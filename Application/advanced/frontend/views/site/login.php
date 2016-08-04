@@ -19,7 +19,7 @@ $this->title = 'LSC Learning Management System';
         <div class="form" align="center">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?> <br> <br>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?> <br>
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
 

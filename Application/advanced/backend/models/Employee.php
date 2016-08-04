@@ -54,6 +54,7 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+	
     public function attributeLabels()
     {
         return [
@@ -103,3 +104,4 @@ class Employee extends \yii\db\ActiveRecord
         return $this->hasMany(Grade::className(), ['id' => 'grade_id', 'student_id' => 'grade_student_id', 'course_id' => 'grade_course_id'])->viaTable('employee_submits_grade', ['employee_id' => 'id']);
     }
 }
+?>
