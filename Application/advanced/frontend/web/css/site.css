@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-	background-color: pink;
+	background: linear-gradient(to right, #05325c, #91aec9, #05325c);
 }
 
 .wrap {
