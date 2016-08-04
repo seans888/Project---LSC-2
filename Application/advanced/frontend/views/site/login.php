@@ -7,16 +7,16 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'LSC Learning Management System';
+/*$this->params['breadcrumbs'][] = $this->title;*/
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+<!-- <div class="site-login"><br><br><br><br> -->
+    <br><br><br><center><font size="200px" face="lucida calligraphy italic"><?= Html::encode($this->title) ?><center></font>
 
-    <p>Please fill out the following fields to login:</p>
+    <!-- <p>Please fill out the following fields to login:</p>  -->
 
     <div class="row">
-        <div class="col-lg-5">
+        <div class="form" align="center">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>

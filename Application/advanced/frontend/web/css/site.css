@@ -1,17 +1,18 @@
 html,
 body {
     height: 100%;
+	background-color: pink;
 }
 
 .wrap {
     min-height: 100%;
     height: auto;
-    margin: 0 auto -60px;
+    margin: 0 auto -60px; /* footer margin */
     padding: 0 0 60px;
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    padding: 70px 200px 20px;
 }
 
 .footer {
@@ -108,4 +109,7 @@ a.desc:after {
 
 .nav > li > form > button:hover {
     text-decoration: none;
+}
+.row .form {
+	 padding: 70px 230px 20px;
 }
