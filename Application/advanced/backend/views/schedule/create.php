@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Schedule */
+/* @var $model common\models\Schedule */
 
 $this->title = 'Create Schedule';
 $this->params['breadcrumbs'][] = ['label' => 'Schedules', 'url' => ['index']];
