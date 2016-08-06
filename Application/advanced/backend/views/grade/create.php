@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Grade */
+/* @var $model backend\models\Grade */
 
 $this->title = 'Create Grade';
 $this->params['breadcrumbs'][] = ['label' => 'Grades', 'url' => ['index']];

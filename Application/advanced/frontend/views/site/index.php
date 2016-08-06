@@ -4,7 +4,12 @@
 
 $this->title = 'My Yii Application';
 ?>
- <!-- <div class="site-index">
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="C:\xampp\htdocs\advanced\frontend\web\css\index.css">
+</head>
+  <div class="site-index">
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
@@ -50,4 +55,12 @@ $this->title = 'My Yii Application';
         </div>
 
     </div>
-</div> -->
+</div> 
+<body>
+<p> WELCOME </p>
+
+</body>
+</html>
+
+
+

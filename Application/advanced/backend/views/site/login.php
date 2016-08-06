@@ -10,7 +10,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'LSC - LMS Administration';
 /*$this->params['breadcrumbs'][] = $this->title;*/
 ?>
-<!-- <div class="site-login"> -->
+ <div class="site-login"> 
     <<br><br><br><center><font size="200px" face="lucida calligraphy italic"><?= Html::encode($this->title) ?><center></font>
 
     <!--<p>Please fill out the following fields to login:</p>-->

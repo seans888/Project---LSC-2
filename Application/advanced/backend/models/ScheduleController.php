@@ -3,8 +3,8 @@
 namespace backend\models;
 
 use Yii;
-use common\models\Schedule;
-use common\models\ScheduleSearch;
+use backend\models\Schedule;
+use backend\models\ScheduleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
