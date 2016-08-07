@@ -44,6 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'school_address',
             'guardian_name',
             'date_of_registration',
+            'status',
         ],
     ]) ?>
 

@@ -8,6 +8,7 @@ use common\models\EmployeeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 /**
  * EmployeeController implements the CRUD actions for Employee model.
@@ -61,17 +62,28 @@ class EmployeeController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+	 
     public function actionCreate()
     {
-        $model = new Employee();
+        if(Yii::$app->user->can( 'create employee')){
+			$model = new Employee();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post())) {
+				if($model->save())
+				{
+					echo 1;
+				}else{
+					echo 0;
+				}
+				//return $this->redirect(['view', 'id' => $model->id]);
+			} else {
+				return $this->renderAjax('create', [
+					'model' => $model,
+				]);
+			}
+		}else{
+			throw new ForbiddenHttpException;
+		}
     }
 
     /**

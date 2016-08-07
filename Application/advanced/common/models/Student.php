@@ -23,6 +23,7 @@ use Yii;
  * @property string $school_address
  * @property string $guardian_name
  * @property string $date_of_registration
+ * @property string $status
  *
  * @property Grade[] $grades
  * @property Schedule[] $schedules
@@ -44,8 +45,8 @@ class Student extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'password', 'lastname', 'firstname', 'nickname', 'gender', 'age', 'contact_number', 'address', 'school', 'school_address', 'guardian_name', 'date_of_registration'], 'required'],
-            [['gender'], 'string'],
+            [['username', 'password', 'lastname', 'firstname', 'nickname', 'gender', 'age', 'contact_number', 'address', 'school', 'school_address', 'guardian_name', 'date_of_registration', 'status'], 'required'],
+            [['gender', 'status'], 'string'],
             [['age', 'contact_number'], 'integer'],
             [['date_of_registration'], 'safe'],
             [['username', 'nickname'], 'string', 'max' => 15],
@@ -80,6 +81,7 @@ class Student extends \yii\db\ActiveRecord
             'school_address' => 'School Address',
             'guardian_name' => 'Guardian Name',
             'date_of_registration' => 'Date Of Registration',
+            'status' => 'Status',
         ];
     }
 

@@ -19,7 +19,7 @@ class StudentSearch extends Student
     {
         return [
             [['id', 'age', 'contact_number'], 'integer'],
-            [['username', 'password', 'lastname', 'firstname', 'middlename', 'nickname', 'gender', 'email_address', 'address', 'school', 'school_address', 'guardian_name', 'date_of_registration'], 'safe'],
+            [['username', 'password', 'lastname', 'firstname', 'middlename', 'nickname', 'gender', 'email_address', 'address', 'school', 'school_address', 'guardian_name', 'date_of_registration', 'status'], 'safe'],
         ];
     }
 
@@ -76,7 +76,8 @@ class StudentSearch extends Student
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'school', $this->school])
             ->andFilterWhere(['like', 'school_address', $this->school_address])
-            ->andFilterWhere(['like', 'guardian_name', $this->guardian_name]);
+            ->andFilterWhere(['like', 'guardian_name', $this->guardian_name])
+            ->andFilterWhere(['like', 'status', $this->status]);
 
         return $dataProvider;
     }

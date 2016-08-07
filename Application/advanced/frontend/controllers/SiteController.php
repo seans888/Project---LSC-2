@@ -8,6 +8,7 @@ use yii\web\Controller;//
 use yii\filters\VerbFilter;//
 use yii\filters\AccessControl;//
 use common\models\LoginForm;//
+//use common\models\AuthItem;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -149,6 +150,7 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+		//$authItems = AuthItem::find()->all();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -159,6 +161,7 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
+			//'authItems'=> $authItems,	
         ]);
     }
 

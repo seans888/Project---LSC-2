@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+use yii\widgets\pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\GradeSearch */
@@ -16,8 +19,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Grade', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::button('Create Grade', ['value'=>Url::to('index.php?r=grade/create'),'class' => 'btn btn-success','id'=>'modalButton']) ?>
     </p>
+	
+	<?php
+	Modal::begin([
+		'id' => 'modal',
+		'size'=>'modal-lg',
+	]);
+	
+	echo "<div id='modalContent'></div>";
+	
+	Modal::end();
+	?>
+	
+	<?php Pjax::begin(['id'=>'gradeGrid']); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
