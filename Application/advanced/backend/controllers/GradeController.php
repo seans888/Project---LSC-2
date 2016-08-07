@@ -8,6 +8,7 @@ use common\models\GradeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 /**
  * GradeController implements the CRUD actions for Grade model.
@@ -65,15 +66,20 @@ class GradeController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Grade();
+		if(Yii::$app->user->can('create grade')){
+			$model = new Grade();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'student_id' => $model->student_id, 'course_id' => $model->course_id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				return $this->redirect(['view', 'id' => $model->id, 'student_id' => $model->student_id, 'course_id' => $model->course_id]);
+			} else {
+				return $this->render('create', [
+					'model' => $model,
+				]);
+			}
+		}else{
+			throw new ForbiddenHttpException;
+		}
+        
     }
 
     /**

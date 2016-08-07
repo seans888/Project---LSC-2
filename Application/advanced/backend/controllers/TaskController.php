@@ -8,6 +8,7 @@ use common\models\TaskSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 /**
  * TaskController implements the CRUD actions for Task model.
@@ -64,15 +65,21 @@ class TaskController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Task();
+		
+		if(Yii::$app->user->can('create task')){
+			$model = new Task();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'course_id' => $model->course_id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				return $this->redirect(['view', 'id' => $model->id, 'course_id' => $model->course_id]);
+			} else {
+				return $this->render('create', [
+					'model' => $model,
+				]);
+			}
+		}else{
+			throw new ForbiddenHttpException;
+		}
+        
     }
 
     /**
