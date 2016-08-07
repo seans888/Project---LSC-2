@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use common\models\Course;
 
 /**
  * This is the model class for table "course".

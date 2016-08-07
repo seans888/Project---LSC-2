@@ -14,8 +14,20 @@ return [
     'modules' => [],
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\Admin',
             'enableAutoLogin' => true,
+			'identityCookie' => [
+				'name' => '_backendUser',//unique for backend user
+			]
+        ],
+		'session' => [
+            'name' => 'PHPBACKSESSID',
+            'savePath' => sys_get_temp_dir(),
+        ],
+		'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => '[mevrpBhUOcvncVOTqmsN]',
+            'csrfParam' => '_backendCSRF',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

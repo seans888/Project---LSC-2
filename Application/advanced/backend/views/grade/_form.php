@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Grade */
@@ -27,6 +28,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'attendance')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'student_id')->textInput() ?>
+	
+
 
     <?= $form->field($model, 'course_id')->textInput() ?>
 
