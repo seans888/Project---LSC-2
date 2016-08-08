@@ -38,10 +38,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
 		'rowOptions'=>function($model){
-				if($model->status == 'inactive')
+				if($model->status == 'active')
 				{
 					return ['class'=>'success']; 
-				}else if($model->status == 'active')
+				}else if($model->status == 'inactive')
 				{
 					return ['class'=>'danger'];
 				}

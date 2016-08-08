@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 	<?php
 	Modal::begin([
+		'header' => '<h4>Course</h4>',
 		'id' => 'modal',
 		'size'=>'modal-lg',
 	]);

@@ -12,6 +12,7 @@ body {
 }
 
 .wrap > .container {
+	height: 655px;
     padding: 70px 230px 20px;
 }
 
@@ -113,4 +114,5 @@ a.desc:after {
 
 .row .form{
 	padding: 70px 200px 20px;
+	
 }

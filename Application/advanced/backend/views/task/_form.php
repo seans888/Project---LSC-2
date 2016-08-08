@@ -17,7 +17,8 @@ use common\models\Student;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'category')->textInput(['maxlength' => true]) ?>
+	<?= $form->field($model, 'category')->dropDownList([ 'Quiz' => 'Quiz', 'Homework' => 'Homework', 'Exam' => 'Exam'], ['prompt' => 'Select Category']) ?>
+	
 
 	<?= $form->field($model, 'course_id')->dropDownList(
 		ArrayHelper::map( Course::find()->all(), 'id', 'course_name'),
