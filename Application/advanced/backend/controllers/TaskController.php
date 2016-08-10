@@ -36,13 +36,18 @@ class TaskController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new TaskSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		if(Yii::$app->user->can( 'view task' )){
+			$searchModel = new TaskSearch();
+			$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
+			return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+		}else{
+			throw new ForbiddenHttpException;
+		}
+        
     }
 
     /**

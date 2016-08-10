@@ -36,13 +36,20 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CourseSearch();
+		
+		if(Yii::$app->user->can( 'view course')){
+		$searchModel = new CourseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+		}else{
+			throw new ForbiddenHttpException;
+		}
+        
+
     }
 
     /**

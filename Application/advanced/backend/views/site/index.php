@@ -21,7 +21,7 @@ $this->title = 'My Yii Application';
 
     <div class="body-content">
 
-        <div class="row">
+       <!-- <div class="row">
             <div class="col-lg-4">
                 <h2>Heading</h2>
 
@@ -52,7 +52,7 @@ $this->title = 'My Yii Application';
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
-        </div>
+        </div>-->
 
     </div>
 </div>
