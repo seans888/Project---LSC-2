@@ -9,28 +9,28 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'LSC Learning Management System';
 
-?>
-
-    <br><br><br><center><font size="200px" face="lucida calligraphy italic"><?= Html::encode($this->title) ?><center></font>
-
-    <!--<p>Please fill out the following fields to login:</p>-->
+?><br><br><br><br>
+<center>
 	
-    <div class="row">
-        <div class="form" align="center">
+	<div id = 'login'><br><br>
+	<h1><font size="20px">LOGIN</font></h1>
+	<div class='form'>
+	<?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+		<span class='input'>
+		<span class='icon username-icon fontawesome-user'></span>
+			<?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?> <br>
+		</span>
+		<span class='input'>
+			<span class='password-icon-style icon password-icon fontawesome-lock'></span>
+			<?= $form->field($model, 'password')->passwordInput() ?>
+		</span>
 		
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-				
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?> <br>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-            <?php ActiveForm::end(); ?>
+		<?= $form->field($model, 'rememberMe')->checkbox() ?>
+		<div class="form-group">
+			<?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+		</div>
+		<?php ActiveForm::end(); 
+	?>
+	</div>
+	</div>
 			
-        </div>	
-	
- </div>

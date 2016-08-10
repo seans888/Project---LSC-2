@@ -1,19 +1,64 @@
 html,
+
 body {
     height: 100%;
 	background: linear-gradient(to right, #5d94df, #d3e2f6, #5d94df);
 }
+
+#login{
+  width:400px;
+  height:465px;
+  top:0;left:0;bottom:0;right:0;
+  margin:auto;
+  border-radius:4px;
+  border-top:1px solid #464c4c;
+  background:rgba(0,0,0,0.38);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2225', endColorstr='#4b575e',GradientType=0 );
+  -webkit-box-shadow: 10px 13px 20px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 13px 20px -1px rgba(0,0,0,0.75);
+  box-shadow: 10px 13px 20px -1px rgba(0,0,0,0.75);
+}
+h1{
+  width:100%;
+  text-align:center;
+  font-family: arial;
+  font-weight:700;
+  color:#fff;
+  letter-spacing:4px;
+  padding:10px 0 20px 0;
+}
+
+
+input{
+ 
+  background:#242c32;
+  border:1;
+  border-radius:3px;
+  border-bottom:1px solid #646c72;
+  margin-right: 55px;
+  outline:0;
+  padding-left:70px;
+  font-family:'Ubuntu'; 
+  color:#fff;
+  margin-bottom:10px;
+}
+.input{
+  position:relative;
+    
+}
+
+span.password-icon-style.icon.password-icon.fontawesome-lock {
+  left: -291px;
+  top: 75px;
+}
+
 
 .wrap {
     min-height: 100%;
     height: auto;
     margin: 0 auto -60px; /* footer margin */
     padding: 0 0 100px;
-}
-
-.wrap > .container {
-	height: 655px;
-    padding: 70px 230px 20px;
+	
 }
 
 .footer {
@@ -112,8 +157,8 @@ a.desc:after {
     text-decoration: none;
 }
 
-.row .form{
-	padding: 70px 200px 20px;
+.form{
+	margin: 10px 50px 30px;
 }
 
 .border{
