@@ -15,4 +15,5 @@ $config = yii\helpers\ArrayHelper::merge(
 );
 
 $application = new yii\web\Application($config);
-$application->run();
+$application->run(); ?>
+

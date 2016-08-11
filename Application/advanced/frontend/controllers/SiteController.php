@@ -73,7 +73,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+		return $this->render('index');
     }
 
     /**
@@ -105,9 +105,15 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
+		$this->layout = 'loginLayout';
+		$model = new LoginForm();
+        
+		
+		if (Yii::$app->user->logout()) {
+            return $this->render('login', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**

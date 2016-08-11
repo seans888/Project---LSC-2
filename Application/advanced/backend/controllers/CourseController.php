@@ -36,6 +36,7 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
+		$this->layout = 'courseLayout';
 		
 		if(Yii::$app->user->can( 'view course')){
 		$searchModel = new CourseSearch();
@@ -71,6 +72,7 @@ class CourseController extends Controller
      */
     public function actionCreate()
     {
+		$this->layout = 'courseLayout';
 		if(Yii::$app->user->can( 'create course')){
 			$model = new Course();
 
