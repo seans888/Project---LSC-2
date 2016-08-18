@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'LSC Learning Management System';
 
-?><br><br><br><br>
+?><br><br><br><br>  
 <center>
 	
 	<div id = 'login'><br><br>
