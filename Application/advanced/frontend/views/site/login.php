@@ -14,9 +14,9 @@ $this->title = 'LSC Learning Management System';
 <center>
 	
 	<div id = 'login'><br>
-	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" style="width:100px;height:70px;">
-	<h1><font size="20px">LOGIN</font></h1>
-	<div class='form'>
+	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" style="width:100px;height:70px;"><br><br>
+	<font size="5" >Learning Management System</font>
+	<div class='form'><br><br>
 	<?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 		<span class='input'>
 		<span class='icon username-icon fontawesome-user'></span>

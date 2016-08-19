@@ -2,8 +2,10 @@ html,
 
 body {
     height: 100%;
-	background: linear-gradient(to right, #a3b4f2, #d3d9f6, #a3b4f2);
+	background: linear-gradient(to right, #aebef6, #eaedfb, #aebef6);
 	overflow:hidden;
+	color:#eaedfb;
+	
 }
 
 #login{
@@ -11,12 +13,13 @@ body {
   height:500px;
   top:0;left:0;bottom:0;right:0;
   margin:auto;
-  border-radius:4px;
-  background:rgba(0,0,0,0.38);
+  border-radius:1px;
+  background:rgba(0,0,0,0.27);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2225', endColorstr='#4b575e',GradientType=0 );
   -webkit-box-shadow: 10px 13px 20px -1px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 13px 20px -1px rgba(0,0,0,0.75);
   box-shadow: 10px 13px 20px -1px rgba(0,0,0,0.75);
+  
 }
 
 h1{
@@ -28,6 +31,8 @@ h1{
   letter-spacing:4px;
   padding:10px 0 20px 0;
 }
+
+
 
 
 input{
@@ -167,6 +172,10 @@ a.desc:after {
 }
 
 .navigation{
-	background:#100078;
-	color: white;
+	background:#3b4f96;
+	border-style: solid;
+    border-bottom: 1px solid black;
+	height: 50px;
+	border-radius:0px;
 }
+
