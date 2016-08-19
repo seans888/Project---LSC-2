@@ -32,7 +32,7 @@ LoginAsset::register($this);
         'brandLabel' => 'LSC Learning Management System',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navigation', /*kahit ano na gusto mong name ng class-johanna*/
         ], 	
     ]);
     
