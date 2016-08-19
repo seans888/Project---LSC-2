@@ -2,12 +2,12 @@ html,
 
 body {
     height: 100%;
-	background: linear-gradient(to right, #5d94df, #d3e2f6, #5d94df);
+	background: linear-gradient(to right, #a3b4f2, #d3d9f6, #a3b4f2);
 	overflow:hidden;
 }
 
 #login{
-  width:375px;
+  width:355px;
   height:500px;
   top:0;left:0;bottom:0;right:0;
   margin:auto;
@@ -167,5 +167,6 @@ a.desc:after {
 }
 
 .navigation{
-	background:#00336d;
+	background:#100078;
+	color: white;
 }
