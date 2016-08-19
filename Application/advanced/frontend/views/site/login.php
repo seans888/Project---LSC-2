@@ -9,10 +9,13 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'LSC Learning Management System';
 
-?><br><br><br><br>  
+?>
+
+<br><br><br><br>  
 <center>
 	
-	<div id = 'login'><br><br>
+	<div id = 'login'><br>
+	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" style="width:100px;height:70px;" >
 	<h1><font size="20px">LOGIN</font></h1>
 	<div class='form'>
 	<?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
