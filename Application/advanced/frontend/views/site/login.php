@@ -29,7 +29,7 @@ $this->title = 'LSC Learning Management System';
 		
 		<?= $form->field($model, 'rememberMe')->checkbox() ?>
 		<div class="form-group">
-			<?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+			<?= Html::submitButton('Login', ['class' => 'button', 'name' => 'login-button']) ?>
 		</div>
 		<?php ActiveForm::end(); 
 	?>
