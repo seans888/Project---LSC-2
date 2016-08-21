@@ -11,9 +11,9 @@ $this->title = 'LSC Learning Management System';
 
 ?>
  
-<center>
+<center><br><br><br><br>
 	
-	<div id = 'login'><br>
+	<div id = 'login'><br><br>
 	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" style="width:100px;height:70px;"><br><br>
 	<font size="5" >Learning Management System</font>
 	<div class='form'><br><br>

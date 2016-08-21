@@ -4,6 +4,15 @@ body {
 	background: linear-gradient(to right, #5d94df, #d3e2f6, #5d94df);
 }
 
+.navbar{
+	background:#364783;
+	border-style: solid;
+    border-bottom: 1px solid black;
+	height: 50px;
+	border-radius:0px;
+	
+}
+
 .wrap {
     min-height: 100%;
     height: auto;

@@ -163,6 +163,15 @@ a.desc:after {
     text-decoration: none;
 }
 
+.navbar{
+	background:#364783;
+	border-style: solid;
+    border-bottom: 1px solid black;
+	height: 50px;
+	border-radius:0px;
+	
+}
+
 .form{
 	margin: 5px 50px 30px;
 }
@@ -171,13 +180,7 @@ a.desc:after {
 	border: solid 1px black;
 }
 
-.navigation{
-	background:#364783;
-	border-style: solid;
-    border-bottom: 1px solid black;
-	height: 50px;
-	border-radius:0px;
-}
+
 
 .button {
   background: #12113d;
@@ -205,3 +208,5 @@ a.desc:after {
   background-image: linear-gradient(to bottom, #222266, #323194);
   text-decoration: none;
 }
+
+.
