@@ -8,6 +8,7 @@ use common\models\StudentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 /**
  * StudentController implements the CRUD actions for Student model.
@@ -63,15 +64,25 @@ class StudentController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Student();
+        if(Yii::$app->user->can( 'create student')){
+			$model = new Student();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post())) {
+				if($model->save())
+				{
+					echo 1;
+				}else{
+					echo 0;
+				}
+				//return $this->redirect(['view', 'id' => $model->id]);
+			} else {
+				return $this->renderAjax('create', [
+					'model' => $model,
+				]);
+			}
+		}else{
+			throw new ForbiddenHttpException;
+		}
     }
 
     /**

@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 
 <div class="student-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id'=>$model->formName()]); ?>
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
@@ -51,3 +51,34 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+<?php 
+$script = <<< JS
+
+$('form#{$model->formName()}').on('beforeSubmit', function(e)
+{
+	var \$form = $(this);
+	$.post(
+		\$form.attr("action"), //serialize yii2 form
+		\$form.serialize()
+	)
+		.done(function(result){
+		if(result == 1)
+		{
+			$(\$form).trigger("reset");
+			$.pjax.reload({container:'#studentGrid'});
+		}else
+		{
+			$("#message").html(result);
+		}
+		}).fall(function()
+		{
+			console.log("server error");
+		});
+		
+		return false;
+		
+});
+
+JS;
+$this->registerJs($script);
+?>

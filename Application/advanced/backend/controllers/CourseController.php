@@ -49,8 +49,6 @@ class CourseController extends Controller
 		}else{
 			throw new ForbiddenHttpException;
 		}
-        
-
     }
 
     /**
@@ -92,7 +90,6 @@ class CourseController extends Controller
 		}else{
 			throw new ForbiddenHttpException;
 		}
-        
     }
 
     /**

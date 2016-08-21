@@ -8,6 +8,7 @@ use common\models\CourseSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\ForbiddenHttpException;
 
 /**
  * CourseController implements the CRUD actions for Course model.
@@ -35,13 +36,19 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CourseSearch();
+        
+		
+		if(Yii::$app->user->can( 'view course')){
+		$searchModel = new CourseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+		}else{
+			throw new ForbiddenHttpException;
+		}
     }
 
     /**
@@ -63,15 +70,26 @@ class CourseController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Course();
+        $this->layout = 'courseLayout';
+		if(Yii::$app->user->can( 'create course')){
+			$model = new Course();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+			if ($model->load(Yii::$app->request->post())) {
+				if($model->save())
+				{
+					echo 1;
+				}else{
+					echo 0;
+				}
+				//return $this->redirect(['view', 'id' => $model->id]);
+			} else {
+				return $this->renderAjax('create', [
+					'model' => $model,
+				]);
+			}
+		}else{
+			throw new ForbiddenHttpException;
+		}
     }
 
     /**
