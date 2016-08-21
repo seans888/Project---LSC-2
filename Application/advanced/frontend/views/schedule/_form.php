@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use common\models\Course;
 use common\models\Student;
-use common\models\Course
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Schedule */
@@ -13,7 +13,7 @@ use common\models\Course
 
 <div class="schedule-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id'=>$model->formName()]); ?>
 
     <?= $form->field($model, 'day')->textInput(['maxlength' => true]) ?>
 
@@ -48,3 +48,35 @@ use common\models\Course
     <?php ActiveForm::end(); ?>
 
 </div>
+<?php 
+$script = <<< JS
+
+$('form#{$model->formName()}').on('beforeSubmit', function(e)
+{
+	var \$form = $(this);
+	$.post(
+		\$form.attr("action"), //serialize yii2 form
+		\$form.serialize()
+	)
+		.done(function(result){
+		if(result == 1)
+		{
+			$(\$form).trigger("reset");
+			$.pjax.reload({container:'#scheduleGrid'});
+		}else
+		{
+			$("#message").html(result);
+		}
+		}).fall(function()
+		{
+			console.log("server error");
+		});
+		
+		return false;
+		
+});
+
+JS;
+$this->registerJs($script);
+?>
+

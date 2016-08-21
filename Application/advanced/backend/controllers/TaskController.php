@@ -68,9 +68,9 @@ class TaskController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+	 
     public function actionCreate()
     {
-		
 		if(Yii::$app->user->can( 'create task')){
 			$model = new Task();
 
@@ -89,8 +89,7 @@ class TaskController extends Controller
 			}
 		}else{
 			throw new ForbiddenHttpException;
-		}
-        
+		}       
     }
 
     /**
