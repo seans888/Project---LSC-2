@@ -13,6 +13,7 @@ use yii\widgets\pjax;
 $this->title = 'Courses';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="course-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -41,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'course_name',
             'subject',
 
@@ -49,3 +50,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+
+

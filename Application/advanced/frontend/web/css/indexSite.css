@@ -168,7 +168,7 @@ a.desc:after {
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background:rgba(0,0,0,0.24);
+	background:rgba(0,0,0,0.15);
 	overflow-x:hidden;
 	padding-top: 150px;
 	border-right: 1px solid gray;
