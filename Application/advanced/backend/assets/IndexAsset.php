@@ -5,14 +5,14 @@ namespace backend\assets;
 use yii\web\AssetBundle;
 
 /**
- * Main frontend application asset bundle.
+ * Main backend application asset bundle.
  */
-class CourseAsset extends AssetBundle
-{
+class IndexAsset extends AssetBundle{
+
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/courseSite.css',
+        'css/indexSite.css',
     ];
     public $js = [
 		'js/main.js',

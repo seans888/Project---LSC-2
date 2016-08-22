@@ -7,11 +7,10 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use backend\assets\CourseAsset;
+use backend\assets\IndexAsset;
 use common\widgets\Alert;
 
-
-CourseAsset::register($this);
+IndexAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -29,19 +28,17 @@ CourseAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'LSC - LMS',
+        'brandLabel' => 'LSC - LMS Admin',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
-        ], 	
+        ],
     ]);
     $menuItems = [
-        /*['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],*/
+        /*['label' => 'Home', 'url' => ['/site/index']],*/
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+		$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
@@ -81,3 +78,5 @@ CourseAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+
+
