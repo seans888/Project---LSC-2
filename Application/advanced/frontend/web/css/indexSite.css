@@ -158,3 +158,24 @@ a.desc:after {
   background-image: linear-gradient(to bottom, #8a85c7, #b59eeb);
   text-decoration: none;
 }
+     
+          
+.sidenav{
+	color: pink;
+	height: 100%;
+	width: 250ox;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: black;
+	overflow-x:hidden;
+	padding-top: 150px;
+}
+
+.sidenav a{
+	color: white;
+	font-size:25px;
+	display: block;
+	padding: 8px 35px 8px 32px;
+}           
