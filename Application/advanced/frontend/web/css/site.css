@@ -132,3 +132,29 @@ a.desc:after {
 .border{
 	border: solid 1px black;
 }
+.btn {
+  background: #2d2963;
+  background-image: -webkit-linear-gradient(top, #2d2963, #534d9e);
+  background-image: -moz-linear-gradient(top, #2d2963, #534d9e);
+  background-image: -ms-linear-gradient(top, #2d2963, #534d9e);
+  background-image: -o-linear-gradient(top, #2d2963, #534d9e);
+  background-image: linear-gradient(to bottom, #2d2963, #534d9e);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #8a85c7;
+  background-image: -webkit-linear-gradient(top, #8a85c7, #b59eeb);
+  background-image: -moz-linear-gradient(top, #8a85c7, #b59eeb);
+  background-image: -ms-linear-gradient(top, #8a85c7, #b59eeb);
+  background-image: -o-linear-gradient(top, #8a85c7, #b59eeb);
+  background-image: linear-gradient(to bottom, #8a85c7, #b59eeb);
+  text-decoration: none;
+}
