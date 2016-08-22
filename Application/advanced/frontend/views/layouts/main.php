@@ -29,7 +29,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'LSC - LMS',
+        'brandLabel' => 'LSC Learning Management System',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -41,8 +41,8 @@ AppAsset::register($this);
         ['label' => 'Contact', 'url' => ['/site/contact']],*/
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        /*$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];*/
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
