@@ -7,12 +7,13 @@ use yii\web\AssetBundle;
 /**
  * Main backend application asset bundle.
  */
-class IndexAsset extends AssetBundle{
+class LoginAsset extends AssetBundle{
 
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/indexSite.css',
+		'css/bootstrap.min',
+        'css/loginSite.css',
     ];
     public $js = [
 		'js/main.js',
