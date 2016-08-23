@@ -7,11 +7,11 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\LoginAsset;
+use backend\assets\IndexAsset;
 use common\widgets\Alert;
 
 
-LoginAsset::register($this);
+IndexAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -35,14 +35,19 @@ LoginAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ], 	
     ]);
-    
+    $menuItems = [
+        /*['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'About', 'url' => ['/site/about']],
+        ['label' => 'Contact', 'url' => ['/site/contact']],*/
+    ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        /*$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];*/
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                'Logout (' . Yii::$app->user->identity->admin . ')',
                 ['class' => 'btn btn-link']
             )
             . Html::endForm()
@@ -56,13 +61,21 @@ LoginAsset::register($this);
     ?>
 
     <div class="container">
-        
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
 </div>
 
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; Loyola Student Center <?= date('Y') ?></p>
 
+        <p class="pull-right"><?= Yii::powered() ?></p>
+    </div>
+</footer>
 
 <?php $this->endBody() ?>
 </body>

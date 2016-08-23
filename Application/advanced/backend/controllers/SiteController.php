@@ -63,9 +63,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-		
-		//$this->layout = 'indexLayout';
-		
+		$this->layout = 'indexLayout';
         if(Yii::$app->user->can( 'view index')){
 			return $this->render('index');
 		}else{
@@ -75,6 +73,7 @@ class SiteController extends Controller
 
     public function actionLogin()
     {
+		$this->layout = 'loginLayout';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -107,6 +106,7 @@ class SiteController extends Controller
 
     public function actionLogout()
     {
+		$this->layout = 'loginLayout';
         Yii::$app->user->logout();
 
         return $this->goHome();
