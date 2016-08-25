@@ -18,7 +18,8 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-		"phpoffice/phpexcel": "dev-develop"
+		"phpoffice/phpexcel": "dev-develop",
+		"2amigos/yii2-date-picker-widget" : "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

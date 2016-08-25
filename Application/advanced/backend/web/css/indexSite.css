@@ -6,6 +6,8 @@ body {
 	color:#222e5a;
 }
 
+
+
 .navbar{
 	background:#364783;
 	border-style: solid;
@@ -23,11 +25,15 @@ body {
 	
 }
 
+
 .wrap > .container {
 	height: 655px;
-    padding: 70px 230px 20px;
+    padding: 20px 20px 20px;
 	
+
 }
+      
+      
 
 .footer {
     height: 60px;

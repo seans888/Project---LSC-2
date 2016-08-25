@@ -12,7 +12,7 @@ class IndexAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-		'css.bootstrap.min.css',
+		
         'css/indexSite.css',
     ];
     public $js = [

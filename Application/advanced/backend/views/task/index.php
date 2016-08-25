@@ -13,6 +13,14 @@ use yii\widgets\pjax;
 $this->title = 'Tasks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="sidenav">
+	<a href="http://localhost/advanced/backend/web/index.php?r=task" target = "_self">Task</a>
+	<a href="http://localhost/advanced/backend/web/index.php?r=course">Course</a>
+	<a href="http://localhost/advanced/backend/web/index.php?r=student">Student</a>
+	<a href="#">Calendar</a>
+	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
+	<a href="#">Message</a>
+</div>
 <div class="task-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -43,8 +51,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'category',
-            'course_id',
-            'student_id',
+            //'course_id',
+            //'student_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
