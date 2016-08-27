@@ -19,9 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	<a href="http://localhost/advanced/backend/web/index.php?r=student">Student</a>
 	<a href="#">Calendar</a>
 	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
-	<a href="#">Message</a>
+	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
 </div>
-
 <div class="grade-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -49,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'date',
             'subject',
             'homework',

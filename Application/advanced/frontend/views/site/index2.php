@@ -4,7 +4,8 @@
 
 $this->title = 'LSC-LMS';
 ?>
-<div class="site-index">
+
+<!--<div class="site-index">
 
     <div class="jumbotron">
 	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" style="width:250px;height:150px;"><br><br>
@@ -15,4 +16,4 @@ $this->title = 'LSC-LMS';
         <p><a id="btn" href="http://localhost/advanced/frontend/web/index.php?r=site%2Flogin">LOGIN</a></p>
     </div>
 
-</div>
+</div>-->

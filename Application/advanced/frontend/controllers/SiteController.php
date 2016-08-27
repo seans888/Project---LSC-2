@@ -73,11 +73,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-		$this->layout = 'indexLayout';
+		
 		
 		if(Yii::$app->user->can( 'view index')){
+			$this->layout = 'indexLayout';
 			return $this->render('index');
 		}else{
+			$this->layout = 'index2Layout';
 			return $this->render('index2');
 		}
     }
