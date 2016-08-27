@@ -18,7 +18,15 @@ use common\models\Course
 
     <?= $form->field($model, 'date')->textInput() ?>
 
-    <?= $form->field($model, 'subject')->textInput(['maxlength' => true]) ?>
+	<?= $form->field($model, 'subject')->dropDownList(
+		ArrayHelper::map( Course::find()->all(), 'id', 'subject'),
+		[
+			'prompt'=>'Select Subject',
+			//'onchange'=>'
+			//	$.post("index.php?r=work-orders/lists&id='.'"+$(this).val(), function(data){
+			//		$("select#models-contact").html(data);
+			//		});'
+		]); ?>
 
     <?= $form->field($model, 'homework')->textInput() ?>
 
@@ -28,7 +36,7 @@ use common\models\Course
 
     <?= $form->field($model, 'grade_final')->textInput() ?>
 
-    <?= $form->field($model, 'attendance')->textInput(['maxlength' => true]) ?>
+	<?= $form->field($model, 'attendance')->dropDownList([ 'Absent' => 'Abset', 'Present' => 'Present'], ['prompt' => 'Select Attendance']) ?>
 
 	<?= $form->field($model, 'student_id')->dropDownList(
 		ArrayHelper::map( Student::find()->all(), 'id', 'username'),
