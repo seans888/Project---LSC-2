@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * EventController implements the CRUD actions for Event model.
  */
@@ -35,12 +36,21 @@ class EventController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new EventSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+		$events = Event::find()->all();
+		
+		$tasks = [];
+		
+		foreach ($events as $eve){
+			$event = new \yii2fullcalendar\models\Event();
+			$event->id = $eve->id;
+			$event->backgroundColor = 'red';
+			$event->title = $eve->title;
+			$event->start = $eve->created_date;
+			$tasks[] = $event;
+		}
+		
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'events' => $tasks,
         ]);
     }
 
@@ -61,14 +71,15 @@ class EventController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($date)
     {
         $model = new Event();
-
+		$model->created_date = $date;
+		
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
-            return $this->render('create', [
+            return $this->renderAjax('create', [
                 'model' => $model,
             ]);
         }

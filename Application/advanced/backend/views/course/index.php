@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
 	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
 </div>
-</div>
+
 <div class="course-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
