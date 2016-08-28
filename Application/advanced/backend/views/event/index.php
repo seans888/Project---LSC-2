@@ -4,10 +4,10 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\MessageSearch */
+/* @var $searchModel common\models\EventSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Messages';
+$this->title = 'Events';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sidenav">
@@ -18,13 +18,13 @@ $this->params['breadcrumbs'][] = $this->title;
 	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
 	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
 </div>
-<div class="message-index">
+<div class="event-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Message', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Event', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -33,11 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'receiver_name',
-            'receiver_email:email',
-            'subject',
-            'content:ntext',
-            // 'attachment',
+            'title',
+            'description:ntext',
+            'created_date',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
