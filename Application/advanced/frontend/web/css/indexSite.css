@@ -220,3 +220,12 @@ a.desc:after {
 	-webkit-transform: scale(2);
 	transform: scale(2);
 } 
+
+.logo{
+	top: 10%;
+	left: 30%;
+	position: absolute;
+	opacity: 0.1;
+	filter: alpha(opacity=0);
+	
+}
