@@ -23,6 +23,11 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
+<style>
+#w0{
+	background:pink;
+}
+</style>
 <body>
 <?php $this->beginBody() ?>
 

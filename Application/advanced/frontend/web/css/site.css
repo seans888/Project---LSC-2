@@ -6,13 +6,7 @@ body {
 	color:#222e5a;
 }
 
-.navbar{
-	background:#364783;
-	border-style: solid;
-    border-bottom: 1px solid black;
-	height: 50px;
-	border-radius:0px;
-}
+
 
 .wrap {
     min-height: 100%;
@@ -21,6 +15,15 @@ body {
     padding: 0 0 100px;
 	
 }
+
+.navbar{
+	background:#364783;
+	border-style: solid;
+    border-bottom: 1px solid black;
+	height: 50px;
+	border-radius:0px;
+}
+
 
 .wrap > .container {
 	height: 655px;

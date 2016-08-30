@@ -9,7 +9,7 @@ use yii\bootstrap\Modal;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Events';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="sidenav">
 	<a href="http://localhost/advanced/backend/web/index.php?r=task" target = "_self">Task</a>

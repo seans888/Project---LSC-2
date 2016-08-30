@@ -8,6 +8,15 @@ body {
 	
 }
 
+.navbar{
+	background:#364783;
+	border-style: solid;
+    border-bottom: 1px solid black;
+	height: 50px;
+	border-radius:0px;
+}
+
+
 #login{
   width:355px;
   height:500px;

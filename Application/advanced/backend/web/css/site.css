@@ -219,3 +219,10 @@ a.desc:after {
 	-webkit-transform: scale(2);
 	transform: scale(2);
 } 
+#w2:hover{
+	background:#162351;
+	border-radius: 15px;
+}
+.event-index{
+	width: 850px;	
+}

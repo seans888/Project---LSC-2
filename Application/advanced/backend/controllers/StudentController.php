@@ -84,6 +84,57 @@ class StudentController extends Controller
 			throw new ForbiddenHttpException;
 		}
     }
+	
+	//Imports data from the excel sheet
+	public function actionImportExcel()
+	{
+			$inputFile = 'backend/controllers/student.xlsx';
+			try{
+				$inputFileType = \PHPExcel_IOFactory::identify($inputFile);
+				$objReader = \PHPExcel_IOFactory::createReader($inputFileType);
+				$objPHPExcel = $objReader->load($inputFile);
+			}catch(Exception $e)
+			{
+				die('Error');
+			}
+			
+			$sheet = $objPHPExcel->getSheet(0);
+			$highestRow = $sheet->getHighestRow();
+			$highestColumn = $sheet->getHighestColumn();
+			
+			for( $row = 1; $row <= $highestRow; $row++ )
+			{
+				$rowData = $sheet->rangeToArray('A'.$row.';'.$highestColumn.$row,NULL,TRUE,FALSE);
+				
+				if($row = 1)
+				{
+					continue;
+				}
+				
+				$student = new Student();
+				$id = $rowData[0][0];
+				$student->username = $rowData[0][1];
+				$student->password = $rowData[0][2];
+				$student->lastname = $rowData[0][3];
+				$student->firstname = $rowData[0][4];
+				$student->middlename = $rowData[0][5];
+				$student->nickname = $rowData[0][6];
+				$student->gender = $rowData[0][7];
+				$student->age = $rowData[0][8];
+				$student->email_address = $rowData[0][9];
+				$student->contact_number = $rowData[0][10];
+				$student->address = $rowData[0][11];
+				$student->school = $rowData[0][12];
+				$student->school_address = $rowData[0][13];
+				$student->guardian_name = $rowData[0][14];
+				$student->date_of_registration = $rowData[0][15];
+				$student->status = $rowData[0][16];
+				
+				$student->save();
+				
+				print_r($student->getErrors());
+			}
+	}
 
     /**
      * Updates an existing Student model.
