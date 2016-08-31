@@ -16,10 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
 }
 </style>
 <div class="sidenav">
-	<a href="#">My Profile</a>
-	<a href="#">Task</a>
-	<a href="#">Message</a>
-	<a href="#">Calendar</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
+	<a href="#">Course</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
 </div>
 
 <div class="message-index">

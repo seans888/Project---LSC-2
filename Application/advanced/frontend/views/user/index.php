@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
 	<a href="#">Course</a>
 	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
-	<a href="#">Calendar</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
 </div>
 <div class="user-index">
 

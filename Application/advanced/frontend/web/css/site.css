@@ -160,7 +160,7 @@ a.desc:after {
 }
 
 .sidenav{
-	color: pink;
+	/*color: pink;*/
 	height: 100%;
 	width: 250ox;
 	position: fixed;

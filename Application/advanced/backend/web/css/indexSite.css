@@ -226,3 +226,29 @@ a.desc:after {
 	-webkit-transform: scale(2);
 	transform: scale(2);
 } 
+
+.logo{
+	top: 10%;
+	left: 30%;
+	position: absolute;
+	opacity: 0.1;
+	filter: alpha(opacity=0);
+}
+
+.text{
+	  z-index: 100;
+	  position: absolute;
+	  color: black;
+	  font-size: 60px;
+	  font-style: oblique;
+	  font-weight: bold;
+	  left: 29%;
+	  top: 44%;
+	  -webkit-text-stroke: 1px white;
+	  text-shadow: 
+		3px 3px 0 #342e74,
+		-1px -1px 0 #342e74,  
+		1px -1px 0 #342e74,
+		-1px 1px 0 #342e74,
+		1px 1px 0 #342e74;
+}

@@ -13,5 +13,11 @@ $this->title = 'Home';
 	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
 	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
 </div>
+<p class = "text">
+	Loyola Student Center
+	</p>
+<div class="logo">
+	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/try_zpse1sdxrvq.png" style="width:700px;height:500px;">	
+</div>
 
 </body>
