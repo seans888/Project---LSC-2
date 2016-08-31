@@ -5,6 +5,7 @@ use yii\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use yii\widgets\pjax;
+use kartik\export\ExportMenu;
 
 
 /* @var $this yii\web\View */
@@ -32,6 +33,27 @@ $this->params['breadcrumbs'][] = $this->title;
 	echo "<div id='modalContent'></div>";
 	
 	Modal::end();
+	?>
+	
+	<?php
+		$gridColumns = [
+			'id',
+			'date',
+			'subject',
+			'homework',
+			'exercise',
+			'quiz',
+			'grade_final',
+			'attendance',
+			'student_id',
+			'course_id',
+
+		];
+		
+		echo ExportMenu::widget([
+			'dataProvider'=> $dataProvider,
+			'columns' => $gridColumns,
+		]);
 	?>
 	
 	<?php Pjax::begin(['id'=>'gradeGrid']); ?>
