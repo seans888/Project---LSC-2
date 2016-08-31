@@ -10,6 +10,11 @@ $this->title = 'Create Grade';
 $this->params['breadcrumbs'][] = ['label' => 'Grades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style>
+#w0{
+	background-color:transparent;
+}
+</style>
 <div class="grade-create">
 
     <h1><?= Html::encode($this->title) ?></h1>

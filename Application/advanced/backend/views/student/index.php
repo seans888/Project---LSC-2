@@ -43,7 +43,33 @@ $this->params['breadcrumbs'][] = $this->title;
 	Modal::end();
 	?>
 	
-	
+	<?php
+		$gridColumns = [
+			'id',
+			'username',
+			'password',
+			'lastname',
+			'firstname',
+			'middlename',
+			'nickname',
+			'gender',
+			'age',
+			'email_address',
+			'contact_number',
+			'address',
+			'school',
+			'school_address',
+			'guardian_name',
+			'date_of_registration',
+			'status',
+
+		];
+		
+		echo ExportMenu::widget([
+			'dataProvider'=> $dataProvider,
+			'columns' => $gridColumns,
+		]);
+	?>
 	
 	
 	

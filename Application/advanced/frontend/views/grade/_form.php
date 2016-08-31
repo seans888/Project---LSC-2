@@ -11,6 +11,11 @@ use dosamigos\datepicker\DatePicker;
 /* @var $model common\models\Grade */
 /* @var $form yii\widgets\ActiveForm */
 ?>
+<style>
+#w0{
+	background-color:transparent;
+}
+</style>
 
 <div class="grade-form">
 
@@ -35,7 +40,7 @@ use dosamigos\datepicker\DatePicker;
     <?= $form->field($model, 'exercise')->textInput() ?>
 
     <?= $form->field($model, 'quiz')->textInput() ?>
-
+ 
     <?= $form->field($model, 'grade_final')->textInput() ?>
 
     <?= $form->field($model, 'attendance')->textInput(['maxlength' => true]) ?>

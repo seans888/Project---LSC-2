@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\ForbiddenHttpException;
+use yii\helpers\Json;
 
 /**
  * CourseController implements the CRUD actions for Course model.
@@ -40,6 +41,24 @@ class CourseController extends Controller
 		if(Yii::$app->user->can( 'view course')){
 		$searchModel = new CourseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+		
+			if(Yii::$app->request->post('hasEditable'))
+			{
+				$id = Yii::$app->request->post('editableKey');
+				$course = Course::findOne($id);
+				
+				$out = Json::encode(['output'=>'','message'=>'']);
+				$post = [];
+				$posted = current($_POST['Course']);
+				$post['Course'] = $posted;
+				if($course->load($post))
+				{
+					$course->save();
+					
+				}
+				echo $out;
+				return;
+			}
 
         return $this->render('index', [
             'searchModel' => $searchModel,
