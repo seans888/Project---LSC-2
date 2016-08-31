@@ -27,6 +27,7 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         ),
         'k' => 
         array (
+            'kartik\\select2\\' => 15,
             'kartik\\popover\\' => 15,
             'kartik\\plugins\\popover\\' => 23,
             'kartik\\mpdf\\' => 12,
@@ -90,6 +91,10 @@ class ComposerStaticInit97f60f486aee3c9bc14072d1bbd961d8
         'yii2fullcalendar\\' => 
         array (
             0 => __DIR__ . '/..' . '/philippfrenzel/yii2fullcalendar',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
         ),
         'kartik\\popover\\' => 
         array (
