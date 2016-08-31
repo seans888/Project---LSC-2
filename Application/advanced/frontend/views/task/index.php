@@ -15,12 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	background:transparent;
 }
 </style>
-<div class="sidenav">
-	<a href="#">My Profile</a>
-	<a href="#">Task</a>
-	<a href="#">Message</a>
-	<a href="#">Calendar</a>
-</div>
+
 
 <div class="task-index">
 

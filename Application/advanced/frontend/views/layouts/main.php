@@ -30,6 +30,12 @@ AppAsset::register($this);
 </style>
 <body>
 <?php $this->beginBody() ?>
+<div class="sidenav">
+	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=course">Course</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
+</div>
 
 <div class="wrap">
     <?php

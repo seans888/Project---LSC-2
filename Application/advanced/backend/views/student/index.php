@@ -15,14 +15,7 @@ use kartik\export\ExportMenu;
 $this->title = 'Students';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="sidenav">
-	<a href="http://localhost/advanced/backend/web/index.php?r=task" target = "_self">Task</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=course">Course</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=student">Student</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=event">Calendar</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
-</div>
+
 <div class="student-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
