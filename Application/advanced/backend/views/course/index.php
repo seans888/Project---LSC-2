@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use yii\widgets\pjax;
@@ -47,13 +47,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+		'pjax'=>true,
+		'export'=>false,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
+		['class' => 'yii\grid\SerialColumn'],
+			[
+				'class'=>'kartik\grid\EditableColumn',
+				'header'=>'COURSE',
+				'attribute'=>'course_name',
+			],
+            
+			[
+				'class'=>'kartik\grid\EditableColumn',
+				'header'=>'SUBJECT',
+				'attribute'=>'subject',
+				'value'=>'subject',
+			],
+		
             //'id',
-            'course_name',
-            'subject',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

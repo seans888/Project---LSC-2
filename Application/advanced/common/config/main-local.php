@@ -18,6 +18,14 @@ return [
         ],
 		'authManager' => [
               'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\PhpManager'
+			  
         ],
+		
+		
     ],
+	
+	'modules' => [
+			'gridview' => [ 'class' => 'kartik\grid\Module',
+		],
+	],
 ];

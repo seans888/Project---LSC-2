@@ -5,6 +5,8 @@ use yii\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use yii\widgets\pjax;
+use kartik\export\ExportMenu;
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\StudentSearch */
@@ -40,6 +42,10 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 	Modal::end();
 	?>
+	
+	
+	
+	
 	
 	<?php Pjax::begin(['id'=>'studentGrid']); ?>
     <?= GridView::widget([
