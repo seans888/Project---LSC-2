@@ -70,17 +70,11 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
+        <?= $content ?><br><br>
     </div>
-</div> <br><br><br><br><br><br><br><br><br><br><br>
+</div> 
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; Loyola Student Center <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>

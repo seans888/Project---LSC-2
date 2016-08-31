@@ -18,7 +18,9 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-		 "phpoffice/phpexcel": "dev-develop",
+		"kartik-v/yii2-export": "*",
+		"kartik-v/yii2-mpdf": "*",
+		"kartik-v/yii2-editable": "*",
 		"2amigos/yii2-date-picker-widget" : "*",
         "philippfrenzel/yii2fullcalendar": "*"
     },

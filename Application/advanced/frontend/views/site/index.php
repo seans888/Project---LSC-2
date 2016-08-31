@@ -6,9 +6,9 @@ $this->title = 'Home';
 ?>
 <body>
 <div class="sidenav">
-	<a href="#">My Profile</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
 	<a href="#">Course</a>
-	<a href="#">Message</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
 	<a href="#">Calendar</a>
 </div>
 <div class="logo">

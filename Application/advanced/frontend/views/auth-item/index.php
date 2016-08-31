@@ -10,6 +10,11 @@ use yii\grid\GridView;
 $this->title = 'Auth Items';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style>
+#w0{
+	background:transparent;
+}
+</style>
 <div class="sidenav">
 	<a href="#">My Profile</a>
 	<a href="#">Task</a>
@@ -35,8 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'type',
             'description:ntext',
-            'rule_name',
-            'data:ntext',
+            //'rule_name',
+            //'data:ntext',
             // 'created_at',
             // 'updated_at',
 

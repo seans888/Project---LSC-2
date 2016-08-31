@@ -13,6 +13,11 @@ use yii\widgets\pjax;
 $this->title = 'Students';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style>
+#w0{
+	background:transparent;
+}
+</style>
 <div class="sidenav">
 	<a href="#">My Profile</a>
 	<a href="#">Task</a>

@@ -7,7 +7,6 @@ body {
 }
 
 
-
 .wrap {
     min-height: 100%;
     height: auto;
@@ -28,7 +27,6 @@ body {
 .wrap > .container {
 	height: 655px;
     padding: 70px 230px 20px;
-	
 }
 
 .footer {

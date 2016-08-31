@@ -10,6 +10,11 @@ use yii\grid\GridView;
 $this->title = 'Tasks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style>
+#w0{
+	background:transparent;
+}
+</style>
 <div class="sidenav">
 	<a href="#">My Profile</a>
 	<a href="#">Task</a>
