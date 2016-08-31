@@ -221,3 +221,34 @@ a.desc:after {
 	transform: scale(2);
 } 
 
+#mission{
+  width:355px;
+  height:500px;
+  top:20%;left:55%;bottom:0;right:0;
+position: absolute;
+  border-radius:1px;
+  background:rgba(0,0,0,0.24);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2225', endColorstr='#4b575e',GradientType=0 );
+ 
+}
+#vision{
+  width:355px;
+  height:500px;
+  top:20%;left:25%;bottom:0;right:0;
+	position: absolute;
+  border-radius:1px;
+  background:rgba(0,0,0,0.24);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2225', endColorstr='#4b575e',GradientType=0 );
+
+}
+
+hr{
+	size:5px;
+}
+
+h4{
+	padding-left: 30px;
+	padding-right: 30px;
+	text-align: justify;
+	color: white;
+}
