@@ -16,12 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 }
 
 </style>
-<div class="sidenav">
-	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
-	<a href="#">Course</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
-</div>
+
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
