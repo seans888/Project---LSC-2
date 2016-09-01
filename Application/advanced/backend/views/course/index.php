@@ -5,11 +5,9 @@ use kartik\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use yii\widgets\pjax;
-<<<<<<< HEAD
 use common\models\CourseSearch;
-=======
 use kartik\export\ExportMenu;
->>>>>>> origin/master
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CourseSearch */
