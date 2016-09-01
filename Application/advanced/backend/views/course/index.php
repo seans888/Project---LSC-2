@@ -5,13 +5,18 @@ use kartik\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use yii\widgets\pjax;
+<<<<<<< HEAD
+use common\models\CourseSearch;
+=======
+use kartik\export\ExportMenu;
+>>>>>>> origin/master
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CourseSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Courses';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
 
@@ -36,6 +41,20 @@ $this->params['breadcrumbs'][] = $this->title;
 	Modal::end();
 	?>
 	
+	<?php
+		$gridColumns = [
+			'id',
+			'course_name',
+			'subject',
+
+		];
+		
+		echo ExportMenu::widget([
+			'dataProvider'=> $dataProvider,
+			'columns' => $gridColumns,
+		]);
+	?>
+	
 	<?php Pjax::begin(['id'=>'courseGrid']); ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -43,7 +62,23 @@ $this->params['breadcrumbs'][] = $this->title;
 		'pjax'=>true,
 		'export'=>false,
         'columns' => [
-		['class' => 'yii\grid\SerialColumn'],
+		[
+			'class'	=> 'kartik\grid\ExpandRowColumn',
+			'value' => function ($model, $key, $index, $column){
+				return GridView::ROW_COLLAPSED;
+			},
+			'detail' => function ($model, $key, $index, $column){
+				$searchModel = new CourseSearch();
+				$searchModel -> id = $model->id;
+				$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+				
+				return Yii::$app->controller->renderPartial('_subject',[
+					'searchModel' => $searchModel,
+					'dataProvider' => $dataProvider,
+				]);
+			},
+		],
+			
 			[
 				'class'=>'kartik\grid\EditableColumn',
 				'header'=>'COURSE',
@@ -60,6 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             ['class' => 'yii\grid\ActionColumn'],
         ],
+		
     ]); ?>
 </div>
 

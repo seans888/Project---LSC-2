@@ -23,7 +23,8 @@
 		"kartik-v/yii2-editable": "*",
 		"2amigos/yii2-date-picker-widget" : "*",
         "philippfrenzel/yii2fullcalendar": "*",
-		"kartik-v/yii2-widget-select2": "@dev"
+		"kartik-v/yii2-widget-select2": "@dev",
+		"kartik-v/yii2-grid": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

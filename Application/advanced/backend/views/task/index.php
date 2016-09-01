@@ -5,6 +5,7 @@ use kartik\grid\GridView;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
 use yii\widgets\pjax;
+use kartik\export\ExportMenu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\TaskSearch */
@@ -32,6 +33,22 @@ $this->params['breadcrumbs'][] = $this->title;
 	echo "<div id='modalContent'></div>";
 	
 	Modal::end();
+	?>
+	
+	<?php
+		$gridColumns = [
+			'id',
+			'name',
+			'category',
+			'course_id',
+			'student_id',
+
+		];
+		
+		echo ExportMenu::widget([
+			'dataProvider'=> $dataProvider,
+			'columns' => $gridColumns,
+		]);
 	?>
 	
 	<?php Pjax::begin(['id'=>'taskGrid']); ?>
