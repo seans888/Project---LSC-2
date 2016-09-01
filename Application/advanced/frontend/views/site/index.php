@@ -34,4 +34,7 @@ to developing their character and critical thinking skills - so that they may be
  members of society and contribute to the development of the country. </h4>
 </div>
 
+<div class="logo">
+	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/try_zpse1sdxrvq.png" style="width:700px;height:500px;">	
+</div>
 </body>

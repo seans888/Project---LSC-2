@@ -252,3 +252,14 @@ h4{
 	text-align: justify;
 	color: white;
 }
+
+
+.logo{
+	top: 10%;
+	left: 30%;
+	position: absolute;
+	opacity: 0.1;
+	filter: alpha(opacity=0);
+}
+
+
