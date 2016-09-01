@@ -10,13 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<style>
-#w0{
-	background:transparent;
-}
-
-</style>
-
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -31,12 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
+            'id',
             'username',
-            //'auth_key',
-            //'password_hash',
-            //'password_reset_token',
-             'email:email',
+            'auth_key',
+            'password_hash',
+            'password_reset_token',
+            // 'email:email',
             // 'status',
             // 'created_at',
             // 'updated_at',
