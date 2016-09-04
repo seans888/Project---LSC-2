@@ -83,12 +83,12 @@ $this->title = 'Courses';
 				'attribute'=>'course_name',
 			],
             
-			[
+			/*[
 				'class'=>'kartik\grid\EditableColumn',
 				'header'=>'SUBJECT',
 				'attribute'=>'subject',
 				'value'=>'subject',
-			],
+			],*/
 		
             //'id',
             ['class' => 'yii\grid\ActionColumn'],

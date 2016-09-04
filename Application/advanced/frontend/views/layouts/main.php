@@ -35,6 +35,7 @@ AppAsset::register($this);
 	<a href="http://localhost/advanced/frontend/web/index.php?r=course">Course</a>
 	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
 	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
+	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Schedule</a>
 </div>
 
 <div class="wrap">
