@@ -1,0 +1,41 @@
+1. a STUDENT can only have one ACCOUNT;
+   An ACCOUNT --------> a STUDENT
+   
+2. A STUDENT is belong to a CLASS LIST
+   A CLASS LIST ---> STUDENT
+   
+2. A CLASS LIST can enroll in only one COURSE
+   A COURSE ------------> a CLASS LIST
+   
+3. A COURSE has one or many SUBJECT
+   Many SUBJECT --------> a COURSE
+   
+4. a STUDENT can take many TASK
+   Many TASK ------> STUDENT
+   
+5. Each SUBJECT has one or many TASK
+   Many TASK ----------> SUBJECT
+   
+6. A TASK can have one or many QUESTIONS
+   Many QUESTION ----> a TASK
+   
+7. Every QUESTION has one ANSWER
+   An ANSWER ----------> QUESTION
+   
+8. A TASK has a RESULT
+   A RESULT --------> a TASK
+   
+9. Many RESULT is stored in a GRADE
+   A GRADE --------> many RESULT
+   
+10. A STUDENT can check a SCHEDULE
+   A SCHEDULE --------> a STUDENT
+   
+11. A STUDENT can check ATTENDANCE
+   A ATTENDANCE -----> a STUDENT
+
+   
+12. A STUDENT can check many GRADES
+   GRADES --------> a STUDENT
+
+13. 
