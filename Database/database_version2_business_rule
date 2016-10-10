@@ -1,41 +1,40 @@
-1. a STUDENT can only have one ACCOUNT;
+1. a STUDENT can only access one ACCOUNT;		WALA PA
    An ACCOUNT --------> a STUDENT
    
-2. A STUDENT is belong to a CLASS LIST
+2. A STUDENT is belong to a CLASS LIST			WALA PA
    A CLASS LIST ---> STUDENT
    
-2. A CLASS LIST can enroll in only one COURSE
+4. A CLASS LIST can enroll in only one COURSE   WALA PA
    A COURSE ------------> a CLASS LIST
    
-3. A COURSE has one or many SUBJECT
+5. A COURSE includes one or many SUBJECT
    Many SUBJECT --------> a COURSE
    
-4. a STUDENT can take many TASK
+6. a STUDENT can take many TASK					WALA PA
    Many TASK ------> STUDENT
    
-5. Each SUBJECT has one or many TASK
+7. Each SUBJECT consist of one or many TASK
    Many TASK ----------> SUBJECT
    
-6. A TASK can have one or many QUESTIONS
+8. A TASK contains one or many QUESTIONS
    Many QUESTION ----> a TASK
    
-7. Every QUESTION has one ANSWER
+9. Every QUESTION hold one ANSWER
    An ANSWER ----------> QUESTION
    
-8. A TASK has a RESULT
+10. A TASK is compile to a RESULT
    A RESULT --------> a TASK
    
-9. Many RESULT is stored in a GRADE
+11. Many RESULT is stored in a GRADE			WALA PA
    A GRADE --------> many RESULT
    
-10. A STUDENT can check a SCHEDULE
+12. A STUDENT can check a SCHEDULE
    A SCHEDULE --------> a STUDENT
    
-11. A STUDENT can check ATTENDANCE
+13. A STUDENT can observe ATTENDANCE
    A ATTENDANCE -----> a STUDENT
-
    
-12. A STUDENT can check many GRADES
+14. A STUDENT can view many GRADES				WALA PA
    GRADES --------> a STUDENT
 
 13. 
