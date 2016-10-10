@@ -1,5 +1,8 @@
-1. a STUDENT can only access one ACCOUNT;		WALA PA
+1. a STUDENT can only access one ACCOUNT;		
    An ACCOUNT --------> a STUDENT
+   
+2. a EMPLOYEE can only access one ACCOUNT;
+   An ACCOUNT --------> a EMPLOYEE
    
 2. A STUDENT is belong to a CLASS LIST			WALA PA
    A CLASS LIST ---> STUDENT
