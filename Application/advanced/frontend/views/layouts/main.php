@@ -10,7 +10,6 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -23,38 +22,26 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<style>
-#w0{
-	background:pink;
-}
-</style>
 <body>
 <?php $this->beginBody() ?>
-<div class="sidenav">
-	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=course">Course</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Schedule</a>
-</div>
 
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'LSC Learning Management System',
+        'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
-        ], 	
+        ],
     ]);
     $menuItems = [
-        /*['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],*/
+        ['label' => 'Contact', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
-        /*$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];*/
+        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -77,11 +64,17 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?><br><br>
+        <?= $content ?>
     </div>
-</div> 
+</div>
 
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
+        <p class="pull-right"><?= Yii::powered() ?></p>
+    </div>
+</footer>
 
 <?php $this->endBody() ?>
 </body>

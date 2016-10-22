@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'yii\\swiftmailer\\' => array($vendorDir . '/yiisoft/yii2-swiftmailer'),
-    'yii\\jui\\' => array($vendorDir . '/yiisoft/yii2-jui'),
     'yii\\gii\\' => array($vendorDir . '/yiisoft/yii2-gii'),
     'yii\\faker\\' => array($vendorDir . '/yiisoft/yii2-faker'),
     'yii\\debug\\' => array($vendorDir . '/yiisoft/yii2-debug'),
@@ -15,17 +14,6 @@ return array(
     'yii\\codeception\\' => array($vendorDir . '/yiisoft/yii2-codeception'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
-    'yii2fullcalendar\\' => array($vendorDir . '/philippfrenzel/yii2fullcalendar'),
-    'kartik\\select2\\' => array($vendorDir . '/kartik-v/yii2-widget-select2'),
-    'kartik\\popover\\' => array($vendorDir . '/kartik-v/yii2-popover-x'),
-    'kartik\\plugins\\popover\\' => array($vendorDir . '/kartik-v/bootstrap-popover-x'),
-    'kartik\\mpdf\\' => array($vendorDir . '/kartik-v/yii2-mpdf'),
-    'kartik\\grid\\' => array($vendorDir . '/kartik-v/yii2-grid'),
-    'kartik\\export\\' => array($vendorDir . '/kartik-v/yii2-export'),
-    'kartik\\editable\\' => array($vendorDir . '/kartik-v/yii2-editable'),
-    'kartik\\dialog\\' => array($vendorDir . '/kartik-v/yii2-dialog'),
-    'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base'),
-    'dosamigos\\datepicker\\' => array($vendorDir . '/2amigos/yii2-date-picker-widget/src'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

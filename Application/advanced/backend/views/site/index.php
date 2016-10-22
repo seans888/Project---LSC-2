@@ -2,26 +2,52 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Home';
+$this->title = 'My Yii Application';
 ?>
-<body>
-<<<<<<< HEAD
+<div class="site-index">
 
-=======
-<!--<div class="sidenav">-->
-	<a href="http://localhost/advanced/backend/web/index.php?r=task" target = "_self">Task</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=course">Course</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=student">Student</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=event">Calendar</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
-<!--</div>-->
->>>>>>> origin/master
-<p class = "text">
-	Loyola Student Center
-	</p>
-<div class="logo">
-	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/try_zpse1sdxrvq.png" style="width:700px;height:500px;">	
+    <div class="jumbotron">
+        <h1>Congratulations!</h1>
+
+        <p class="lead">You have successfully created your Yii-powered application.</p>
+
+        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+    </div>
+
+    <div class="body-content">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            </div>
+        </div>
+
+    </div>
 </div>
-
-</body>

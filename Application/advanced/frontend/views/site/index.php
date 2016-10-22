@@ -2,39 +2,52 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Home';
+$this->title = 'My Yii Application';
 ?>
-<body>
-<div class="sidenav">
-	<a href="http://localhost/advanced/frontend/web/index.php?r=user">My Profile</a>
-	<a href="#">Course</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=message">Message</a>
-	<a href="http://localhost/advanced/frontend/web/index.php?r=event">Calendar</a>
-</div>
-<br><br>
-<div id = 'mission'><br><br>
-<font size="5" ><i><center>Mission</i></font></center>
-<hr width="50%">
-<h4>Our mission is to enhance the intellectual development of students in the 
-Philippines by augmenting the learning they receive from the educational system. 
-We aim to accomplish this by providing the most comprehensive and highest 
-quality tutorials and review services, maintaining competent and progressive 
-teaching and support staff, continually updating our books and materials, and 
-providing an environment conducive to learning and achievement. </h4>
+<div class="site-index">
 
-</div>
+    <div class="jumbotron">
+        <h1>Congratulations!</h1>
 
-<div id = 'vision'><br><br>
-<font size="5" ><center><i>Vision</i></font></center>
-<hr width="50%">
-<h4>We aspire to become a center of educational excellence and a resource for sectors 
-of our society deprived of opportunities for advance learning. We desire to see the students 
-we help achieve their educational goals – from the simplest one of passing their school quizzes 
-to developing their character and critical thinking skills - so that they may become successful
- members of society and contribute to the development of the country. </h4>
-</div>
+        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-<div class="logo">
-	<img src="http://i1044.photobucket.com/albums/b444/jgtadeo/try_zpse1sdxrvq.png" style="width:700px;height:500px;">	
+        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+    </div>
+
+    <div class="body-content">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur.</p>
+
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+            </div>
+        </div>
+
+    </div>
 </div>
-</body>

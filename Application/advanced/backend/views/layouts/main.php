@@ -3,11 +3,11 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use backend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
@@ -24,35 +24,26 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<div class="sidenav">
-	<a href="http://localhost/advanced/backend/web/index.php?r=task" target = "_self">Task</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=course">Course</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=student">Student</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=event">Calendar</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=grade">Grade</a>
-	<a href="http://localhost/advanced/backend/web/index.php?r=message">Message</a>
-</div>
 
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'LSC - LMS Admin',
+        'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        /*['label' => 'Home', 'url' => ['/site/index']],*/
+        ['label' => 'Home', 'url' => ['/site/index']],
     ];
     if (Yii::$app->user->isGuest) {
-		$menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->admin . ')',
+                'Logout (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link']
             )
             . Html::endForm()
@@ -72,19 +63,17 @@ AppAsset::register($this);
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
-</div><br><br><br><br><br><br><br><br><br>
-<!--
+</div>
+
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Loyola Student Center <?= date('Y') ?></p>
+        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
-</footer>-->
+</footer>
 
 <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
-
-

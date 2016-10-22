@@ -1,14 +1,13 @@
 <?php
 namespace frontend\controllers;
 
-use Yii;//
+use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;//
-use yii\filters\VerbFilter;//
-use yii\filters\AccessControl;//
-use common\models\LoginForm;//
-//use common\models\AuthItem;
+use yii\web\Controller;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -73,18 +72,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-		
-		
-		if(Yii::$app->user->can( 'view index')){
-			$this->layout = 'indexLayout';
-			return $this->render('index');
-		}else{
-			$this->layout = 'index2Layout';
-			return $this->render('index2');
-		}
+        return $this->render('index');
     }
-	
-	
+
     /**
      * Logs in a user.
      *
@@ -92,7 +82,6 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-		$this->layout = 'loginLayout';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -114,8 +103,7 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
-		$this->layout = 'loginLayout';
-		Yii::$app->user->logout();
+        Yii::$app->user->logout();
 
         return $this->goHome();
     }
@@ -148,10 +136,10 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    /*public function actionAbout()
+    public function actionAbout()
     {
         return $this->render('about');
-    }*/
+    }
 
     /**
      * Signs user up.
@@ -161,7 +149,6 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
-		//$authItems = AuthItem::find()->all();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
@@ -172,7 +159,6 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
-			//'authItems'=> $authItems,	
         ]);
     }
 
@@ -181,7 +167,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    /*public function actionRequestPasswordReset()
+    public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -197,7 +183,7 @@ class SiteController extends Controller
         return $this->render('requestPasswordResetToken', [
             'model' => $model,
         ]);
-    }*/
+    }
 
     /**
      * Resets password.
@@ -206,7 +192,7 @@ class SiteController extends Controller
      * @return mixed
      * @throws BadRequestHttpException
      */
-    /*public function actionResetPassword($token)
+    public function actionResetPassword($token)
     {
         try {
             $model = new ResetPasswordForm($token);
@@ -223,5 +209,5 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
-    }*/
+    }
 }

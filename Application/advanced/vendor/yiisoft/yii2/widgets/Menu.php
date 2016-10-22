@@ -79,9 +79,7 @@ class Menu extends Widget
      * specifies its `options`, it will be merged with this property before being used to generate the HTML
      * attributes for the menu item tag. The following special options are recognized:
      *
-     * - tag: string, defaults to "li", the tag name of the item container tags.
-     *   Set to false to disable container tag.
-     *   See also [[\yii\helpers\Html::tag()]].
+     * - tag: string, defaults to "li", the tag name of the item container tags. Set to false to disable container tag.
      *
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
@@ -132,7 +130,6 @@ class Menu extends Widget
      * @var array the HTML attributes for the menu's container tag. The following special options are recognized:
      *
      * - tag: string, defaults to "ul", the tag name of the item container tags. Set to false to disable container tag.
-     *   See also [[\yii\helpers\Html::tag()]].
      *
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */

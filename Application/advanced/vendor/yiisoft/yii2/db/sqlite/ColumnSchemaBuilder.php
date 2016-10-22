@@ -9,6 +9,7 @@ namespace yii\db\sqlite;
 
 use yii\db\ColumnSchemaBuilder as AbstractColumnSchemaBuilder;
 
+
 /**
  * ColumnSchemaBuilder is the schema builder for Sqlite databases.
  *
@@ -32,13 +33,13 @@ class ColumnSchemaBuilder extends AbstractColumnSchemaBuilder
     {
         switch ($this->getTypeCategory()) {
             case self::CATEGORY_PK:
-                $format = '{type}{check}{append}';
+                $format = '{type}{check}';
                 break;
             case self::CATEGORY_NUMERIC:
-                $format = '{type}{length}{unsigned}{notnull}{unique}{check}{default}{append}';
+                $format = '{type}{length}{unsigned}{notnull}{unique}{check}{default}';
                 break;
             default:
-                $format = '{type}{length}{notnull}{unique}{check}{default}{append}';
+                $format = '{type}{length}{notnull}{unique}{check}{default}';
         }
 
         return $this->buildCompleteString($format);
