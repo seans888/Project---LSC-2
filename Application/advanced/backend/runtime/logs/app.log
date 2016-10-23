@@ -259,3 +259,134 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1477170085.558
     'REQUEST_TIME' => 1477170085
 ]
+2016-10-23 12:03:37 [::1][-][76775m59ok89sjm0mi0dq3sr01][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'lsc_lms.user' doesn't exist' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(376): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Query.php(247): yii\db\Command->queryOne()
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(290): yii\db\Query->one('<span class="ke...')
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(107): yii\db\ActiveQuery->one()
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\User.php(83): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\LoginForm.php(44): common\models\LoginForm->getUser()
+#8 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\Validator.php(252): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\LoginForm.php(58): yii\base\Model->validate()
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\backend\controllers\SiteController.php(68): common\models\LoginForm->login()
+#14 [internal function]: backend\controllers\SiteController->actionLogin()
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\backend\web\index.php(18): yii\base\Application->run()
+#21 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'lsc_lms.user' doesn't exist
+The SQL being executed was: SELECT * FROM `user` WHERE (`username`='admin') AND (`status`=10)' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(376): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Query.php(247): yii\db\Command->queryOne()
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\ActiveQuery.php(290): yii\db\Query->one('<span class="ke...')
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\BaseActiveRecord.php(107): yii\db\ActiveQuery->one()
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\User.php(83): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\LoginForm.php(44): common\models\LoginForm->getUser()
+#8 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\Validator.php(252): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\models\LoginForm.php(58): yii\base\Model->validate()
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\backend\controllers\SiteController.php(68): common\models\LoginForm->login()
+#14 [internal function]: backend\controllers\SiteController->actionLogin()
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\backend\web\index.php(18): yii\base\Application->run()
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'lsc_lms.user' doesn't exist
+)
+
+2016-10-23 12:03:37 [::1][-][76775m59ok89sjm0mi0dq3sr01][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'M01DMkJFLU55GHt3FSN6PXd/OnNzA2t/dykBXCMLfyZGfy9IDAwaJQ=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '0'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '76775m59ok89sjm0mi0dq3sr01'
+    '_csrf' => '97531e17b9b98b27a43a8ea0e0e87232bfd45170b251f726464277da5889085da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"JU8EWfWsD2yA1FF1DdBnaNRhu2lzNI7k\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/advanced/backend/web/index.php'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '172'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/backend/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=76775m59ok89sjm0mi0dq3sr01; _csrf=97531e17b9b98b27a43a8ea0e0e87232bfd45170b251f726464277da5889085da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22JU8EWfWsD2yA1FF1DdBnaNRhu2lzNI7k%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\Program Files\\TortoiseGit\\bin;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/backend/web/index.php'
+    'REMOTE_PORT' => '60993'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/advanced/backend/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/advanced/backend/web/index.php'
+    'PHP_SELF' => '/advanced/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477217017.165
+    'REQUEST_TIME' => 1477217017
+]
