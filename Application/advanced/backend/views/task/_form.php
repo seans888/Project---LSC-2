@@ -22,17 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_open')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date_open')->widget(
-        DatePicker::className(), [
-        // inline too, not bad
-        'inline' => false,
-        // modify template for custom rendering
-        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
-        'clientOptions' => [
-            'autoclose' => true,
-            'format' => 'dd-M-yyyy'
-        ]
-    ]);?>
+    <?= $form->field($model, 'date_open')->textInput();?>
 
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
