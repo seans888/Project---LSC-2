@@ -1,6 +1,7 @@
 <?php
 
 use common\models\Course;
+use common\models\Employee;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -33,7 +34,7 @@ use yii\widgets\ActiveForm;
         ]); ?>
 
     <?= $form->field($model, 'course_employee_id')->dropDownList(
-        ArrayHelper::map(Course::find()->all(), 'id', 'first_name'),
+        ArrayHelper::map(Employee::find()->all(), 'id', 'first_name'),
         [
             'prompt'=>'Select Course',
         ]); ?>
