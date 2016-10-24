@@ -50,12 +50,21 @@ class CourseController extends Controller
      * @param integer $employee_id
      * @return mixed
      */
-    public function actionView($id, $employee_id)
+    /*public function actionView($id, $employee_id)
     {
         return $this->render('view', [
             'model' => $this->findModel($id, $employee_id),
         ]);
+    }*/
+
+    public function actionView()
+    {
+        return $this->render('coursePage');
     }
+
+    /*public function actionCourse(){
+        return $this->render('coursePage');
+    }*/
 
     /**
      * Creates a new Course model.

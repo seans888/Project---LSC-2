@@ -1,5 +1,6 @@
 <?php
 
+use backend\component\ViewCourse;
 use common\models\Employee;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
