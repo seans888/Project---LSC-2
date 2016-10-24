@@ -7,47 +7,100 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <div  class="tag-line" >
+         <div class="container">
+           <div class="row  text-center" >
+           
+               <div class="col-lg-12  col-md-12 col-sm-12">
+			   
+                <!--LOGO-->
+              <div class="span3"><a class="brand" href="#"><img src="img/logo.png"/></a></div>
+              <!-- /LOGO -->
+        <h2 data-scroll-reveal="enter from the bottom after 0.1s" ><i class="fa fa-circle-o-notch"></i> LOYOLA STUDENT CENTER<br>LEARNING MANAGEMENT SYSTEM <i class="fa fa-circle-o-notch"></i> </h2>
+                   </div>
+               </div>
+             </div>
+        
     </div>
+	<br><br><br><br><br><br><br><br>
+    <!--HOME SECTION TAG LINE END-->   
+         <div id="features-sec" class="container set-pad" >
+             <div class="row text-center">
+                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+                     
+                    
+                 </div>
 
-    <div class="body-content">
+             </div>
+             <!--/.HEADER LINE END-->
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+           <div class="row" >
+           
+               
+                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
+                     <div class="about-div">
+                     <i class="fa fa-paper-plane-o fa-4x icon-round-border" ></i>
+					 <div class="span3"><a class="brand" href="#"><img src="img/logo.png"/></a></div>
+                   <h3 >CALENDAR</h3>
+                 <hr />
+                       <hr />
+                   <p >
+                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo . 
+                       
+                   </p>
+               <a href="#" class="btn btn-info btn-set"  >CALENDAR</a>
+                </div>
+                   </div>
+                   <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
+                     <div class="about-div">
+					 <div class="span3"><a class="brand" href="#"><img src="img/logo.png"/></a></div>
+                     <i class="fa fa-bolt fa-4x icon-round-border" ></i>
+                   <h3 >TASK</h3>
+                 <hr />
+                       <hr />
+                   <p >
+                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo . 
+                       
+                   </p>
+               <a href="#" class="btn btn-info btn-set"  >TASK</a>
+                </div>
+                   </div>
+<div class="span3"><a class="brand" href="#"><img src="img/logo.png"/></a></div>
+                   <h3 >SCORE SHEET</h3>
+                 <hr />
+                       <hr />
+                   <p >
+                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo . 
+                       
+                   </p>
+               <a href="#" class="btn btn-info btn-set"  >SCORE</a>
+                </div>
+                   </div>
+               </div>
+             </div>
+      
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+          
+      <!-- COURSES SECTION END-->
+   
+    <!--  Jquery Core Script -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!--  Core Bootstrap Script -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!--  Flexslider Scripts --> 
+         <script src="assets/js/jquery.flexslider.js"></script>
+     <!--  Scrolling Reveal Script -->
+    <script src="assets/js/scrollReveal.js"></script>
+    <!--  Scroll Scripts --> 
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <!--  Custom Scripts --> 
+         <script src="assets/js/custom.js"></script>
+</body>
+</html>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
-</div>
