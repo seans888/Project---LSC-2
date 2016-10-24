@@ -22,13 +22,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_open')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date_open')->textInput() ?>
     <?= $form->field($model, 'date_open')->widget(
         DatePicker::className(), [
         // inline too, not bad
-        'inline' => true,
+        'inline' => false,
         // modify template for custom rendering
-        'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
         'clientOptions' => [
             'autoclose' => true,
             'format' => 'dd-M-yyyy'
@@ -37,7 +36,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'task_type')->dropDownList([ 'Quiz' => 'Quiz', 'Assignment' => 'Assignment', 'Exercise' => 'Exercise', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'task_type')->dropDownList([ 'Quiz' => 'Quiz', 'Assignment' => 'Assignment', 'Exercise' => 'Exercise', ], ['prompt' => 'Select task type']) ?>
 
     <?= $form->field($model, 'time_remaining')->textInput(['maxlength' => true]) ?>
 
