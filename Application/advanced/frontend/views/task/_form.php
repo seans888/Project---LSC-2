@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'task_type')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'task_type')->dropDownList([ 'Quiz' => 'Quiz', 'Assignment' => 'Assignment', 'Exercise' => 'Exercise', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'time_remaining')->textInput(['maxlength' => true]) ?>
 

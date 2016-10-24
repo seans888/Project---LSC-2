@@ -19,7 +19,7 @@ class StudentSearch extends Student
     {
         return [
             [['id'], 'integer'],
-            [['first_name', 'last_name', 'middle_name', 'age', 'gender', 'cell_number', 'email_add', 'home_add'], 'safe'],
+            [['first_name', 'last_name', 'middle_name', 'age', 'gender', 'cell_number', 'email_add', 'home_add', 'date_registered'], 'safe'],
         ];
     }
 
@@ -60,6 +60,7 @@ class StudentSearch extends Student
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'date_registered' => $this->date_registered,
         ]);
 
         $query->andFilterWhere(['like', 'first_name', $this->first_name])

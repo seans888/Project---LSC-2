@@ -1,5 +1,9 @@
 <?php
 
+use common\models\Choice;
+use common\models\Question;
+use common\models\Student;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -18,11 +22,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'max_grade')->textInput() ?>
 
-    <?= $form->field($model, 'stud_answer_choice_id')->textInput() ?>
+    <?= $form->field($model, 'stud_answer_choice_id')->dropDownList(
+        ArrayHelper::map(Choice::find()->all(), 'id', 'title'),
+        [
+            'prompt'=>'Select Choices',
+        ]); ?>
 
-    <?= $form->field($model, 'stud_answer_choice_question_id')->textInput() ?>
+    <?= $form->field($model, 'stud_answer_choice_question_id')->dropDownList(
+        ArrayHelper::map(Question::find()->all(), 'id', 'title'),
+        [
+            'prompt'=>'Select Choices',
+        ]); ?>
 
-    <?= $form->field($model, 'stud_answer_student_id')->textInput() ?>
+    <?= $form->field($model, 'stud_answer_student_id')->dropDownList(
+        ArrayHelper::map(Student::find()->all(), 'id', 'title'),
+        [
+            'prompt'=>'Select Students',
+        ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

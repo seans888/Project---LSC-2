@@ -16,6 +16,7 @@ use Yii;
  * @property string $cell_number
  * @property string $email_add
  * @property string $home_add
+ * @property string $date_registered
  *
  * @property ClassList[] $classLists
  * @property Course[] $courses
@@ -38,7 +39,13 @@ class Student extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['first_name', 'last_name', 'middle_name', 'age', 'gender', 'cell_number', 'email_add', 'home_add'], 'string', 'max' => 45],
+            [['gender'], 'string'],
+            [['date_registered'], 'required'],
+            [['date_registered'], 'safe'],
+            [['first_name', 'last_name', 'middle_name', 'age'], 'string', 'max' => 45],
+            [['cell_number'], 'string', 'max' => 15],
+            [['email_add'], 'string', 'max' => 100],
+            [['home_add'], 'string', 'max' => 255],
             [['first_name'], 'unique'],
             [['last_name'], 'unique'],
             [['age'], 'unique'],
@@ -62,6 +69,7 @@ class Student extends \yii\db\ActiveRecord
             'cell_number' => 'Cell Number',
             'email_add' => 'Email Add',
             'home_add' => 'Home Add',
+            'date_registered' => 'Date Registered',
         ];
     }
 

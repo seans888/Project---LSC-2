@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'cell_number',
             'email_add:email',
             'home_add',
+            'date_registered',
         ],
     ]) ?>
 

@@ -1,5 +1,7 @@
 <?php
 
+use common\models\Course;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -20,13 +22,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'task_type')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'task_type')->dropDownList([ 'Quiz' => 'Quiz', 'Assignment' => 'Assignment', 'Exercise' => 'Exercise', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'time_remaining')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'course_id')->textInput() ?>
+    <?= $form->field($model, 'course_id')->dropDownList(
+        ArrayHelper::map(Course::find()->all(), 'id', 'title'),
+        [
+            'prompt'=>'Select Course',
+        ]); ?>
 
-    <?= $form->field($model, 'course_employee_id')->textInput() ?>
+    <?= $form->field($model, 'course_employee_id')->dropDownList(
+        ArrayHelper::map(Course::find()->all(), 'id', 'first_name'),
+        [
+            'prompt'=>'Select Course',
+        ]); ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 

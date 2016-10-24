@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2016 at 05:04 PM
+-- Generation Time: Oct 24, 2016 at 03:33 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -57,8 +57,8 @@ CREATE TABLE `attendance` (
 
 CREATE TABLE `choice` (
   `id` int(11) NOT NULL,
-  `choose` varchar(45) NOT NULL,
-  `is_correct` varchar(45) NOT NULL,
+  `choose` varchar(100) NOT NULL,
+  `is_correct` varchar(100) NOT NULL,
   `question_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -83,11 +83,18 @@ CREATE TABLE `class_list` (
 CREATE TABLE `course` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `course_description` varchar(45) DEFAULT NULL,
-  `time_created` timestamp(6) NULL DEFAULT NULL,
+  `course_description` varchar(100) DEFAULT NULL,
+  `time_created` time(6) DEFAULT NULL,
   `date_created` date DEFAULT NULL,
   `employee_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`id`, `title`, `course_description`, `time_created`, `date_created`, `employee_id`) VALUES
+(6, 'MCSPROJ', 'Applied Projects 2', '838:59:59.999999', '2016-10-24', 2);
 
 -- --------------------------------------------------------
 
@@ -101,12 +108,19 @@ CREATE TABLE `employee` (
   `last_name` varchar(45) NOT NULL,
   `middle_name` varchar(45) DEFAULT NULL,
   `age` varchar(45) NOT NULL,
-  `gender` varchar(45) NOT NULL,
-  `cell_number` varchar(45) DEFAULT NULL,
-  `email_add` varchar(45) DEFAULT NULL,
-  `home_add` varchar(45) NOT NULL,
-  `employee_type` varchar(45) DEFAULT NULL
+  `gender` enum('Male','Female') CHARACTER SET utf32 NOT NULL,
+  `cell_number` varchar(15) DEFAULT NULL,
+  `email_add` varchar(100) DEFAULT NULL,
+  `home_add` varchar(255) NOT NULL,
+  `employee_type` enum('Admin','Professor') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`id`, `first_name`, `last_name`, `middle_name`, `age`, `gender`, `cell_number`, `email_add`, `home_add`, `employee_type`) VALUES
+(2, 'Johanna Marisse', 'Heramia', 'Credito', '18', 'Female', '09261523128', 'jcheramia@student.apc.edu.ph', 'P 53 - 20 12th 15th St., Villamor Air Base, Pasay City', 'Professor');
 
 -- --------------------------------------------------------
 
@@ -135,7 +149,7 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 
 CREATE TABLE `question` (
   `id` int(11) NOT NULL,
-  `ask` varchar(45) DEFAULT NULL,
+  `ask` varchar(255) DEFAULT NULL,
   `task_id` int(11) NOT NULL,
   `task_course_id` int(11) NOT NULL,
   `task_course_employee_id` int(11) NOT NULL,
@@ -149,7 +163,7 @@ CREATE TABLE `question` (
 --
 
 CREATE TABLE `result` (
-  `feedback` varchar(45) NOT NULL,
+  `feedback` varchar(100) NOT NULL,
   `min_grade` int(11) DEFAULT NULL,
   `max_grade` int(11) DEFAULT NULL,
   `stud_answer_choice_id` int(11) NOT NULL,
@@ -166,7 +180,7 @@ CREATE TABLE `result` (
 CREATE TABLE `schedule` (
   `id` int(11) NOT NULL,
   `time` time(6) DEFAULT NULL,
-  `day` varchar(45) DEFAULT NULL
+  `day` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -181,11 +195,19 @@ CREATE TABLE `student` (
   `last_name` varchar(45) DEFAULT NULL,
   `middle_name` varchar(45) DEFAULT NULL,
   `age` varchar(45) DEFAULT NULL,
-  `gender` varchar(45) DEFAULT NULL,
-  `cell_number` varchar(45) DEFAULT NULL,
-  `email_add` varchar(45) DEFAULT NULL,
-  `home_add` varchar(45) DEFAULT NULL
+  `gender` enum('Male','Female') DEFAULT NULL,
+  `cell_number` varchar(15) DEFAULT NULL,
+  `email_add` varchar(100) DEFAULT NULL,
+  `home_add` varchar(255) DEFAULT NULL,
+  `date_registered` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `first_name`, `last_name`, `middle_name`, `age`, `gender`, `cell_number`, `email_add`, `home_add`, `date_registered`) VALUES
+(2, 'Jana Marie', 'Gardon', 'Gavarra', '18', 'Female', '09191231253', 'jggardon@student.apc.edu.ph', 'Taguig City', '2016-10-24');
 
 -- --------------------------------------------------------
 
@@ -211,7 +233,7 @@ CREATE TABLE `task` (
   `date_created` date DEFAULT NULL,
   `time_open` time(6) DEFAULT NULL,
   `time_close` time(6) DEFAULT NULL,
-  `task_type` varchar(45) DEFAULT NULL,
+  `task_type` enum('Quiz','Assignment','Exercise') DEFAULT NULL,
   `time_remaining` time(6) DEFAULT NULL,
   `course_id` int(11) NOT NULL,
   `course_employee_id` int(11) NOT NULL,
@@ -234,16 +256,16 @@ CREATE TABLE `user` (
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` smallint(6) NOT NULL DEFAULT '10',
-  `created_at` int(11) NOT NULL,
-  `updated_at` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `created_at` datetime(6) NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'jcheramia', '4qlUO6J_eWP5muCHjxypAA5CF3EwBYwM', '$2y$13$j33UwCp2LdMZKLosR/rcgueKSAowjxf1EE28NNQLMBUg1djhhHQjK', NULL, 'johannaheramia@gmail.com', 10, 1477217124, 1477217124);
+(1, 'jcheramia', '4qlUO6J_eWP5muCHjxypAA5CF3EwBYwM', '$2y$13$j33UwCp2LdMZKLosR/rcgueKSAowjxf1EE28NNQLMBUg1djhhHQjK', NULL, 'johannaheramia@gmail.com', 10, '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000'),
+(4, 'jggardon', 'yjTHLelZVEF-ulVt5sIfxmaWcH8B0XA3', '$2y$13$SqHyU1JfXo7TPJA4vrXM1eH7Vh8cA6K1NZqZNYQDOfWRik6004DTu', NULL, 'jggardon@student.apc.edu.ph', 10, '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000');
 
 --
 -- Indexes for dumped tables
@@ -352,15 +374,6 @@ ALTER TABLE `task`
   ADD KEY `fk_task_course1_idx` (`course_id`,`course_employee_id`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -373,12 +386,12 @@ ALTER TABLE `choice`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `question`
 --
@@ -393,7 +406,7 @@ ALTER TABLE `schedule`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `task`
 --
@@ -403,7 +416,7 @@ ALTER TABLE `task`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --

@@ -42,9 +42,10 @@ class Task extends \yii\db\ActiveRecord
         return [
             [['title', 'course_id', 'course_employee_id'], 'required'],
             [['date_created', 'time_open', 'time_close', 'time_remaining', 'time_created'], 'safe'],
+            [['task_type'], 'string'],
             [['course_id', 'course_employee_id', 'attempts'], 'integer'],
             [['title'], 'string', 'max' => 100],
-            [['task_type', 'description'], 'string', 'max' => 45],
+            [['description'], 'string', 'max' => 45],
             [['course_id', 'course_employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['course_id' => 'id', 'course_employee_id' => 'employee_id']],
         ];
     }

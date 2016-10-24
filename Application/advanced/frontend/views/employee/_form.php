@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'age')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'gender')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'gender')->dropDownList([ 'Male' => 'Male', 'Female' => 'Female', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'cell_number')->textInput(['maxlength' => true]) ?>
 
@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'home_add')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'employee_type')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'employee_type')->dropDownList([ 'Admin' => 'Admin', 'Professor' => 'Professor', ], ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

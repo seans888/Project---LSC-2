@@ -34,7 +34,7 @@ class Result extends \yii\db\ActiveRecord
         return [
             [['feedback', 'stud_answer_choice_id', 'stud_answer_choice_question_id', 'stud_answer_student_id'], 'required'],
             [['min_grade', 'max_grade', 'stud_answer_choice_id', 'stud_answer_choice_question_id', 'stud_answer_student_id'], 'integer'],
-            [['feedback'], 'string', 'max' => 45],
+            [['feedback'], 'string', 'max' => 100],
             [['stud_answer_choice_id', 'stud_answer_choice_question_id', 'stud_answer_student_id'], 'exist', 'skipOnError' => true, 'targetClass' => StudAnswer::className(), 'targetAttribute' => ['stud_answer_choice_id' => 'choice_id', 'stud_answer_choice_question_id' => 'choice_question_id', 'stud_answer_student_id' => 'student_id']],
         ];
     }

@@ -13,10 +13,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login">
         <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" width="100" height="60"/><br/>
+            <hr zize="10px"/>
+            <a href="index.php"><b>LSC </b> LMS</a>
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">SIGN IN</p>
                 <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
                     <?= $form->field($model, 'username', ['options'=>[
                             'tag' => 'div',

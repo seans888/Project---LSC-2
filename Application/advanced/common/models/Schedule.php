@@ -31,7 +31,7 @@ class Schedule extends \yii\db\ActiveRecord
     {
         return [
             [['time'], 'safe'],
-            [['day'], 'string', 'max' => 45],
+            [['day'], 'string'],
         ];
     }
 

@@ -35,7 +35,7 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['task_id', 'task_course_id', 'task_course_employee_id'], 'required'],
             [['task_id', 'task_course_id', 'task_course_employee_id'], 'integer'],
-            [['ask'], 'string', 'max' => 45],
+            [['ask'], 'string', 'max' => 255],
             [['image'], 'string', 'max' => 8000],
             [['task_id', 'task_course_id', 'task_course_employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Task::className(), 'targetAttribute' => ['task_id' => 'id', 'task_course_id' => 'course_id', 'task_course_employee_id' => 'course_employee_id']],
         ];

@@ -34,7 +34,7 @@ class Choice extends \yii\db\ActiveRecord
         return [
             [['choose', 'is_correct', 'question_id'], 'required'],
             [['question_id'], 'integer'],
-            [['choose', 'is_correct'], 'string', 'max' => 45],
+            [['choose', 'is_correct'], 'string', 'max' => 100],
             [['question_id'], 'exist', 'skipOnError' => true, 'targetClass' => Question::className(), 'targetAttribute' => ['question_id' => 'id']],
         ];
     }

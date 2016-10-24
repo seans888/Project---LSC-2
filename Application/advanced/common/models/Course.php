@@ -38,8 +38,7 @@ class Course extends \yii\db\ActiveRecord
             [['title', 'employee_id'], 'required'],
             [['time_created', 'date_created'], 'safe'],
             [['employee_id'], 'integer'],
-            [['title'], 'string', 'max' => 100],
-            [['course_description'], 'string', 'max' => 45],
+            [['title', 'course_description'], 'string', 'max' => 100],
             [['employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_id' => 'id']],
         ];
     }
