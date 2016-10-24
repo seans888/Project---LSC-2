@@ -19,11 +19,14 @@ class DashboardAsset extends AssetBundle
         'css/_all-skins.min.css', //ok
         'css/blue.css', //ok
         'css/site.css', //ok
-        /*'css/morris.css',
+        'css/morris.css',
         'css/jquery-jvectormap-1.2.2.css',
         'css/datepicker3.css',
         'css/daterangpicker.css',
-        'css/bootstrap3-wysihtml5.min.css',*/
+        'css/bootstrap3-wysihtml5.min.css',
+        'css/bootstrap-colorpicker.min.css',
+        'bootstrap-timepicker.min.css',
+        'select2.min.css',
     ];
     public $js = [
         'js/bootstrap.min.js',  //ok
@@ -34,14 +37,19 @@ class DashboardAsset extends AssetBundle
         'js/fastclick.js',   //ok
         'js/app.min.js', //ok
         'js/dashboard.js', //ok
-        /*'js/jquery-jvectormap-1.2.2.min.js',
+        'js/jquery-jvectormap-1.2.2.min.js',
         'js/jquery-jvectormap-world-mill-en.js',
         'ja/jquery.knob.js',
         'js/daterangepicker.js',
         'js/bootstrap-datepicker.js',
         'js/bootstrap3-wysihtml5.all.min.js',
         'js/demo.js',
-        'js/morris.js',*/
+        'js/morris.js',
+        'js/bootstrap-timepicker.min.js',
+        'js/jquery.inputmask.date.extensions.js',
+        'js/jquery.inputmask.extensions.js',
+        'js/jquery.inputmask.js',
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

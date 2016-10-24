@@ -26,7 +26,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             ],
                             'template'=>'{input}<span class="glyphicon glyphicon-user form-control-feedback"></span>
                                          {error}{hint}'
-                        ])->textInput(['placeholder'=>'Username']) ?>
+                        ])->textInput(['placeholder'=>'Username'])
+                    ?>
 
                     <?= $form->field($model, 'password', ['options'=>[
                              'tag' => 'div',
@@ -36,12 +37,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                          {error}{hint}'
                         ])->passwordInput(['placeholder'=>'Password']) ?>
 
-                    <?= $form->field($model, 'rememberMe', ['options'=>[
-                            'tag' => 'div',
-                            'class' =>'checkbox icheck'
-                             ],
-                            'template'=>'{input}<span class="icheckbox_square-blue checked"></span>'
-                        ])->checkbox() ?>
+                    <?= $form->field($model, 'rememberMe')->checkbox() ?>
+
                     <div class="form-group">
                         <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button'])?>
                     </div>

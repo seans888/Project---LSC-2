@@ -4,6 +4,7 @@ use common\models\Course;
 use common\models\Employee;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use dosamigos\datepicker\DatePicker;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -22,6 +23,17 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'time_open')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'date_open')->textInput() ?>
+    <?= $form->field($model, 'date_open')->widget(
+        DatePicker::className(), [
+        // inline too, not bad
+        'inline' => true,
+        // modify template for custom rendering
+        'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'dd-M-yyyy'
+        ]
+    ]);?>
 
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
@@ -50,6 +62,8 @@ use yii\widgets\ActiveForm;
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
+
+
 
     <?php ActiveForm::end(); ?>
 
