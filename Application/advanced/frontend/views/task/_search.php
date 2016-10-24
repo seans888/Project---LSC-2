@@ -23,7 +23,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_open') ?>
 
-    <?= $form->field($model, 'time_close') ?>
+    <?= $form->field($model, 'date_open') ?>
+
+    <?php // echo $form->field($model, 'time_close') ?>
 
     <?php // echo $form->field($model, 'task_type') ?>
 

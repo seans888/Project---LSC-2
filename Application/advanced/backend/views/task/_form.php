@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_open')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'date_open')->textInput() ?>
+
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'task_type')->dropDownList([ 'Quiz' => 'Quiz', 'Assignment' => 'Assignment', 'Exercise' => 'Exercise', ], ['prompt' => '']) ?>
@@ -36,7 +38,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'course_employee_id')->dropDownList(
         ArrayHelper::map(Employee::find()->all(), 'id', 'first_name'),
         [
-            'prompt'=>'Select Course',
+            'prompt'=>'Select Employee',
         ]); ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>

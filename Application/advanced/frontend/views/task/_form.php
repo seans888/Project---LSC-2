@@ -18,6 +18,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'time_open')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'date_open')->textInput() ?>
+
     <?= $form->field($model, 'time_close')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'task_type')->dropDownList([ 'Quiz' => 'Quiz', 'Assignment' => 'Assignment', 'Exercise' => 'Exercise', ], ['prompt' => '']) ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2016 at 03:33 PM
+-- Generation Time: Oct 24, 2016 at 04:01 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -232,6 +232,7 @@ CREATE TABLE `task` (
   `title` varchar(100) NOT NULL,
   `date_created` date DEFAULT NULL,
   `time_open` time(6) DEFAULT NULL,
+  `date_open` date NOT NULL,
   `time_close` time(6) DEFAULT NULL,
   `task_type` enum('Quiz','Assignment','Exercise') DEFAULT NULL,
   `time_remaining` time(6) DEFAULT NULL,

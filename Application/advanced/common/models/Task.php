@@ -11,6 +11,7 @@ use Yii;
  * @property string $title
  * @property string $date_created
  * @property string $time_open
+ * @property string $date_open
  * @property string $time_close
  * @property string $task_type
  * @property string $time_remaining
@@ -40,8 +41,8 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'course_id', 'course_employee_id'], 'required'],
-            [['date_created', 'time_open', 'time_close', 'time_remaining', 'time_created'], 'safe'],
+            [['title', 'date_open', 'course_id', 'course_employee_id'], 'required'],
+            [['date_created', 'time_open', 'date_open', 'time_close', 'time_remaining', 'time_created'], 'safe'],
             [['task_type'], 'string'],
             [['course_id', 'course_employee_id', 'attempts'], 'integer'],
             [['title'], 'string', 'max' => 100],
@@ -60,6 +61,7 @@ class Task extends \yii\db\ActiveRecord
             'title' => 'Title',
             'date_created' => 'Date Created',
             'time_open' => 'Time Open',
+            'date_open' => 'Date Open',
             'time_close' => 'Time Close',
             'task_type' => 'Task Type',
             'time_remaining' => 'Time Remaining',

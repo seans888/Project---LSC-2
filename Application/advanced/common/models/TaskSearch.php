@@ -19,7 +19,7 @@ class TaskSearch extends Task
     {
         return [
             [['id', 'course_id', 'course_employee_id', 'attempts'], 'integer'],
-            [['title', 'date_created', 'time_open', 'time_close', 'task_type', 'time_remaining', 'description', 'time_created'], 'safe'],
+            [['title', 'date_created', 'time_open', 'date_open', 'time_close', 'task_type', 'time_remaining', 'description', 'time_created'], 'safe'],
         ];
     }
 
@@ -62,6 +62,7 @@ class TaskSearch extends Task
             'id' => $this->id,
             'date_created' => $this->date_created,
             'time_open' => $this->time_open,
+            'date_open' => $this->date_open,
             'time_close' => $this->time_close,
             'time_remaining' => $this->time_remaining,
             'course_id' => $this->course_id,

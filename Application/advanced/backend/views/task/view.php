@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'date_created',
             'time_open',
+            'date_open',
             'time_close',
             'task_type',
             'time_remaining',
