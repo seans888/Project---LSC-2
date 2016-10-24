@@ -74,8 +74,8 @@
       <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/controllers/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+            <state relative-caret-position="306">
+              <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -104,6 +104,7 @@
         <option value="$PROJECT_DIR$/backend/views/stud-answer/_form.php" />
         <option value="$PROJECT_DIR$/backend/controllers/CourseController.php" />
         <option value="$PROJECT_DIR$/backend/controllers/StudentController.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/TaskController.php" />
       </list>
     </option>
   </component>
@@ -332,15 +333,15 @@
       <updated>1477159463476</updated>
       <workItem from="1477159465212" duration="4816000" />
       <workItem from="1477217337516" duration="14521000" />
-      <workItem from="1477294322144" duration="5512000" />
+      <workItem from="1477294322144" duration="5648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24849000" />
+    <option name="totallyTimeSpent" value="24985000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1852123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -639,8 +640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/controllers/TaskController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="67" column="28" selection-start-line="67" selection-start-column="28" selection-end-line="67" selection-end-column="28" />
+        <state relative-caret-position="306">
+          <caret line="71" column="27" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
           <folding />
         </state>
       </provider>
