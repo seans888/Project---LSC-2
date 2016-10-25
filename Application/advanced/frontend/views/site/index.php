@@ -33,9 +33,9 @@ $this->title = 'My Yii Application';
             <div class="row" >
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
                     <div class="about-div">
-                        <span class="glyphicons glyphicons-calendar"></span>
+                        <i class="fa fa-calendar" ></i>
                         <div class="span3">
-                            <a class="brand" href="#"><img src="img/logo.png"/></a>
+                            <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
                         </div>
                         <h3>CALENDAR</h3>
                         <hr/>
@@ -49,9 +49,10 @@ $this->title = 'My Yii Application';
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
                     <div class="about-div">
                        <div class="span3">
-                           <a class="brand" href="#"><img src="img/logo.png"/></a>
+                           <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
                        </div>
-                       <i class="fa fa-bolt fa-4x icon-round-border" ></i>
+                       <!--<i class="fa fa-bolt fa-4x icon-round-border" ></i>-->
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
                        <h3>TASK</h3>
                        <hr/>
                        <hr/>
@@ -62,8 +63,9 @@ $this->title = 'My Yii Application';
                    </div>
                </div>
                <div class="span3">
-                   <a class="brand" href="#"><img src="img/logo.png"/></a>
+                   <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
                </div>
+                <i class="fa fa-star" aria-hidden="true"></i>
                <h3>SCORE SHEET</h3>
                <hr/>
                <hr/>
