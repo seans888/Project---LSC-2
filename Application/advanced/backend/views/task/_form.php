@@ -1,7 +1,7 @@
 <?php
 
-use common\models\Course;
 use common\models\Employee;
+use common\models\Course;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use dosamigos\datepicker\DatePicker;
