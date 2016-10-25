@@ -17,7 +17,9 @@ $this->title = 'My Yii Application';
                             </a>
                         </div>
                         <!-- /LOGO -->
-                        <h2 data-scroll-reveal="enter from the bottom after 0.1s" ><i class="fa fa-circle-o-notch"></i> LOYOLA STUDENT CENTER<br>LEARNING MANAGEMENT SYSTEM <i class="fa fa-circle-o-notch"></i> </h2>
+                        <h2 data-scroll-reveal="enter from the bottom after 0.1s" >
+                            LOYOLA STUDENT CENTER<br/>
+                            <i class="fa fa-mortar-board fa-lg"></i>  Learning Management System  <i class="fa fa-mortar-board fa-lg"></i> </h2>
                     </div>
                 </div>
             </div>
@@ -33,7 +35,7 @@ $this->title = 'My Yii Application';
             <div class="row" >
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
                     <div class="about-div">
-                        <i class="fa fa-calendar" ></i>
+                        <i class="fa fa-calendar fa-lg" ></i>
                         <div class="span3">
                             <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
                         </div>
@@ -52,7 +54,7 @@ $this->title = 'My Yii Application';
                            <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
                        </div>
                        <!--<i class="fa fa-bolt fa-4x icon-round-border" ></i>-->
-                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                        <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
                        <h3>TASK</h3>
                        <hr/>
                        <hr/>
@@ -65,7 +67,7 @@ $this->title = 'My Yii Application';
                <div class="span3">
                    <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
                </div>
-                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star fa-lg" aria-hidden="true"></i>
                <h3>SCORE SHEET</h3>
                <hr/>
                <hr/>
