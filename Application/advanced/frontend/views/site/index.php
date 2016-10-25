@@ -36,9 +36,6 @@ $this->title = 'My Yii Application';
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
                     <div class="about-div">
                         <i class="fa fa-calendar fa-lg" ></i>
-                        <div class="span3">
-                            <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
-                        </div>
                         <h3>CALENDAR</h3>
                         <hr/>
                         <hr/>
@@ -50,9 +47,6 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
                     <div class="about-div">
-                       <div class="span3">
-                           <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
-                       </div>
                        <!--<i class="fa fa-bolt fa-4x icon-round-border" ></i>-->
                         <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
                        <h3>TASK</h3>
@@ -64,16 +58,27 @@ $this->title = 'My Yii Application';
                        <a href="#" class="btn btn-info btn-set"  >TASK</a>
                    </div>
                </div>
-               <div class="span3">
-                   <a class="brand" href="#"><!--<img src="img/logo.png"/>--></a>
-               </div>
                 <i class="fa fa-star fa-lg" aria-hidden="true"></i>
-               <h3>SCORE SHEET</h3>
-               <hr/>
-               <hr/>
-               <p>
-                   This is where you can see all of your scores in your exercises, assignments or quizzes.
-               </p>
+
+                <!--<section class="module col-md-3 col-sm-6">
+                <div class="module-content">
+                    <!--<img src="#"/>-->
+                    <!--<div class="module-header"></div>
+                    <div class="module-details text-center">
+                        <h3>SCORE SHEET</h3>
+                        <p class="score">
+                            This is where you can see all scores in your exercises, assignments or quizzes.
+                        </p>
+                    </div>
+                </div>-->
+                <!--</section>-->
+
+                <h3>SCORE SHEET</h3>
+                <hr/>
+                <hr/>
+                <p>
+                    This is where you can see all of your scores in your exercises, assignments or quizzes.
+                </p>
                <a href="#" class="btn btn-info btn-set"  >SCORE</a>
            </div>
          </div>
