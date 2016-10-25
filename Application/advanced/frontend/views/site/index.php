@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'LSC LMS';
 ?>
 <div class="site-index">
     <div class="jumbotron">
@@ -24,12 +24,11 @@ $this->title = 'My Yii Application';
                 </div>
             </div>
         </div>
-        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
         <!--HOME SECTION TAG LINE END-->
         <div id="features-sec" class="container set-pad" >
             <div class="row text-center">
-                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
-                </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2"></div>
             </div>
             <!--/.HEADER LINE END-->
             <div class="row" >
@@ -43,34 +42,34 @@ $this->title = 'My Yii Application';
                             This is where you can see your schedule of your classes and schedule of your tasks.
                         </p>
                         <a href="#" class="btn btn-info btn-set">CALENDAR</a>
-                   </div>
+                    </div>
                 </div>
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
                     <div class="about-div">
-                       <!--<i class="fa fa-bolt fa-4x icon-round-border" ></i>-->
+                        <!--<i class="fa fa-bolt fa-4x icon-round-border" ></i>-->
                         <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
-                       <h3>TASK</h3>
-                       <hr/>
-                       <hr/>
-                       <p>
-                           This is where you can take your exercises, assignments or quizzes.
-                       </p>
-                       <a href="#" class="btn btn-info btn-set"  >TASK</a>
-                   </div>
-               </div>
+                        <h3>TASK</h3>
+                        <hr/>
+                        <hr/>
+                        <p>
+                            This is where you can take your exercises, assignments or quizzes.
+                        </p>
+                        <a href="#" class="btn btn-info btn-set"  >TASK</a>
+                    </div>
+                </div>
                 <i class="fa fa-star fa-lg" aria-hidden="true"></i>
 
                 <!--<section class="module col-md-3 col-sm-6">
                 <div class="module-content">
                     <!--<img src="#"/>-->
-                    <!--<div class="module-header"></div>
-                    <div class="module-details text-center">
-                        <h3>SCORE SHEET</h3>
-                        <p class="score">
-                            This is where you can see all scores in your exercises, assignments or quizzes.
-                        </p>
-                    </div>
-                </div>-->
+                <!--<div class="module-header"></div>
+                <div class="module-details text-center">
+                    <h3>SCORE SHEET</h3>
+                    <p class="score">
+                        This is where you can see all scores in your exercises, assignments or quizzes.
+                    </p>
+                </div>
+            </div>-->
                 <!--</section>-->
 
                 <h3>SCORE SHEET</h3>
@@ -79,9 +78,11 @@ $this->title = 'My Yii Application';
                 <p>
                     This is where you can see all of your scores in your exercises, assignments or quizzes.
                 </p>
-               <a href="#" class="btn btn-info btn-set"  >SCORE</a>
-           </div>
-         </div>
+                <a href="#" class="btn btn-info btn-set"  >SCORE</a>
+            </div>
+        </div>
+
+        <!-- END -->
     </div>
 </div>
       
