@@ -58,7 +58,7 @@ $this->title = 'LSC LMS';
                         <a href="#" class="btn btn-info btn-set"  >TASK</a>
                     </div>
                 </div>
-                <i class="fa fa-star fa-lg" aria-hidden="true"></i>
+                 
 
                 <!--<section class="module col-md-3 col-sm-6">
                 <div class="module-content">
@@ -96,8 +96,8 @@ $this->title = 'LSC LMS';
 				<i class="fa fa-calendar fa-lg" ></i>
 				<div class="module-header"></div>
 				<div class="module-details text-center">
-					<h3>CALENDAR</h3>
-					<h4>Calendar viewer provides....</h4>
+					<center><h3>CALENDAR</h3>
+					<h4>Calendar viewer provides....</h4></center>
 					<p></p>
 				</div>
 			</div>
