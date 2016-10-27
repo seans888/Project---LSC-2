@@ -12,8 +12,26 @@ body {
 	background:#f7f9fa;
 	border:#f7f9fa;
 }
-.navbar-brand{
-	hover:#f7f9fa;
+
+.module-body{
+
+}
+
+.module{
+    overflow:visible;
+    position: relative;
+    text-align: center;
+    min-height: 250px;
+    margin-top: 20px;
+    padding-right: 0px !important;
+}
+
+.col-xs-offset-1{
+    margin-left:8.33333333%;
+}
+
+.col-xs-10{
+    width: 8.33333333%;
 }
 
 .module-content{
@@ -39,9 +57,15 @@ body {
 	overflow: hidden;
 }
 
+.text-center{
+    text-align: center;
+}
+
 
 /*END try*/
-
+.navbar-header{
+    
+}
 
 .wrap {
     min-height: 100%;
@@ -63,7 +87,7 @@ body {
 
 .jumbotron {
     text-align: center;
-	height: 300px;
+	height: 650px;
     background-color: transparent;
 }
 
