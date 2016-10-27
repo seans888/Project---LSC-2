@@ -4,10 +4,42 @@ body {
 }
 
 /*try*/
+#w0{
+	background:#f7f9fa;
+	border:#f7f9fa;
+}
+#w1{
+	background:#f7f9fa;
+	border:#f7f9fa;
+}
+.navbar-brand{
+	hover:#f7f9fa;
+}
 
+.module-content{
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+	border-radius: 5px 5px 5px 5px;
+}
+
+.module-header{
+	background: #7a7a7a;
+	background-size: cover;
+	height: 65px;
+	border-radius: 5px 5px 0px 0px
+}
+
+.module-details{
+	line-height: 15px;
+	margin-right: 0px;
+	padding: 0px 10px 15px 10px;
+	color: #585a5b;
+	height: 158px;
+	overflow: hidden;
+}
 
 
 /*END try*/
+
 
 .wrap {
     min-height: 100%;

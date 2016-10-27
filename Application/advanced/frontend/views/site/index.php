@@ -4,6 +4,7 @@
 
 $this->title = 'LSC LMS';
 ?>
+  
 <div class="site-index">
     <div class="jumbotron">
         <div  class="tag-line" >
@@ -24,7 +25,7 @@ $this->title = 'LSC LMS';
                 </div>
             </div>
         </div>
-        <br><br><br><br><br><br><br>
+        <br><br><br>
         <!--HOME SECTION TAG LINE END-->
         <div id="features-sec" class="container set-pad" >
             <div class="row text-center">
@@ -32,7 +33,7 @@ $this->title = 'LSC LMS';
             </div>
             <!--/.HEADER LINE END-->
             <div class="row" >
-                <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
+             <!--   <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.4s">
                     <div class="about-div">
                         <i class="fa fa-calendar fa-lg" ></i>
                         <h3>CALENDAR</h3>
@@ -47,7 +48,7 @@ $this->title = 'LSC LMS';
                 <div class="col-lg-4  col-md-4 col-sm-4" data-scroll-reveal="enter from the bottom after 0.5s">
                     <div class="about-div">
                         <!--<i class="fa fa-bolt fa-4x icon-round-border" ></i>-->
-                        <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
+                <!--        <i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
                         <h3>TASK</h3>
                         <hr/>
                         <hr/>
@@ -72,7 +73,7 @@ $this->title = 'LSC LMS';
             </div>-->
                 <!--</section>-->
 
-                <h3>SCORE SHEET</h3>
+          <!--      <h3>SCORE SHEET</h3>
                 <hr/>
                 <hr/>
                 <p>
@@ -82,27 +83,78 @@ $this->title = 'LSC LMS';
             </div>
         </div>
 
+				
+
         <!-- END -->
     </div>
 </div>
+	<section class="module-body container-fluid row col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	<!--CALENDAR[-->
+	<section class="module col-md-3 col-sm-6">
+		<a href="calendar.php">
+			<div class="module-content">
+				<i class="fa fa-calendar fa-lg" ></i>
+				<div class="module-header"></div>
+				<div class="module-details text-center">
+					<h3>CALENDAR</h3>
+					<h4>Calendar viewer provides....</h4>
+					<p></p>
+				</div>
+			</div>
+		</a>
+	</section>
+	<!--COURSE-->
+	<section class="module col-md-3 col-sm-6">
+		<a href="course.php">
+			<div class="module-content">
+				<img class="move-me" id="badge" alt="" src="images/course.png"/>
+				<div class="module-header"></div>
+				<div class="module-details text-center">
+					<h3>COURSE</h3>
+					<h4>Course viewer provides....</h4>
+					<p></p>
+				</div>
+			</div>
+		</a>
+	</section>
+	<!--GRADES-->
+	<section class="module col-md-3 col-sm-6">
+		<a href="grades.php">
+			<div class="module-content">
+				<i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
+				<div class="module-header"></div>
+				<div class="module-details text-center">
+					<h3>GRADES</h3>
+					<h4>Grades viewer provides....</h4>
+					<p></p>
+				</div>
+			</div>
+		</a>
+	</section>
+	<!--ATTENDANCE-->
+	<section class="module col-md-3 col-sm-6">
+		<a href="attendance.php">
+			<div class="module-content">
+				<img class="move-me" id="badge" alt="" src="images/attendance.png"/>
+				<div class="module-header"></div>
+				<div class="module-details text-center">
+					<h3>ATTENDANCE</h3>
+					<h4>Attendance viewer provides....</h4>
+					<p></p>
+				</div>
+			</div>
+		</a>
+	</section>
+	
+				
+	
       
 
 
           
       <!-- COURSES SECTION END-->
    
-    <!--  Jquery Core Script -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!--  Core Bootstrap Script -->
-    <script src="assets/js/bootstrap.js"></script>
-    <!--  Flexslider Scripts --> 
-         <script src="assets/js/jquery.flexslider.js"></script>
-     <!--  Scrolling Reveal Script -->
-    <script src="assets/js/scrollReveal.js"></script>
-    <!--  Scroll Scripts --> 
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <!--  Custom Scripts --> 
-         <script src="assets/js/custom.js"></script>
+  
 </body>
 </html>
 
