@@ -25,7 +25,7 @@ $this->title = 'LSC LMS';
                 </div>
             </div>
         </div>
-        <br><br><br>
+      
         <!--HOME SECTION TAG LINE END-->
 		<div id="features-sec" class="container set-pad" >
 			<div class="row text-center">
@@ -42,9 +42,9 @@ $this->title = 'LSC LMS';
 								<i class="fa fa-calendar fa-lg" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
-									<center><h3>CALENDAR</h3>
-										<h4>Calendar viewer provides....</h4></center>
-									<p></p>
+									<center><h4><b>CALENDAR</b></h4>
+										<p><h5>Calendar viewer provides all the notification including events, assignments and exercises.</h5></p></center>
+								
 								</div>
 							</div>
 						</a>
@@ -56,9 +56,9 @@ $this->title = 'LSC LMS';
 								<i class="fa fa-calendar fa-lg" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
-									<h3>COURSE</h3>
-									<h4>Course viewer provides....</h4>
-									<p></p>
+									<h4><b>COURSE</b></h4>
+									<p><h5>Course viewer provides all tasks (assignments and exercies) on each subjects of all enrolled courses. </h5></p>
+									
 								</div>
 							</div>
 						</a>
@@ -70,9 +70,8 @@ $this->title = 'LSC LMS';
 								<i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
-									<h3>GRADES</h3>
-									<h4>Grades viewer provides....</h4>
-									<p></p>
+									<h4><b>GRADES</b></h4>
+									<p><h5>Grades viewer provides all the grades from the exercises and assignments results.</h5></p>	
 								</div>
 							</div>
 						</a>
@@ -84,13 +83,15 @@ $this->title = 'LSC LMS';
 								<i class="fa fa-calendar fa-lg" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
-									<h3>ATTENDANCE</h3>
-									<h4>Attendance viewer provides....</h4>
-									<p></p>
+								<center>
+									<h4><b>ATTENDANCE</b></h4>
+									<p><h5>Attendance viewer provides the attendance report.</h5></center></p>
+								
 								</div>
 							</div>
 						</a>
 					</section>
+					<footer class='container-fluid nav navbar-inverse navbar-fixed-bottom'></footer>
 				</section>
 			</div>
 		</div>
