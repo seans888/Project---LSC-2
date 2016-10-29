@@ -39,7 +39,7 @@ $this->title = 'LSC LMS';
 					<section class="module col-md-3 col-sm-6">
 						<a href="calendar.php">
 							<div class="module-content">
-								<i class="fa fa-calendar fa-lg" ></i>
+								<i class="fa fa-calendar fa-lg"  style="font-size:50px"></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<center><h4><b>CALENDAR</b></h4>
@@ -53,7 +53,7 @@ $this->title = 'LSC LMS';
 					<section class="module col-md-3 col-sm-6">
 						<a href="course.php">
 							<div class="module-content">
-								<i class="fa fa-calendar fa-lg" ></i>
+								<i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:40px" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<h4><b>COURSE</b></h4>
@@ -67,7 +67,7 @@ $this->title = 'LSC LMS';
 					<section class="module col-md-3 col-sm-6">
 						<a href="grades.php">
 							<div class="module-content">
-								<i class="fa fa-tasks fa-lg" aria-hidden="true"></i>
+								<i class="fa fa-trophy fa-lg" aria-hidden="true" style="font-size:50px"></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<h4><b>GRADES</b></h4>
@@ -80,7 +80,7 @@ $this->title = 'LSC LMS';
 					<section class="module col-md-3 col-sm-6">
 						<a href="attendance.php">
 							<div class="module-content">
-								<i class="fa fa-calendar fa-lg" ></i>
+								<i class="fa fa-check-square-o fa-lg"  style="font-size:50px" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 								<center>
