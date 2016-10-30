@@ -53,7 +53,7 @@ $this->title = 'LSC LMS';
 					<section class="module col-md-3 col-sm-6">
 						<a href="course.php">
 							<div class="module-content">
-								<i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:40px" ></i>
+								<i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:37px" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<h4><b>COURSE</b></h4>
@@ -97,16 +97,7 @@ $this->title = 'LSC LMS';
 		</div>
 	</div>
 </div>
-	
-				
-	
-      
 
-
-          
-      <!-- COURSES SECTION END-->
-   
-  
 </body>
 </html>
 
