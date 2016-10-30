@@ -12,7 +12,7 @@ body {
 #w1{
     background:#062456;
     border:#f7f9fa;
-	
+
 }
 
 .navbar-inverse .navbar-brand{
@@ -92,8 +92,13 @@ a.navbar-brand:hover{
 
 .jumbotron {
     text-align: center;
-    background-color: transparent;
+    background-color: #eae9e9;
+    -webkit-box-shadow: 0px 0px 14px 7px rgba(94,94,94,1);
+    -moz-box-shadow: 0px 0px 14px 7px rgba(94,94,94,1);
+    box-shadow: 0px 0px 14px 7px rgba(94,94,94,1);
+
 }
+
 
 .jumbotron .btn {
     font-size: 21px;
