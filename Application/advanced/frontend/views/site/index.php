@@ -4,7 +4,7 @@
 
 $this->title = 'LSC LMS';
 ?>
-  
+<link href="/advanced/frontend/web/css/site.css" rel="stylesheet">
 <div class="site-index">
 	<div class="jumbotron">
         <div  class="tag-line" >

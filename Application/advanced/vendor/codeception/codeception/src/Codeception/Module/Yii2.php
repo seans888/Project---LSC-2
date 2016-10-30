@@ -118,7 +118,7 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
      * @var array
      */
     protected $config = [
-        'cleanup'     => false,
+        'cleanup'     => true,
         'entryScript' => '',
         'entryUrl'    => 'http://localhost/index-test.php',
     ];
@@ -167,7 +167,7 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
 
         // load fixtures before db transaction
         if (method_exists($test, self::TEST_FIXTURES_METHOD)) {
-            $this->haveFixtures(call_user_func($test, self::TEST_FIXTURES_METHOD));
+            $this->haveFixtures(call_user_func([$test, self::TEST_FIXTURES_METHOD]));
         }
 
         if ($this->config['cleanup'] && $this->app->has('db')) {
@@ -194,9 +194,15 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
 
         $this->client->resetPersistentVars();
 
-        if (\Yii::$app->has('session', true)) {
+        if (isset(\Yii::$app) && \Yii::$app->has('session', true)) {
             \Yii::$app->session->close();
         }
+
+        // Close connections if exists
+        if (isset(\Yii::$app) && \Yii::$app->has('db', true)) {
+            \Yii::$app->db->close();
+        }
+
         parent::_after($test);
     }
 

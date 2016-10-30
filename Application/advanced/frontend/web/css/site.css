@@ -6,11 +6,21 @@ body {
 /*try*/
 #w0{
     background:#062456;
+	
     border:#f7f9fa;
 }
 #w1{
     background:#062456;
     border:#f7f9fa;
+	
+}
+
+.navbar-inverse .navbar-brand{
+    color:whitesmoke;
+}
+
+a.navbar-brand:hover{
+    font-size: 20px;
 }
 
 
@@ -168,5 +178,7 @@ a.desc:after {
 .nav > li > form > button:hover {
     text-decoration: none;
 }
+
+
 
 /*try lang
