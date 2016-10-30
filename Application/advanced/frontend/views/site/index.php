@@ -33,13 +33,13 @@ $this->title = 'LSC LMS';
             </div>
             <!--/.HEADER LINE END-->
 			<div class="row" >
-				<hr>
+				<hr class="line">
 				<section class="module-body container-fluid row col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 					<!--CALENDAR[-->
 					<section class="module col-md-3 col-sm-6">
 						<a href="calendar.php">
+							<i class="fa fa-calendar fa-lg"  style="font-size:50px"></i>
 							<div class="module-content">
-								<i class="fa fa-calendar fa-lg"  style="font-size:50px"></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<center><h4><b>CALENDAR</b></h4>
@@ -52,8 +52,8 @@ $this->title = 'LSC LMS';
 					<!--COURSE-->
 					<section class="module col-md-3 col-sm-6">
 						<a href="course.php">
+							<i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:37px" ></i>
 							<div class="module-content">
-								<i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:37px" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<h4><b>COURSE</b></h4>
@@ -66,8 +66,8 @@ $this->title = 'LSC LMS';
 					<!--GRADES-->
 					<section class="module col-md-3 col-sm-6">
 						<a href="grades.php">
+							<i class="fa fa-trophy fa-lg" aria-hidden="true" style="font-size:50px"></i>
 							<div class="module-content">
-								<i class="fa fa-trophy fa-lg" aria-hidden="true" style="font-size:50px"></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 									<h4><b>GRADES</b></h4>
@@ -79,8 +79,8 @@ $this->title = 'LSC LMS';
 					<!--ATTENDANCE-->
 					<section class="module col-md-3 col-sm-6">
 						<a href="attendance.php">
+							<i class="fa fa-check-square-o fa-lg"  style="font-size:50px" ></i>
 							<div class="module-content">
-								<i class="fa fa-check-square-o fa-lg"  style="font-size:50px" ></i>
 								<div class="module-header"></div>
 								<div class="module-details text-center">
 								<center>
