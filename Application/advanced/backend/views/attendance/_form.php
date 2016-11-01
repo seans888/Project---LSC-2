@@ -31,7 +31,7 @@ use yii\widgets\ActiveForm;
             'prompt'=>'Select Employee',
         ]); ?>
 
-    <<?= $form->field($model, 'class_list_student_id')->dropDownList(
+    <?= $form->field($model, 'class_list_student_id')->dropDownList(
         ArrayHelper::map(Student::find()->all(), 'id', 'first_name'),
         [
             'prompt'=>'Select Students',
