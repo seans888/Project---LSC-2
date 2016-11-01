@@ -10,6 +10,11 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+	'modules' => [
+		'Courses' => [
+            'class' => 'frontend\modules\Courses\Courses',
+        ],
+	],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [
