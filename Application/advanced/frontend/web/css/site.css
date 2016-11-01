@@ -12,8 +12,12 @@ body {
 }
 #w1{
     background:#062456;
-    border:#f7f9fa;
 
+}
+
+.navbar-header{
+
+    border:#f7f9fa;
 }
 
 .navbar-inverse .navbar-brand{
@@ -83,6 +87,10 @@ a.navbar-brand:hover{
 .text-center{
     text-align: center;
 
+}
+
+.form-group{
+    color:white;
 }
 
 
