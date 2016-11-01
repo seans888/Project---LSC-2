@@ -1,5 +1,9 @@
 <?php
 
+use common\models\Choice;
+use common\models\Question;
+use common\models\Student;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -12,11 +16,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'choice_id')->textInput() ?>
+    <?= $form->field($model, 'choice_id')->dropDownList(
+        ArrayHelper::map(Choice::find()->all(), 'id', 'choose'),
+        [
+            'prompt'=>'Choices',
+        ]); ?>
 
-    <?= $form->field($model, 'choice_question_id')->textInput() ?>
+    <?= $form->field($model, 'choice_question_id')->dropDownList(
+        ArrayHelper::map(Question::find()->all(), 'id', 'ask'),
+        [
+            'prompt'=>'Questions',
+        ]); ?>
 
-    <?= $form->field($model, 'student_id')->textInput() ?>
+    <?= $form->field($model, 'student_id')->dropDownList(
+        ArrayHelper::map(Student::find()->all(), 'id', 'first_name'),
+        [
+            'prompt'=>'Select Students',
+        ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

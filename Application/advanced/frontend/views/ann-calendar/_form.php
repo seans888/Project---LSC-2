@@ -1,5 +1,8 @@
 <?php
 
+use common\models\Employee;
+use common\models\Task;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -16,9 +19,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'announcement')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'employee_id')->textInput() ?>
-
-    <?= $form->field($model, 'task_id')->textInput() ?>
+    <?= $form->field($model, 'employee_id')->dropDownList(
+        ArrayHelper::map(Employee::find()->all(), 'id', 'first_name'),
+        [
+            'prompt'=>'Select Employee',
+        ]); ?>
+    <?= $form->field($model, 'task_id')->dropDownList(
+        ArrayHelper::map(Task::find()->all(), 'id', 'title'),
+        [
+            'prompt'=>'Select Task',
+        ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
