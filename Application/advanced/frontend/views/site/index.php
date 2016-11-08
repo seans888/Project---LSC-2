@@ -5,6 +5,7 @@
 $this->title = 'LSC LMS';
 ?>
 <link href="/advanced/frontend/web/css/site.css" rel="stylesheet">
+
 <div class="site-index">
 	<div class="jumbotron">
         <div  class="tag-line" >
@@ -17,6 +18,7 @@ $this->title = 'LSC LMS';
                                 <img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" width="100" height="60"/>
                             </a>
                         </div>
+
                         <!-- /LOGO -->
                         <h2 data-scroll-reveal="enter from the bottom after 0.1s" >
                             LOYOLA STUDENT CENTER<br/>
