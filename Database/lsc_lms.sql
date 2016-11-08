@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema lsc_lms
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema lsc_lms
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `lsc_lms` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `lsc_lms` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`employee`
+-- Table `lsc_lms`.`employee`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`employee` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`employee` (
   `id` INT(11) NOT NULL COMMENT '',
   `username` VARCHAR(255) NULL COMMENT '',
   `auth_key` VARCHAR(32) NULL COMMENT '',
@@ -45,9 +45,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `lsc_lms`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`user` (
   `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '',
   `username` VARCHAR(255) NOT NULL COMMENT '',
   `auth_key` VARCHAR(32) NOT NULL COMMENT '',
@@ -81,9 +81,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`course`
+-- Table `lsc_lms`.`course`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`course` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`course` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `name` VARCHAR(100) NOT NULL COMMENT '',
   `course_description` VARCHAR(200) NULL COMMENT '',
@@ -95,16 +95,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`course` (
   INDEX `fk_course_employee_idx` (`employee_id` ASC)  COMMENT '',
   CONSTRAINT `fk_course_employee`
     FOREIGN KEY (`employee_id`)
-    REFERENCES `mydb`.`employee` (`id`)
+    REFERENCES `lsc_lms`.`employee` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`class_list`
+-- Table `lsc_lms`.`class_list`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`class_list` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`class_list` (
   `course_id` INT NOT NULL COMMENT '',
   `course_employee_id` INT NOT NULL COMMENT '',
   `user_id` INT(11) NOT NULL COMMENT '',
@@ -113,21 +113,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`class_list` (
   INDEX `fk_class_list_user1_idx` (`user_id` ASC)  COMMENT '',
   CONSTRAINT `fk_course_has_student_course1`
     FOREIGN KEY (`course_id` , `course_employee_id`)
-    REFERENCES `mydb`.`course` (`id` , `employee_id`)
+    REFERENCES `lsc_lms`.`course` (`id` , `employee_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_class_list_user1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `lsc_lms`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`task`
+-- Table `lsc_lms`.`task`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`task` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`task` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `title` VARCHAR(100) NOT NULL COMMENT '',
   `description` VARCHAR(200) NULL COMMENT '',
@@ -146,16 +146,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`task` (
   INDEX `fk_task_course1_idx` (`course_id` ASC, `course_employee_id` ASC)  COMMENT '',
   CONSTRAINT `fk_task_course1`
     FOREIGN KEY (`course_id` , `course_employee_id`)
-    REFERENCES `mydb`.`course` (`id` , `employee_id`)
+    REFERENCES `lsc_lms`.`course` (`id` , `employee_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`ann_calendar`
+-- Table `lsc_lms`.`ann_calendar`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ann_calendar` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`ann_calendar` (
   `id` INT NOT NULL COMMENT '',
   `announcement` VARCHAR(50) NOT NULL COMMENT '',
   `employee_id` INT NOT NULL COMMENT '',
@@ -165,21 +165,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`ann_calendar` (
   INDEX `fk_ann_calendar_task1_idx` (`task_id` ASC)  COMMENT '',
   CONSTRAINT `fk_employee_has_task_employee1`
     FOREIGN KEY (`employee_id`)
-    REFERENCES `mydb`.`employee` (`id`)
+    REFERENCES `lsc_lms`.`employee` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_ann_calendar_task1`
     FOREIGN KEY (`task_id`)
-    REFERENCES `mydb`.`task` (`id`)
+    REFERENCES `lsc_lms`.`task` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`question`
+-- Table `lsc_lms`.`question`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`question` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`question` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `ask` VARCHAR(255) NOT NULL COMMENT '',
   `image` VARBINARY(8000) NULL COMMENT '',
@@ -189,16 +189,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`question` (
   INDEX `fk_question_task1_idx` (`task_id` ASC)  COMMENT '',
   CONSTRAINT `fk_question_task1`
     FOREIGN KEY (`task_id`)
-    REFERENCES `mydb`.`task` (`id`)
+    REFERENCES `lsc_lms`.`task` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`choice`
+-- Table `lsc_lms`.`choice`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`choice` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`choice` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `choose` VARCHAR(255) NOT NULL COMMENT '',
   `is_correct` VARCHAR(255) NOT NULL COMMENT '',
@@ -208,16 +208,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`choice` (
   INDEX `fk_choice_question1_idx` (`question_id` ASC)  COMMENT '',
   CONSTRAINT `fk_choice_question1`
     FOREIGN KEY (`question_id`)
-    REFERENCES `mydb`.`question` (`id`)
+    REFERENCES `lsc_lms`.`question` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`stud_answer`
+-- Table `lsc_lms`.`stud_answer`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`stud_answer` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`stud_answer` (
   `choice_id` INT NOT NULL COMMENT '',
   `choice_question_id` INT NOT NULL COMMENT '',
   `user_id` INT(11) NOT NULL COMMENT '',
@@ -225,21 +225,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`stud_answer` (
   INDEX `fk_stud_answer_user1_idx` (`user_id` ASC)  COMMENT '',
   CONSTRAINT `fk_stud_answer_choice1`
     FOREIGN KEY (`choice_id` , `choice_question_id`)
-    REFERENCES `mydb`.`choice` (`id` , `question_id`)
+    REFERENCES `lsc_lms`.`choice` (`id` , `question_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_stud_answer_user1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `lsc_lms`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`schedule`
+-- Table `lsc_lms`.`schedule`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`schedule` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`schedule` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `subject` VARCHAR(100) NOT NULL COMMENT '',
   `description` VARCHAR(255) NULL COMMENT '',
@@ -251,9 +251,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`attendance`
+-- Table `lsc_lms`.`attendance`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`attendance` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`attendance` (
   `status` ENUM('Absent', 'Late', 'Excuse', 'Present') NOT NULL COMMENT '',
   `class_list_course_id` INT NOT NULL COMMENT '',
   `class_list_course_employee_id` INT NOT NULL COMMENT '',
@@ -263,21 +263,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`attendance` (
   INDEX `fk_attendance_schedule1_idx` (`schedule_id` ASC)  COMMENT '',
   CONSTRAINT `fk_attendance_class_list1`
     FOREIGN KEY (`class_list_course_id` , `class_list_course_employee_id` , `class_list_user_id`)
-    REFERENCES `mydb`.`class_list` (`course_id` , `course_employee_id` , `user_id`)
+    REFERENCES `lsc_lms`.`class_list` (`course_id` , `course_employee_id` , `user_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_attendance_schedule1`
     FOREIGN KEY (`schedule_id`)
-    REFERENCES `mydb`.`schedule` (`id`)
+    REFERENCES `lsc_lms`.`schedule` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`result`
+-- Table `lsc_lms`.`result`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`result` (
+CREATE TABLE IF NOT EXISTS `lsc_lms`.`result` (
   `feedback` VARCHAR(255) NOT NULL COMMENT '',
   `score` INT NOT NULL COMMENT '',
   `grade` INT NOT NULL COMMENT '',
@@ -290,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`result` (
   INDEX `fk_result_stud_answer1_idx` (`stud_answer_choice_id` ASC, `stud_answer_choice_question_id` ASC, `stud_answer_user_id` ASC)  COMMENT '',
   CONSTRAINT `fk_result_stud_answer1`
     FOREIGN KEY (`stud_answer_choice_id` , `stud_answer_choice_question_id` , `stud_answer_user_id`)
-    REFERENCES `mydb`.`stud_answer` (`choice_id` , `choice_question_id` , `user_id`)
+    REFERENCES `lsc_lms`.`stud_answer` (`choice_id` , `choice_question_id` , `user_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
