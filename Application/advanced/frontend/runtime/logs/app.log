@@ -20953,3 +20953,107 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1478933824.178
     'REQUEST_TIME' => 1478933824
 ]
+2016-11-12 08:40:36 [::1][-][9884j2us09tbtb5ok9u32irkq6][error][yii\base\ErrorException:256] yii\base\ErrorException: Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: frontend\models\SignupForm::status_studentss' 
+
+in C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Component.php:143
+
+Stack trace:
+#0 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\helpers\BaseHtml.php(2044): yii\base\Component->__get('status_students...')
+#1 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\helpers\BaseHtml.php(1246): yii\helpers\BaseHtml::getAttributeValue(Object(frontend\models\SignupForm), 'status_students...')
+#2 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\helpers\BaseHtml.php(1295): yii\helpers\BaseHtml::activeInput('text', Object(frontend\models\SignupForm), 'status_students...', Array)
+#3 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\widgets\ActiveField.php(386): yii\helpers\BaseHtml::activeTextInput(Object(frontend\models\SignupForm), 'status_students...', Array)
+#4 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\widgets\ActiveField.php(197): yii\widgets\ActiveField->textInput()
+#5 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2-bootstrap\ActiveField.php(187): yii\widgets\ActiveField->render(NULL)
+#6 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\widgets\ActiveField.php(169): yii\bootstrap\ActiveField->render()
+#7 C:\Users\Renzo\Desktop\advancedlsc\frontend\views\site\signup.php(30): yii\widgets\ActiveField->__toString()
+#8 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\Renzo\\...')
+#9 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\Renzo\\...', Array)
+#10 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\Renzo\\...', Array, Object(frontend\controllers\SiteController))
+#11 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('signup', Array, Object(frontend\controllers\SiteController))
+#12 C:\Users\Renzo\Desktop\advancedlsc\frontend\controllers\SiteController.php(161): yii\base\Controller->render('signup', Array)
+#13 [internal function]: frontend\controllers\SiteController->actionSignup()
+#14 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('signup', Array)
+#17 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/signup', Array)
+#18 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 c:\Users\Renzo\Desktop\advancedlsc\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main} in C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\ErrorHandler.php:299
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', 'C:\\Users\\Renzo\\...', 299, Array)
+#1 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\ErrorHandler.php(299): trigger_error('Exception (Unkn...', 256)
+#2 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\widgets\ActiveField.php(171): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 C:\Users\Renzo\Desktop\advancedlsc\frontend\views\site\signup.php(30): yii\widgets\ActiveField->__toString()
+#4 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\Renzo\\...')
+#5 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\Renzo\\...', '[<span class="s...')
+#6 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\Renzo\\...', Array, Object(frontend\controllers\SiteController))
+#7 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('signup', Array, Object(frontend\controllers\SiteController))
+#8 C:\Users\Renzo\Desktop\advancedlsc\frontend\controllers\SiteController.php(161): yii\base\Controller->render('signup', Array)
+#9 [internal function]: frontend\controllers\SiteController->actionSignup()
+#10 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#11 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#12 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('signup', Array)
+#13 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('site/signup', Array)
+#14 C:\Users\Renzo\Desktop\advancedlsc\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 c:\Users\Renzo\Desktop\advancedlsc\frontend\web\index.php(18): yii\base\Application->run()
+#16 {main}
+    in C:\Users\Renzo\Desktop\advancedlsc\frontend\views\site\signup.php:30
+    in C:\Users\Renzo\Desktop\advancedlsc\frontend\controllers\SiteController.php:161
+2016-11-12 08:40:36 [::1][-][9884j2us09tbtb5ok9u32irkq6][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_COOKIE = [
+    '_csrf' => 'ca7d633729bf5ca14692faa6c318866e6f05a0c7ea495965da45491256b26e61a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"U5qNd44kT6Cq7Nh9nM8ZOneLy7DUdqts\";}'
+    'PHPSESSID' => '9884j2us09tbtb5ok9u32irkq6'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_csrf=ca7d633729bf5ca14692faa6c318866e6f05a0c7ea495965da45491256b26e61a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22U5qNd44kT6Cq7Nh9nM8ZOneLy7DUdqts%22%3B%7D; PHPSESSID=9884j2us09tbtb5ok9u32irkq6'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Java\\jdk8\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\xampp\\htdocs\\advanced;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\xampp\\php;C:\\Program Files\\CloudFoundry;C:\\Users\\Renzo\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/7.0.6 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Win32) OpenSSL/1.0.2e PHP/7.0.6'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advancedlsc/frontend/web/index.php'
+    'REMOTE_PORT' => '50688'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/advancedlsc/frontend/web/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/advancedlsc/frontend/web/index.php'
+    'PHP_SELF' => '/advancedlsc/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1478936436.697
+    'REQUEST_TIME' => 1478936436
+]
