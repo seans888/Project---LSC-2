@@ -21057,3 +21057,285 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1478936436.697
     'REQUEST_TIME' => 1478936436
 ]
+2016-11-12 16:08:45 [::1][-][18ud41aaed4qohg09vdigspqu2][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php:602
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php(478): yii\db\Connection->getSlavePdo()
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(759): yii\db\Schema->quoteValue('<span class="st...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(175): yii\db\Connection->quoteValue('<span class="st...')
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(869): yii\db\Command->getRawSql()
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Query.php(370): yii\db\Command->queryScalar()
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\UniqueValidator.php(144): yii\db\Query->exists()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), '<span class="st...')
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), '[<span class="s...')
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\models\SignupForm.php(84): yii\base\Model->validate()
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\controllers\SiteController.php(153): frontend\models\SignupForm->signup()
+#15 [internal function]: frontend\controllers\SiteController->actionSignup()
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#20 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php:549
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php(478): yii\db\Connection->getSlavePdo()
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(759): yii\db\Schema->quoteValue('<span class="st...')
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(175): yii\db\Connection->quoteValue('<span class="st...')
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(869): yii\db\Command->getRawSql()
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Query.php(370): yii\db\Command->queryScalar()
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\UniqueValidator.php(144): yii\db\Query->exists()
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), '<span class="st...')
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), '[<span class="s...')
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\models\SignupForm.php(84): yii\base\Model->validate()
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\controllers\SiteController.php(153): frontend\models\SignupForm->signup()
+#13 [internal function]: frontend\controllers\SiteController->actionSignup()
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-11-12 16:08:43 [::1][-][18ud41aaed4qohg09vdigspqu2][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_POST = [
+    '_csrf' => 'VVh3QmNpTXQAPR8sBQ41Q2EVKAkUGXQWMi06GhcGeSwwKDArIh4gEg=='
+    'SignupForm' => [
+        'username' => 'jcheramia'
+        'email' => 'johannaheramia@gmail.com'
+        'password' => '123456'
+        'status_student' => 'Enrolled'
+        'number_of_hours' => '45'
+        'review_class' => 'Civil Service Exam Review'
+        'first_name' => 'Johanna Marisse'
+        'middle_name' => 'Credito'
+        'guardian_email_address' => 'eddieheramia@yahoo.com'
+        'last_name' => 'Heramia'
+        'nickname' => 'Joan'
+        'gender' => 'Female'
+        'age' => '19'
+        'contact_number' => '09261523128'
+        'home_address' => 'Villamor Air Base, Pasay City, Philippines'
+        'school' => 'Asia Pacific College'
+        'school_address' => 'Humabon Street, Magallanes, Makati City'
+        'guardian_name' => 'Eddie Heramia'
+        'relation' => 'Father'
+        'guardian_contact_number' => '09172052501'
+        'date_of_registration' => 'January 1, 2000'
+    ]
+    'signup-button' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '18ud41aaed4qohg09vdigspqu2'
+    '_csrf' => '853a763c9bbad640c2dff74bdee69cdbae6dc5750378ed3b18f39e60d9d08932a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Uehnfgx74M_Kwp9bguMXto4XepGiAwmf\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1023'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=18ud41aaed4qohg09vdigspqu2; _csrf=853a763c9bbad640c2dff74bdee69cdbae6dc5750378ed3b18f39e60d9d08932a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Uehnfgx74M_Kwp9bguMXto4XepGiAwmf%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\Program Files\\TortoiseGit\\bin;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '54246'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1478963323.938
+    'REQUEST_TIME' => 1478963323
+]
+2016-11-12 16:10:02 [::1][-][18ud41aaed4qohg09vdigspqu2][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'lms'' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php:602
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(602): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(544): yii\db\Connection->createPdoInstance()
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php(478): yii\db\Connection->getSlavePdo()
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(759): yii\db\Schema->quoteValue('<span class="st...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(175): yii\db\Connection->quoteValue('<span class="st...')
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(869): yii\db\Command->getRawSql()
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Query.php(370): yii\db\Command->queryScalar()
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\UniqueValidator.php(144): yii\db\Query->exists()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), '<span class="st...')
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), '[<span class="s...')
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\models\SignupForm.php(84): yii\base\Model->validate()
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\controllers\SiteController.php(153): frontend\models\SignupForm->signup()
+#15 [internal function]: frontend\controllers\SiteController->actionSignup()
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#20 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'lms'' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php:549
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(863): yii\db\Connection->open()
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(850): yii\db\Connection->getMasterPdo()
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php(478): yii\db\Connection->getSlavePdo()
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(759): yii\db\Schema->quoteValue('<span class="st...')
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(175): yii\db\Connection->quoteValue('<span class="st...')
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(869): yii\db\Command->getRawSql()
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(388): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Query.php(370): yii\db\Command->queryScalar()
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\UniqueValidator.php(144): yii\db\Query->exists()
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\validators\Validator.php(265): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), '<span class="st...')
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Model.php(356): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), '[<span class="s...')
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\models\SignupForm.php(84): yii\base\Model->validate()
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\controllers\SiteController.php(153): frontend\models\SignupForm->signup()
+#13 [internal function]: frontend\controllers\SiteController->actionSignup()
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2016-11-12 16:10:02 [::1][-][18ud41aaed4qohg09vdigspqu2][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_POST = [
+    '_csrf' => 'LWp0bi5XdHN4DxwASDAMRBknKyVZJ00RSh85Nlo4QCtIGjMHbyAZFQ=='
+    'SignupForm' => [
+        'username' => 'jcheramia'
+        'email' => 'johannaheramia@gmail.com'
+        'password' => '123456'
+        'status_student' => 'Reserved'
+        'number_of_hours' => '45'
+        'review_class' => 'Law Aptitude Exam / Law School Admission Test Review'
+        'first_name' => 'Johanna Marisse'
+        'middle_name' => 'Credito'
+        'guardian_email_address' => 'eddieheramia@yahoo.com'
+        'last_name' => 'Heramia'
+        'nickname' => 'Joan'
+        'gender' => 'Female'
+        'age' => '19'
+        'contact_number' => '09261523128'
+        'home_address' => 'Villamor Air Base, Pasay City, Philippines'
+        'school' => 'Asia Pacific College'
+        'school_address' => 'Humabon Street, Magallanes, Makati City'
+        'guardian_name' => 'Eddie Heramia'
+        'relation' => 'Father'
+        'guardian_contact_number' => '09172052501'
+        'date_of_registration' => 'January 1, 2000'
+    ]
+    'signup-button' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '18ud41aaed4qohg09vdigspqu2'
+    '_csrf' => '853a763c9bbad640c2dff74bdee69cdbae6dc5750378ed3b18f39e60d9d08932a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Uehnfgx74M_Kwp9bguMXto4XepGiAwmf\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1052'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=18ud41aaed4qohg09vdigspqu2; _csrf=853a763c9bbad640c2dff74bdee69cdbae6dc5750378ed3b18f39e60d9d08932a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Uehnfgx74M_Kwp9bguMXto4XepGiAwmf%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\Program Files\\TortoiseGit\\bin;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '54302'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1478963402.375
+    'REQUEST_TIME' => 1478963402
+]
