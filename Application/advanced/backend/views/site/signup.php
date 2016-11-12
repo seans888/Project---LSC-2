@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <a href="index.php"><b>LSC </b> LMS</a>
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg">SIGN IN</p>
+            <p class="login-box-msg">SIGN UP</p>
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
             <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
