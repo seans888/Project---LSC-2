@@ -17,43 +17,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'status') ?>
-
-    <?= $form->field($model, 'number_of_hours') ?>
-
-    <?= $form->field($model, 'review_class') ?>
+    <?= $form->field($model, 'first_name') ?>
 
     <?= $form->field($model, 'last_name') ?>
 
-    <?php // echo $form->field($model, 'first_name') ?>
+    <?= $form->field($model, 'middle_name') ?>
 
-    <?php // echo $form->field($model, 'middle_name') ?>
-
-    <?php // echo $form->field($model, 'nickname') ?>
+    <?= $form->field($model, 'age') ?>
 
     <?php // echo $form->field($model, 'gender') ?>
 
-    <?php // echo $form->field($model, 'age') ?>
+    <?php // echo $form->field($model, 'cell_number') ?>
 
-    <?php // echo $form->field($model, 'email_address') ?>
+    <?php // echo $form->field($model, 'email_add') ?>
 
-    <?php // echo $form->field($model, 'contact_number') ?>
+    <?php // echo $form->field($model, 'home_add') ?>
 
-    <?php // echo $form->field($model, 'address') ?>
-
-    <?php // echo $form->field($model, 'school') ?>
-
-    <?php // echo $form->field($model, 'school_address') ?>
-
-    <?php // echo $form->field($model, 'guardian_name') ?>
-
-    <?php // echo $form->field($model, 'relation') ?>
-
-    <?php // echo $form->field($model, 'guardian_contact_number') ?>
-
-    <?php // echo $form->field($model, 'guardian_email_address') ?>
-
-    <?php // echo $form->field($model, 'date_of_registration') ?>
+    <?php // echo $form->field($model, 'date_registered') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -18,8 +18,8 @@ class StudentSearch extends Student
     public function rules()
     {
         return [
-            [['id', 'number_of_hours', 'age'], 'integer'],
-            [['status', 'review_class', 'last_name', 'first_name', 'middle_name', 'nickname', 'gender', 'email_address', 'contact_number', 'address', 'school', 'school_address', 'guardian_name', 'relation', 'guardian_contact_number', 'guardian_email_address', 'date_of_registration'], 'safe'],
+            [['id'], 'integer'],
+            [['first_name', 'last_name', 'middle_name', 'age', 'gender', 'cell_number', 'email_add', 'home_add', 'date_registered'], 'safe'],
         ];
     }
 
@@ -60,27 +60,17 @@ class StudentSearch extends Student
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'number_of_hours' => $this->number_of_hours,
-            'age' => $this->age,
-            'date_of_registration' => $this->date_of_registration,
+            'date_registered' => $this->date_registered,
         ]);
 
-        $query->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'review_class', $this->review_class])
+        $query->andFilterWhere(['like', 'first_name', $this->first_name])
             ->andFilterWhere(['like', 'last_name', $this->last_name])
-            ->andFilterWhere(['like', 'first_name', $this->first_name])
             ->andFilterWhere(['like', 'middle_name', $this->middle_name])
-            ->andFilterWhere(['like', 'nickname', $this->nickname])
+            ->andFilterWhere(['like', 'age', $this->age])
             ->andFilterWhere(['like', 'gender', $this->gender])
-            ->andFilterWhere(['like', 'email_address', $this->email_address])
-            ->andFilterWhere(['like', 'contact_number', $this->contact_number])
-            ->andFilterWhere(['like', 'address', $this->address])
-            ->andFilterWhere(['like', 'school', $this->school])
-            ->andFilterWhere(['like', 'school_address', $this->school_address])
-            ->andFilterWhere(['like', 'guardian_name', $this->guardian_name])
-            ->andFilterWhere(['like', 'relation', $this->relation])
-            ->andFilterWhere(['like', 'guardian_contact_number', $this->guardian_contact_number])
-            ->andFilterWhere(['like', 'guardian_email_address', $this->guardian_email_address]);
+            ->andFilterWhere(['like', 'cell_number', $this->cell_number])
+            ->andFilterWhere(['like', 'email_add', $this->email_add])
+            ->andFilterWhere(['like', 'home_add', $this->home_add]);
 
         return $dataProvider;
     }

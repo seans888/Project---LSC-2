@@ -15,14 +15,15 @@ body {
 
 }
 
+.row{
+    color:black;
+}
+
 .navbar-header{
 
     border:#f7f9fa;
 }
 
-.navbar-inverse .navbar-brand{
-    color:whitesmoke;
-}
 
 a.navbar-brand:hover{
     font-size: 20px;
@@ -89,11 +90,6 @@ a.navbar-brand:hover{
 
 }
 
-.form-group{
-    color:white;
-}
-
-
 /*END try*/
 
 .wrap {
@@ -113,6 +109,9 @@ a.navbar-brand:hover{
     border-top: 1px solid #ddd;
     padding-top: 20px;
 }
+
+
+
 
 .jumbotron {
     text-align: center;
