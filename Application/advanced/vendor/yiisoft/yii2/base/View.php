@@ -140,8 +140,7 @@ class View extends Component
      * in the view. If the context implements [[ViewContextInterface]], it may also be used to locate
      * the view file corresponding to a relative view name.
      * @return string the rendering result
-     * @throws ViewNotFoundException if the view file does not exist.
-     * @throws InvalidCallException if the view cannot be resolved.
+     * @throws InvalidParamException if the view cannot be resolved or the view file does not exist.
      * @see renderFile()
      */
     public function render($view, $params = [], $context = null)
@@ -212,7 +211,7 @@ class View extends Component
      * @param object $context the context that the view should use for rendering the view. If null,
      * existing [[context]] will be used.
      * @return string the rendering result
-     * @throws ViewNotFoundException if the view file does not exist
+     * @throws InvalidParamException if the view file does not exist
      */
     public function renderFile($viewFile, $params = [], $context = null)
     {
@@ -224,7 +223,7 @@ class View extends Component
         if (is_file($viewFile)) {
             $viewFile = FileHelper::localize($viewFile);
         } else {
-            throw new ViewNotFoundException("The view file does not exist: $viewFile");
+            throw new InvalidParamException("The view file does not exist: $viewFile");
         }
 
         $oldContext = $this->context;

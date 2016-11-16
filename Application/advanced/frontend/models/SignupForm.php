@@ -1,6 +1,7 @@
 <?php
 namespace frontend\models;
 
+use Yii;
 use yii\base\Model;
 use common\models\User;
 
@@ -30,7 +31,6 @@ class SignupForm extends Model
     public $relation;
     public $guardian_contact_number;
     public $date_of_registration;
-
 
     /**
      * @inheritdoc
@@ -70,7 +70,6 @@ class SignupForm extends Model
             ['relation', 'required'],
             ['guardian_contact_number', 'required'],
             ['date_of_registration', 'required'],
-
         ];
     }
 
@@ -82,35 +81,41 @@ class SignupForm extends Model
     public function signup()
     {
         if (!$this->validate()) {
-            return null;
+            $user = new User();
+            $user->username = $this->username;
+            $user->email = $this->email;
+            $user->setPassword($this->password);
+            $user->generateAuthKey();
+            $user->status_student = $this->status_student;
+            $user->number_of_hours = $this->number_of_hours;
+            $user->review_class = $this->review_class;
+            $user->first_name = $this->first_name;
+            $user->middle_name = $this->middle_name;
+            $user->guardian_email_address = $this->guardian_email_address;
+            $user->last_name = $this->last_name;
+            $user->nickname = $this->nickname;
+            $user->gender = $this->gender;
+            $user->age = $this->age;
+            $user->contact_number = $this->contact_number;
+            $user->home_address = $this->home_address;
+            $user->school = $this->school;
+            $user->school_address = $this->school_address;
+            $user->guardian_name = $this->guardian_name;
+            $user->relation = $this->relation;
+            $user->guardian_contact_number = $this->guardian_contact_number;
+            $user->date_of_registration = $this->date_of_registration;
+
+
+            //rbac
+            $auth = Yii::$app->authManager;
+            $authorRole = $auth->getRole('user');
+            $auth->assign($authorRole, $user->getId());
+
+            return $user->save() ? $user : null;
+
+
         }
-        
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        $user->status_student = $this->status_student;
-        $user->number_of_hours = $this->number_of_hours;
-        $user->review_class = $this->review_class;
-        $user->first_name = $this->first_name;
-        $user->middle_name = $this->middle_name;
-        $user->guardian_email_address = $this->guardian_email_address;
-        $user->last_name = $this->last_name;
-        $user->nickname = $this->nickname;
-        $user->gender = $this->gender;
-        $user->age = $this->age;
-        $user->contact_number = $this->contact_number;
-        $user->home_address = $this->home_address;
-        $user->school = $this->school;
-        $user->school_address = $this->school_address;
-        $user->guardian_name = $this->guardian_name;
-        $user->relation = $this->relation;
-        $user->guardian_contact_number = $this->guardian_contact_number;
-        $user->date_of_registration = $this->date_of_registration;
 
-
-        
-        return $user->save() ? $user : null;
+        return null;
     }
 }

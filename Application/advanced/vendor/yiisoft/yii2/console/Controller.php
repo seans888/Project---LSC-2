@@ -51,11 +51,6 @@ class Controller extends \yii\base\Controller
      * If not set, ANSI color will only be enabled for terminals that support it.
      */
     public $color;
-    /**
-     * @var boolean whether to display help information about current command.
-     * @since 2.0.10
-     */
-    public $help;
 
     /**
      * @var array the options passed during execution.
@@ -107,7 +102,7 @@ class Controller extends \yii\base\Controller
                 if (in_array($name, $options, true)) {
                     $default = $this->$name;
                     if (is_array($default)) {
-                        $this->$name = preg_split('/\s*,\s*(?![^()]*\))/', $value);
+                        $this->$name = preg_split('/(?!\(\d+)\s*,\s*(?!\d+\))/', $value);
                     } elseif ($default !== null) {
                         settype($value, gettype($default));
                         $this->$name = $value;
@@ -120,10 +115,6 @@ class Controller extends \yii\base\Controller
                     throw new Exception(Yii::t('yii', 'Unknown option: --{name}', ['name' => $name]));
                 }
             }
-        }
-        if ($this->help) {
-            $route = $this->id . '/' . $id;
-            return Yii::$app->runAction('help', [$route]);
         }
         return parent::runAction($id, $params);
     }
@@ -255,19 +246,6 @@ class Controller extends \yii\base\Controller
      *  - validator: a callable function to validate input. The function must accept two parameters:
      *      - $input: the user input to validate
      *      - $error: the error value passed by reference if validation failed.
-     *
-     * An example of how to use the prompt method with a validator function.
-     *
-     * ```php
-     * $code = $this->prompt('Enter 4-Chars-Pin', ['required' => true, 'validator' => function($input, &$error) {
-     *     if (strlen($input) !== 4) {
-     *         $error = 'The Pin must be exactly 4 chars!';
-     *         return false;
-     *     }
-     *     return true;
-     * });
-     * ```
-     *
      * @return string the user input
      */
     public function prompt($text, $options = [])
@@ -325,7 +303,7 @@ class Controller extends \yii\base\Controller
     public function options($actionID)
     {
         // $actionId might be used in subclasses to provide options specific to action id
-        return ['color', 'interactive', 'help'];
+        return ['color', 'interactive'];
     }
 
     /**
@@ -340,9 +318,7 @@ class Controller extends \yii\base\Controller
      */
     public function optionAliases()
     {
-        return [
-            'h' => 'help'
-        ];
+        return [];
     }
 
     /**

@@ -10,11 +10,6 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-	'modules' => [
-		'Courses' => [
-            'class' => 'frontend\modules\Courses\Courses',
-        ],
-	],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'user' => [
@@ -34,6 +29,11 @@ return [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'zwoUaOEuqzjExsiAoyjt',
             'csrfParam' => '_frontendCSRF',
+        ],
+
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['admin', 'tutor', 'user'],
         ],
 
         'log' => [

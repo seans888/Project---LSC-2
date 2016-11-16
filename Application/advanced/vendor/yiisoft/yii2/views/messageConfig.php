@@ -23,12 +23,16 @@ return [
     'markUnused' => true,
     // array, list of patterns that specify which files (not directories) should be processed.
     // If empty or not set, all files will be processed.
-    // See helpers/FileHelper::findFiles() for pattern matching rules.
-    // If a file/directory matches both a pattern in "only" and "except", it will NOT be processed.
+    // Please refer to "except" for details about the patterns.
     'only' => ['*.php'],
     // array, list of patterns that specify which files/directories should NOT be processed.
     // If empty or not set, all files/directories will be processed.
-    // See helpers/FileHelper::findFiles() for pattern matching rules.
+    // A path matches a pattern if it contains the pattern string at its end. For example,
+    // '/a/b' will match all files and directories ending with '/a/b';
+    // the '*.svn' will match all files and directories whose name ends with '.svn'.
+    // and the '.svn' will match all files and directories named exactly '.svn'.
+    // Note, the '/' characters in a pattern matches both '/' and '\'.
+    // See helpers/FileHelper::findFiles() description for more details on pattern matching rules.
     // If a file/directory matches both a pattern in "only" and "except", it will NOT be processed.
     'except' => [
         '.svn',

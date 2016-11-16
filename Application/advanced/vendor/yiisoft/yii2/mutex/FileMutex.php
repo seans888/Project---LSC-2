@@ -89,12 +89,13 @@ class FileMutex extends Mutex
      */
     protected function acquireLock($name, $timeout = 0)
     {
-        $file = fopen($this->getLockFilePath($name), 'w+');
+        $fileName = $this->mutexPath . '/' . md5($name) . '.lock';
+        $file = fopen($fileName, 'w+');
         if ($file === false) {
             return false;
         }
         if ($this->fileMode !== null) {
-            @chmod($this->getLockFilePath($name), $this->fileMode);
+            @chmod($fileName, $this->fileMode);
         }
         $waitTime = 0;
         while (!flock($file, LOCK_EX | LOCK_NB)) {
@@ -122,21 +123,9 @@ class FileMutex extends Mutex
             return false;
         } else {
             fclose($this->_files[$name]);
-            unlink($this->getLockFilePath($name));
             unset($this->_files[$name]);
 
             return true;
         }
-    }
-
-    /**
-     * Generate path for lock file.
-     * @param string $name
-     * @return string
-     * @since 2.0.10
-     */
-    protected function getLockFilePath($name)
-    {
-        return $this->mutexPath . '/' . md5($name) . '.lock';
     }
 }

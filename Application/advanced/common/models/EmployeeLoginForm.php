@@ -13,7 +13,7 @@ class EmployeeLoginForm extends Model
     public $password;
     public $rememberMe = true;
 
-    private $_user;
+    private $_employee;
 
 
     /**
@@ -41,7 +41,7 @@ class EmployeeLoginForm extends Model
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            $user = $this->getUser();
+            $user = $this->getEmployee();
             if (!$user || !$user->validatePassword($this->password)) {
                 $this->addError($attribute, 'Incorrect username or password.');
             }
@@ -56,7 +56,7 @@ class EmployeeLoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            return Yii::$app->user->login($this->getEmployee(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         } else {
             return false;
         }
@@ -65,14 +65,14 @@ class EmployeeLoginForm extends Model
     /**
      * Finds user by [[username]]
      *
-     * @return Employee|EmployeeLoginForm
+     * @return Employee|null
      */
-    protected function getUser()
+    protected function getEmployee()
     {
-        if ($this->_user === null) {
-            $this->_user = Employee::findByUsername($this->username);
+        if ($this->_employee === null) {
+            $this->_employee = Employee::findByUsername($this->username);
         }
 
-        return $this->_user;
+        return $this->_employee;
     }
 }

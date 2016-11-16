@@ -1,9 +1,6 @@
 <?php
 namespace backend\controllers;
 
-use backend\models\EmployeeSignupForm;
-use backend\models\PasswordResetRequestForm;
-use backend\models\ResetPasswordForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -11,6 +8,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\EmployeeLoginForm;
+use backend\models\PasswordResetRequestForm;
+use backend\models\ResetPasswordForm;
+use backend\models\EmployeeSignupForm;
 
 /**
  * Site controller
@@ -25,15 +25,13 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['login', 'error', 'signup'],
                         'allow' => true,
-                        'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -42,7 +40,7 @@ class SiteController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+
                 ],
             ],
         ];
@@ -93,10 +91,14 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
     public function actionSignup()
     {
         $this->layout = 'loginLayout';
-
         $model = new EmployeeSignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -159,4 +161,7 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+
+
 }

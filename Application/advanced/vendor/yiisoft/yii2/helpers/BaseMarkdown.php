@@ -55,11 +55,10 @@ class BaseMarkdown
      *
      * @param string $markdown the markdown text to parse
      * @param string $flavor the markdown flavor to use. See [[$flavors]] for available values.
-     * Defaults to [[$defaultFlavor]], if not set.
      * @return string the parsed HTML output
      * @throws \yii\base\InvalidParamException when an undefined flavor is given.
      */
-    public static function process($markdown, $flavor = null)
+    public static function process($markdown, $flavor = 'original')
     {
         $parser = static::getParser($flavor);
 
@@ -73,11 +72,10 @@ class BaseMarkdown
      *
      * @param string $markdown the markdown text to parse
      * @param string $flavor the markdown flavor to use. See [[$flavors]] for available values.
-     * Defaults to [[$defaultFlavor]], if not set.
      * @return string the parsed HTML output
      * @throws \yii\base\InvalidParamException when an undefined flavor is given.
      */
-    public static function processParagraph($markdown, $flavor = null)
+    public static function processParagraph($markdown, $flavor = 'original')
     {
         $parser = static::getParser($flavor);
 
@@ -85,16 +83,12 @@ class BaseMarkdown
     }
 
     /**
-     * @param string $flavor the markdown flavor to use. See [[$flavors]] for available values.
-     * Defaults to [[$defaultFlavor]], if not set.
+     * @param string $flavor
      * @return \cebe\markdown\Parser
      * @throws \yii\base\InvalidParamException when an undefined flavor is given.
      */
     protected static function getParser($flavor)
     {
-        if ($flavor === null) {
-            $flavor = static::$defaultFlavor;
-        }
         /* @var $parser \cebe\markdown\Markdown */
         if (!isset(static::$flavors[$flavor])) {
             throw new InvalidParamException("Markdown flavor '$flavor' is not defined.'");

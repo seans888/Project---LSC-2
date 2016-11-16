@@ -214,11 +214,6 @@ class ActiveQuery extends Query implements ActiveQueryInterface
         if (!empty($this->with)) {
             $this->findWith($this->with, $models);
         }
-
-        if ($this->inverseOf !== null) {
-            $this->addInverseRelations($models);
-        }
-
         if (!$this->asArray) {
             foreach ($models as $model) {
                 $model->afterFind();
@@ -410,7 +405,7 @@ class ActiveQuery extends Query implements ActiveQueryInterface
                 // relation is defined with an alias, adjust callback to apply alias
                 list(, $relation, $alias) = $matches;
                 $name = $relation;
-                $callback = function ($query) use ($callback, $alias) {
+                $callback = function($query) use ($callback, $alias) {
                     /** @var $query ActiveQuery */
                     $query->alias($alias);
                     if ($callback !== null) {

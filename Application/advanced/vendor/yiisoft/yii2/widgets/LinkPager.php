@@ -47,7 +47,7 @@ class LinkPager extends Widget
      * @var string the CSS class for the each page button.
      * @since 2.0.7
      */
-    public $pageCssClass;
+    public $pageCssClass = null;
     /**
      * @var string the CSS class for the "first" page button.
      */

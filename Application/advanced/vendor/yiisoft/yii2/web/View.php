@@ -398,18 +398,16 @@ class View extends \yii\base\View
     {
         $url = Yii::getAlias($url);
         $key = $key ?: $url;
-
         $depends = ArrayHelper::remove($options, 'depends', []);
 
         if (empty($depends)) {
             $this->cssFiles[$key] = Html::cssFile($url, $options);
         } else {
-            $this->getAssetManager()->bundles[$key] = Yii::createObject([
-                'class' => AssetBundle::className(),
+            $this->getAssetManager()->bundles[$key] = new AssetBundle([
                 'baseUrl' => '',
                 'css' => [strncmp($url, '//', 2) === 0 ? $url : ltrim($url, '/')],
                 'cssOptions' => $options,
-                'depends' => (array)$depends,
+                'depends' => (array) $depends,
             ]);
             $this->registerAssetBundle($key);
         }
@@ -457,27 +455,24 @@ class View extends \yii\base\View
      * Please refer to [[Html::jsFile()]] for other supported options.
      *
      * @param string $key the key that identifies the JS script file. If null, it will use
-     * $url as the key. If two JS files are registered with the same key at the same position, the latter
-     * will overwrite the former. Note that position option takes precedence, thus files registered with the same key,
-     * but different position option will not override each other.
+     * $url as the key. If two JS files are registered with the same key, the latter
+     * will overwrite the former.
      */
     public function registerJsFile($url, $options = [], $key = null)
     {
         $url = Yii::getAlias($url);
         $key = $key ?: $url;
-
         $depends = ArrayHelper::remove($options, 'depends', []);
 
         if (empty($depends)) {
             $position = ArrayHelper::remove($options, 'position', self::POS_END);
             $this->jsFiles[$position][$key] = Html::jsFile($url, $options);
         } else {
-            $this->getAssetManager()->bundles[$key] = Yii::createObject([
-                'class' => AssetBundle::className(),
+            $this->getAssetManager()->bundles[$key] = new AssetBundle([
                 'baseUrl' => '',
                 'js' => [strncmp($url, '//', 2) === 0 ? $url : ltrim($url, '/')],
                 'jsOptions' => $options,
-                'depends' => (array)$depends,
+                'depends' => (array) $depends,
             ]);
             $this->registerAssetBundle($key);
         }
@@ -571,7 +566,7 @@ class View extends \yii\base\View
                 $lines[] = Html::script($js, ['type' => 'text/javascript']);
             }
             if (!empty($this->js[self::POS_LOAD])) {
-                $js = "jQuery(window).on('load', function () {\n" . implode("\n", $this->js[self::POS_LOAD]) . "\n});";
+                $js = "jQuery(window).load(function () {\n" . implode("\n", $this->js[self::POS_LOAD]) . "\n});";
                 $lines[] = Html::script($js, ['type' => 'text/javascript']);
             }
         }

@@ -153,9 +153,7 @@ class AssetBundle extends Object
                 $options = ArrayHelper::merge($this->jsOptions, $js);
                 $view->registerJsFile($manager->getAssetUrl($this, $file), $options);
             } else {
-                if ($js !== null) {
-                    $view->registerJsFile($manager->getAssetUrl($this, $js), $this->jsOptions);
-                }
+                $view->registerJsFile($manager->getAssetUrl($this, $js), $this->jsOptions);
             }
         }
         foreach ($this->css as $css) {
@@ -164,9 +162,7 @@ class AssetBundle extends Object
                 $options = ArrayHelper::merge($this->cssOptions, $css);
                 $view->registerCssFile($manager->getAssetUrl($this, $file), $options);
             } else {
-                if ($css !== null) {
-                    $view->registerCssFile($manager->getAssetUrl($this, $css), $this->cssOptions);
-                }
+                $view->registerCssFile($manager->getAssetUrl($this, $css), $this->cssOptions);
             }
         }
     }

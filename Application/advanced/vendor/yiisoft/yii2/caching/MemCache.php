@@ -261,7 +261,7 @@ class MemCache extends Cache
      * Retrieves a value from cache with a specified key.
      * This is the implementation of the method declared in the parent class.
      * @param string $key a unique key identifying the cached value
-     * @return mixed|false the value stored in cache, false if the value is not in the cache or expired.
+     * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
      */
     protected function getValue($key)
     {
@@ -283,16 +283,13 @@ class MemCache extends Cache
      * This is the implementation of the method declared in the parent class.
      *
      * @param string $key the key identifying the value to be cached
-     * @param mixed $value the value to be cached.
-     * @see \MemcachePool::set()
+     * @param string $value the value to be cached
      * @param integer $duration the number of seconds in which the cached value will expire. 0 means never expire.
      * @return boolean true if the value is successfully stored into cache, false otherwise
      */
     protected function setValue($key, $value, $duration)
     {
-        // Use UNIX timestamp since it doesn't have any limitation
-        // @see http://php.net/manual/en/memcache.set.php
-        // @see http://php.net/manual/en/memcached.expiration.php
+        $duration = $this->trimDuration($duration);
         $expire = $duration > 0 ? $duration + time() : 0;
 
         return $this->useMemcached ? $this->_cache->set($key, $value, $expire) : $this->_cache->set($key, $value, 0, $expire);
@@ -306,12 +303,10 @@ class MemCache extends Cache
      */
     protected function setValues($data, $duration)
     {
+        $duration = $this->trimDuration($duration);
+
         if ($this->useMemcached) {
-            // Use UNIX timestamp since it doesn't have any limitation
-            // @see http://php.net/manual/en/memcache.set.php
-            // @see http://php.net/manual/en/memcached.expiration.php
-            $expire = $duration > 0 ? $duration + time() : 0;
-            $this->_cache->setMulti($data, $expire);
+            $this->_cache->setMulti($data, $duration > 0 ? $duration + time() : 0);
 
             return [];
         } else {
@@ -324,16 +319,13 @@ class MemCache extends Cache
      * This is the implementation of the method declared in the parent class.
      *
      * @param string $key the key identifying the value to be cached
-     * @param mixed $value the value to be cached
-     * @see \MemcachePool::set()
+     * @param string $value the value to be cached
      * @param integer $duration the number of seconds in which the cached value will expire. 0 means never expire.
      * @return boolean true if the value is successfully stored into cache, false otherwise
      */
     protected function addValue($key, $value, $duration)
     {
-        // Use UNIX timestamp since it doesn't have any limitation
-        // @see http://php.net/manual/en/memcache.set.php
-        // @see http://php.net/manual/en/memcached.expiration.php
+        $duration = $this->trimDuration($duration);
         $expire = $duration > 0 ? $duration + time() : 0;
 
         return $this->useMemcached ? $this->_cache->add($key, $value, $expire) : $this->_cache->add($key, $value, 0, $expire);
@@ -358,5 +350,22 @@ class MemCache extends Cache
     protected function flushValues()
     {
         return $this->_cache->flush();
+    }
+
+    /**
+     * Trims duration to 30 days (2592000 seconds).
+     * @param integer $duration the number of seconds
+     * @return integer the duration
+     * @since 2.0.7
+     * @see http://php.net/manual/en/memcache.set.php
+     * @see http://php.net/manual/en/memcached.expiration.php
+     */
+    protected function trimDuration($duration)
+    {
+        if ($duration > 2592000) {
+            Yii::warning('Duration has been truncated to 30 days due to Memcache/Memcached limitation.', __METHOD__);
+            return 2592000;
+        }
+        return $duration;
     }
 }

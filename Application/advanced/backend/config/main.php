@@ -14,11 +14,15 @@ return [
     'modules' => [],
     'components' => [
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\Employee',
             'enableAutoLogin' => true,
             'identityCookie' => [
                 'name' => '_backendUser', // unique for backend
             ]
+        ],
+
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
         ],
 
         'session' => [

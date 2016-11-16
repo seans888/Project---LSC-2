@@ -19,18 +19,12 @@ class Image extends Base
      *
      * @example 'http://lorempixel.com/640/480/?12345'
      */
-    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+    public static function imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null)
     {
-        $baseUrl = "http://lorempixel.com/";
-        $url = "{$width}/{$height}/";
-        
-        if ($gray) {
-            $url = "gray/" . $url;
-        }
-        
+        $url = "http://lorempixel.com/{$width}/{$height}/";
         if ($category) {
             if (!in_array($category, static::$categories)) {
-                throw new \InvalidArgumentException(sprintf('Unknown image category "%s"', $category));
+                throw new \InvalidArgumentException(sprintf('Unkown image category "%s"', $category));
             }
             $url .= "{$category}/";
             if ($word) {
@@ -42,7 +36,7 @@ class Image extends Base
             $url .= '?' . static::randomNumber(5, true);
         }
 
-        return $baseUrl . $url;
+        return $url;
     }
 
     /**

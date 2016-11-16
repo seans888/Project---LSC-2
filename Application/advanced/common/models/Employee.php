@@ -20,6 +20,7 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+
  */
 class Employee extends ActiveRecord implements IdentityInterface
 {
@@ -73,7 +74,7 @@ class Employee extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * Finds user by username
+     * Finds employee by username
      *
      * @param string $username
      * @return static|null
@@ -84,7 +85,7 @@ class Employee extends ActiveRecord implements IdentityInterface
     }
 
     /**
-     * Finds user by password reset token
+     * Finds employee by password reset token
      *
      * @param string $token password reset token
      * @return static|null
@@ -114,7 +115,7 @@ class Employee extends ActiveRecord implements IdentityInterface
         }
 
         $timestamp = (int) substr($token, strrpos($token, '_') + 1);
-        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
+        $expire = Yii::$app->params['employee.passwordResetTokenExpire'];
         return $timestamp + $expire >= time();
     }
 
@@ -146,7 +147,7 @@ class Employee extends ActiveRecord implements IdentityInterface
      * Validates password
      *
      * @param string $password password to validate
-     * @return boolean if password provided is valid for current user
+     * @return boolean if password provided is valid for current employee
      */
     public function validatePassword($password)
     {

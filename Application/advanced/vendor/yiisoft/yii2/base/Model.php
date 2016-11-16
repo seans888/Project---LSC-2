@@ -964,12 +964,12 @@ class Model extends Component implements IteratorAggregate, ArrayAccess, Arrayab
      * Returns whether there is an element at the specified offset.
      * This method is required by the SPL interface [[\ArrayAccess]].
      * It is implicitly called when you use something like `isset($model[$offset])`.
-     * @param mixed $offset the offset to check on.
-     * @return boolean whether or not an offset exists.
+     * @param mixed $offset the offset to check on
+     * @return boolean
      */
     public function offsetExists($offset)
     {
-        return isset($this->$offset);
+        return $this->$offset !== null;
     }
 
     /**

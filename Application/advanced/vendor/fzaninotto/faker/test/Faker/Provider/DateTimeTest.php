@@ -6,18 +6,6 @@ use Faker\Provider\DateTime as DateTimeProvider;
 
 class DateTimeTest extends \PHPUnit_Framework_TestCase
 {
-    public function setUp()
-    {
-        $this->originalTz = date_default_timezone_get();
-        $this->defaultTz = 'UTC';
-        date_default_timezone_set($this->defaultTz);
-    }
-
-    public function tearDown()
-    {
-        date_default_timezone_set($this->originalTz);
-    }
-
     public function testUnixTime()
     {
         $timestamp = DateTimeProvider::unixTime();
@@ -32,13 +20,6 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('@0'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
-    }
-
-    public function testDateTimeWithTimezone()
-    {
-        $date = DateTimeProvider::dateTime('now', 'America/New_York');
-        $this->assertEquals($date->getTimezone(), new \DateTimeZone('America/New_York'));
     }
 
     public function testDateTimeAD()
@@ -47,7 +28,6 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime('0000-01-01 00:00:00'), $date);
         $this->assertLessThanOrEqual(new \DateTime(), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function testIso8601()
@@ -82,7 +62,6 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\DateTime', $date);
         $this->assertGreaterThanOrEqual(new \DateTime($start), $date);
         $this->assertLessThanOrEqual(new \DateTime($end), $date);
-        $this->assertEquals(new \DateTimeZone($this->defaultTz), $date->getTimezone());
     }
 
     public function providerDateTimeBetween()
@@ -92,35 +71,6 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase
             array('-1 year', null),
             array('-1 day', '-1 hour'),
             array('-1 day', 'now'),
-        );
-    }
-
-    /**
-     *
-     * @dataProvider providerDateTimeInInterval
-     */
-    public function testDateTimeInInterval($start, $interval = "+5 days", $isInFuture)
-    {
-        $date = DateTimeProvider::dateTimeInInterval($start, $interval);
-        $this->assertInstanceOf('\DateTime', $date);
-        
-        $_interval = \DateInterval::createFromDateString($interval);
-        $_start = new \DateTime($start);
-        if ($isInFuture) {
-            $this->assertGreaterThanOrEqual($_start, $date);
-            $this->assertLessThanOrEqual($_start->add($_interval), $date);
-        } else {
-            $this->assertLessThanOrEqual($_start, $date);
-            $this->assertGreaterThanOrEqual($_start->add($_interval), $date);
-        }
-    }
-
-    public function providerDateTimeInInterval()
-    {
-        return array(
-            array('-1 year', '+5 days', true),
-            array('-1 day', '-1 hour', false),
-            array('-1 day', '+1 hour', true),
         );
     }
 

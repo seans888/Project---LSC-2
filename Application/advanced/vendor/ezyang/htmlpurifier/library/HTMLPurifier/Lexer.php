@@ -345,17 +345,12 @@ class HTMLPurifier_Lexer
     public function extractBody($html)
     {
         $matches = array();
-        $result = preg_match('|(.*?)<body[^>]*>(.*)</body>|is', $html, $matches);
+        $result = preg_match('!<body[^>]*>(.*)</body>!is', $html, $matches);
         if ($result) {
-            // Make sure it's not in a comment
-            $comment_start = strrpos($matches[1], '<!--');
-            $comment_end   = strrpos($matches[1], '-->');
-            if ($comment_start === false ||
-                ($comment_end !== false && $comment_end > $comment_start)) {
-                return $matches[2];
-            }
+            return $matches[1];
+        } else {
+            return $html;
         }
-        return $html;
     }
 }
 

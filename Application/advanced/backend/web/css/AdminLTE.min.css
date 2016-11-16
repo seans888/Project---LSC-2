@@ -3451,11 +3451,11 @@ table.text-center, table.text-center td, table.text-center th {
     background: #fff;
     padding: 20px;
     border-top: 0;
-    color: #666
+    color: #666;
 }
 
 .login-box-body .form-control-feedback, .register-box-body .form-control-feedback {
-    color: #777
+    color: black;
 }
 
 .login-box-msg, .register-box-msg {

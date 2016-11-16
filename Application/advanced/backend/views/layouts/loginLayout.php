@@ -23,23 +23,24 @@ LoginAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body class="login-page">
-    <?php $this->beginBody() ?>
-    <div class="wrap">
-        <div class="container">
-            <?= Alert::widget() ?>
-            <?= $content ?>
-        </div>
+<?php $this->beginBody() ?>
+
+<div class="wrap">
+    <div class="container">
+        <?= Alert::widget() ?>
+        <?= $content ?>
     </div>
+</div>
 
-    <!--<footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; Loyola Student Center <?/*= date('Y') */?></p>
+<!--<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; My Company <?/*= date('Y') */?></p>
 
-            <p class="pull-right"><?/*= Yii::powered() */?></p>
-        </div>
-    </footer>-->
+        <p class="pull-right"><?/*= Yii::powered() */?></p>
+    </div>
+</footer>-->
 
-    <?php $this->endBody() ?>
+<?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

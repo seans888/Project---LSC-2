@@ -13,15 +13,22 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css',
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+        'css/bootsrtap2.css',
+        'css/font-awesome.min.css',
+        'css/flexslider.css',
+        'style.css',
+        'http://fonts.googleapis.com/css?family=Open+Sans:400,700,300',
     ];
     public $js = [
+        'js/jquery-1.10.2.js',
+        'js/bootstrap.js',
+        'js/jquery.flexslider.js',
+        'js/scrollReveal.js',
+        'js/jquery.easing.min.js',
+        'js/custom.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
-	
-
 }
