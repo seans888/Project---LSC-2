@@ -49,13 +49,25 @@ AppAsset::register($this);
 
         <div class="navbar-collapse collapse move-me">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#home">HOME</a></li>
-
+                
+				<?php if
+                (Yii::$app->user->isGuest){
+                    echo
+                        '<li><a href="'.Url::to(['site/signup']).'">SIGN UP </a></li>'
+						
+                    ;} ?>
+					
+					<?php if
+                (Yii::$app->user->isGuest){
+                    echo
+                        '<li><a href="'.Url::to(['site/login']).'">SIGN IN </a></li>'
+						
+                    ;} ?>
                 <?php if
                 (!Yii::$app->user->isGuest){
                     echo
-                        '<li><a href="'.Url::to(['site/logout']).'">Logout ('.Yii::$app->user->identity->username.')</a></li>'
-
+                        '<li><a href="'.Url::to(['site/logout']).'">LOGOUT ('.Yii::$app->user->identity->username.')</a></li>'
+						
                     ;} ?>
             </ul>
         </div>

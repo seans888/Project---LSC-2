@@ -81,7 +81,12 @@ class SignupForm extends Model
     public function signup()
     {
         if (!$this->validate()) {
-            $user = new User();
+           
+			return null;
+
+        }
+
+         $user = new User();
             $user->username = $this->username;
             $user->email = $this->email;
             $user->setPassword($this->password);
@@ -105,17 +110,6 @@ class SignupForm extends Model
             $user->guardian_contact_number = $this->guardian_contact_number;
             $user->date_of_registration = $this->date_of_registration;
 
-
-            //rbac
-            $auth = Yii::$app->authManager;
-            $authorRole = $auth->getRole('user');
-            $auth->assign($authorRole, $user->getId());
-
             return $user->save() ? $user : null;
-
-
-        }
-
-        return null;
     }
 }
