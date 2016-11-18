@@ -9,9 +9,9 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Login';
 ?>
-<link href="css/site.css" rel="stylesheet" />
 
-<div class="site-login">
+
+<div class="site-login"><br/>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to login:</p>
