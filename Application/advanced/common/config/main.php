@@ -7,4 +7,14 @@ return [
         ],
     ],
 
+    'modules' => [
+        'courses' => [
+            'class' => 'common\modules\courses\Course',
+        ],
+
+        'tasks' => [
+            'class' => 'common\modules\tasks\Quiz',
+        ],
+    ],
+
 ];

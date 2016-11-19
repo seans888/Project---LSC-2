@@ -20,6 +20,7 @@ DashboardAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
 </head>
 
 <body class="skin-blue sidebar-mini">
@@ -84,7 +85,7 @@ DashboardAsset::register($this);
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="http://localhost/advanced/backend/web/index.php?r=employee/employee" class="btn btn-default btn-flat">Profile</a>
                                 </div>
 
                                 <?php if
