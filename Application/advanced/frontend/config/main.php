@@ -32,8 +32,7 @@ return [
         ],
 
         'authManager' => [
-            'class' => 'yii\rbac\PhpManager',
-            'defaultRoles' => ['admin', 'tutor', 'user'],
+            'class' => 'yii\rbac\DbManager',
         ],
 
         'log' => [

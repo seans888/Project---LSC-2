@@ -26,7 +26,7 @@ return [
         ],
 
         'authManager' => [
-            'class' => 'yii\rbac\PhpManager',
+            'class' => 'yii\rbac\DbManager',
         ],
 
 
