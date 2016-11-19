@@ -1,14 +1,21 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: johan
+ * Date: 19/11/2016
+ * Time: 8:53 PM
+ */
+
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\user\models\User */
+/* @var $model backend\modules\employee\models\Employee */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="user-form">
+<div class="employee-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

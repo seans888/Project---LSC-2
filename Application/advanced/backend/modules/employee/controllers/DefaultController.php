@@ -1,11 +1,11 @@
 <?php
 
-namespace common\modules\user\controllers;
+namespace backend\modules\employee\controllers;
 
 use yii\web\Controller;
 
 /**
- * Default controller for the `user` module
+ * Default controller for the `employee` module
  */
 class DefaultController extends Controller
 {

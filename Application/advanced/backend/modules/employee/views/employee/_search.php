@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\user\models\UserSearch */
+/* @var $model backend\modules\employee\models\EmployeeSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="user-search">
+<div class="employee-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -27,27 +27,17 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'email') ?>
 
-    <?php // echo $form->field($model, 'created_at') ?>
-
     <?php // echo $form->field($model, 'status') ?>
 
+    <?php // echo $form->field($model, 'created_at') ?>
+
     <?php // echo $form->field($model, 'updated_at') ?>
-
-    <?php // echo $form->field($model, 'status_student') ?>
-
-    <?php // echo $form->field($model, 'number_of_hours') ?>
-
-    <?php // echo $form->field($model, 'review_class') ?>
 
     <?php // echo $form->field($model, 'first_name') ?>
 
     <?php // echo $form->field($model, 'middle_name') ?>
 
-    <?php // echo $form->field($model, 'guardian_email_address') ?>
-
     <?php // echo $form->field($model, 'last_name') ?>
-
-    <?php // echo $form->field($model, 'nickname') ?>
 
     <?php // echo $form->field($model, 'gender') ?>
 
@@ -55,19 +45,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'contact_number') ?>
 
-    <?php // echo $form->field($model, 'home_address') ?>
+    <?php // echo $form->field($model, 'home_add') ?>
 
-    <?php // echo $form->field($model, 'school') ?>
-
-    <?php // echo $form->field($model, 'school_address') ?>
-
-    <?php // echo $form->field($model, 'guardian_name') ?>
-
-    <?php // echo $form->field($model, 'relation') ?>
-
-    <?php // echo $form->field($model, 'guardian_contact_number') ?>
-
-    <?php // echo $form->field($model, 'date_of_registration') ?>
+    <?php // echo $form->field($model, 'employee_type') ?>
 
     <?php // echo $form->field($model, 'image') ?>
 

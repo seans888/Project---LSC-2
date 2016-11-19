@@ -4,18 +4,19 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\modules\user\models\User */
+/* @var $model backend\modules\employee\models\Employee */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-view">
+<div class="employee-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update your image', ['update-image', 'id' => $model->id], ['class' => 'btn btn-info']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -34,27 +35,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'password_hash',
             'password_reset_token',
             'email:email',
-            'created_at',
             'status',
+            'created_at',
             'updated_at',
-            'status_student',
-            'number_of_hours',
-            'review_class',
             'first_name',
             'middle_name',
-            'guardian_email_address:email',
             'last_name',
-            'nickname',
             'gender',
             'age',
             'contact_number',
-            'home_address',
-            'school',
-            'school_address',
-            'guardian_name',
-            'relation',
-            'guardian_contact_number',
-            'date_of_registration',
+            'home_add',
+            'employee_type',
             'image',
         ],
     ]) ?>

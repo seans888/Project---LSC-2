@@ -81,8 +81,6 @@ class EmployeeSignupForm extends Model
         $user->home_add = $this->home_add;
         $user->employee_type = $this->employee_type;
 
-
-
         return $user->save() ? $user : null;
 
 

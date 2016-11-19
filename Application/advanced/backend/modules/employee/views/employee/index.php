@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\modules\user\models\UserSearch */
+/* @var $searchModel backend\modules\employee\models\EmployeeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = 'Employees';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index">
+<div class="employee-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Employee', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -30,27 +30,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'password_hash',
             'password_reset_token',
             // 'email:email',
-            // 'created_at',
             // 'status',
+            // 'created_at',
             // 'updated_at',
-            // 'status_student',
-            // 'number_of_hours',
-            // 'review_class',
             // 'first_name',
             // 'middle_name',
-            // 'guardian_email_address:email',
             // 'last_name',
-            // 'nickname',
             // 'gender',
             // 'age',
             // 'contact_number',
-            // 'home_address',
-            // 'school',
-            // 'school_address',
-            // 'guardian_name',
-            // 'relation',
-            // 'guardian_contact_number',
-            // 'date_of_registration',
+            // 'home_add',
+            // 'employee_type',
             // 'image',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -1,16 +1,16 @@
 <?php
 
-namespace common\modules\user\models;
+namespace backend\modules\employee\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\modules\user\models\User;
+use backend\modules\employee\models\Employee;
 
 /**
- * UserSearch represents the model behind the search form about `common\modules\user\models\User`.
+ * EmployeeSearch represents the model behind the search form about `backend\modules\employee\models\Employee`.
  */
-class UserSearch extends User
+class EmployeeSearch extends Employee
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class UserSearch extends User
     public function rules()
     {
         return [
-            [['id', 'created_at', 'status', 'updated_at', 'number_of_hours'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'status_student', 'review_class', 'first_name', 'middle_name', 'guardian_email_address', 'last_name', 'nickname', 'gender', 'age', 'contact_number', 'home_address', 'school', 'school_address', 'guardian_name', 'relation', 'guardian_contact_number', 'date_of_registration'], 'safe'],
-            [['image'], 'safe', 'on' => 'update-image'],
+            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'first_name', 'middle_name', 'last_name', 'gender', 'age', 'contact_number', 'home_add', 'employee_type', 'image'], 'safe'],
         ];
     }
 
@@ -29,10 +28,8 @@ class UserSearch extends User
      */
     public function scenarios()
     {
-        $scenarios = parent::scenarios();
         // bypass scenarios() implementation in the parent class
-        $scenarios['update-image'] = ['image'];
-        return $scenarios;
+        return Model::scenarios();
     }
 
     /**
@@ -44,7 +41,7 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find();
+        $query = Employee::find();
 
         // add conditions that should always apply here
 
@@ -63,11 +60,9 @@ class UserSearch extends User
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
             'status' => $this->status,
+            'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'number_of_hours' => $this->number_of_hours,
-            'date_of_registration' => $this->date_of_registration,
         ]);
 
         $query->andFilterWhere(['like', 'username', $this->username])
@@ -75,22 +70,14 @@ class UserSearch extends User
             ->andFilterWhere(['like', 'password_hash', $this->password_hash])
             ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
             ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'status_student', $this->status_student])
-            ->andFilterWhere(['like', 'review_class', $this->review_class])
             ->andFilterWhere(['like', 'first_name', $this->first_name])
             ->andFilterWhere(['like', 'middle_name', $this->middle_name])
-            ->andFilterWhere(['like', 'guardian_email_address', $this->guardian_email_address])
             ->andFilterWhere(['like', 'last_name', $this->last_name])
-            ->andFilterWhere(['like', 'nickname', $this->nickname])
             ->andFilterWhere(['like', 'gender', $this->gender])
             ->andFilterWhere(['like', 'age', $this->age])
             ->andFilterWhere(['like', 'contact_number', $this->contact_number])
-            ->andFilterWhere(['like', 'home_address', $this->home_address])
-            ->andFilterWhere(['like', 'school', $this->school])
-            ->andFilterWhere(['like', 'school_address', $this->school_address])
-            ->andFilterWhere(['like', 'guardian_name', $this->guardian_name])
-            ->andFilterWhere(['like', 'relation', $this->relation])
-            ->andFilterWhere(['like', 'guardian_contact_number', $this->guardian_contact_number])
+            ->andFilterWhere(['like', 'home_add', $this->home_add])
+            ->andFilterWhere(['like', 'employee_type', $this->employee_type])
             ->andFilterWhere(['like', 'image', $this->image]);
 
         return $dataProvider;

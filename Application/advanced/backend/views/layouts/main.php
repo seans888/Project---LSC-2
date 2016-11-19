@@ -62,7 +62,7 @@ DashboardAsset::register($this);
                             <img src="img/johanna.jpg" class="user-image" alt="User Image">
                             <?php
                                 echo
-                                '<span class="hidden-xs">'.Yii::$app->user->identity->first_name.' '.Yii::$app->user->identity->last_name.'</span>'
+                                '<span class="hidden-xs">'.Yii::$app->user->identity->first_name.' '.Yii::$app->user->identity->last_name.'</span>';
                             ?>
 
 
