@@ -31,6 +31,7 @@ class SignupForm extends Model
     public $relation;
     public $guardian_contact_number;
     public $date_of_registration;
+    public $image;
 
     /**
      * @inheritdoc
@@ -70,6 +71,7 @@ class SignupForm extends Model
             ['relation', 'required'],
             ['guardian_contact_number', 'required'],
             ['date_of_registration', 'required'],
+            ['image', 'required'],
         ];
     }
 
@@ -109,6 +111,7 @@ class SignupForm extends Model
             $user->relation = $this->relation;
             $user->guardian_contact_number = $this->guardian_contact_number;
             $user->date_of_registration = $this->date_of_registration;
+            $user->image = $this->image;
 
             return $user->save() ? $user : null;
     }

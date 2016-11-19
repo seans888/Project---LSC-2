@@ -25,6 +25,7 @@ return [
             'class' => 'yii\rbac\PhpManager',
         ],
 
+
         'session' => [
             'name' => 'PHPBACKSESSID',
             'savePath' => sys_get_temp_dir(),

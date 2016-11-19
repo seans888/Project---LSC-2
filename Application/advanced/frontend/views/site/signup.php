@@ -94,6 +94,8 @@ $this->title = 'Signup';
 
             <?= $form->field($model, 'date_of_registration') ?>
 
+            <?= $form->field($model, 'image') ?>
+
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>

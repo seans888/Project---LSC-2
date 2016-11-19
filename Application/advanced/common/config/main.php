@@ -5,5 +5,15 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+
+
     ],
+
+    'modules' => [
+        'user' => [
+            'class' => 'common\modules\user\User',
+        ],
+    ],
+
+
 ];
