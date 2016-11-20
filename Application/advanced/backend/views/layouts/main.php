@@ -60,15 +60,11 @@ DashboardAsset::register($this);
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-
                             <img src="img/johanna.jpg" class="user-image" alt="User Image">
                             <?php
                                 echo
                                 '<span class="hidden-xs">'.Yii::$app->user->identity->first_name.' '.Yii::$app->user->identity->last_name.'</span>';
                             ?>
-
-
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->

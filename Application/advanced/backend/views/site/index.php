@@ -7,7 +7,7 @@ $this->title = 'My Yii Application';
 <div class="site-index">
 
     <div class="jumbotron"><br><br>
-        <img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" width="170" height="100"/>
+        <img src="img/lsc.png" width="170" height="100"/>
         <hr width="50%">
         <h1>Welcome!</h1>
 

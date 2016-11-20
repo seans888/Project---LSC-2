@@ -17,11 +17,12 @@ $this->title = 'Home';
                         <!--LOGO-->
                         <div class="span3">
                             <a class="brand" href="#">
-                                <img src="http://i1044.photobucket.com/albums/b444/jgtadeo/Loyola-Student-Center%201_zpsbbvbqnsv.png" width="100" height="60"/>
+                                <img src="img/lsc.png" width="150" height="80"/>
                             </a>
                         </div><br>
                         LOYOLA STUDENT CENTER<br/>
                         <i class="fa fa-mortar-board fa-lg"></i>  Learning Management System  <i class="fa fa-mortar-board fa-lg"></i> </h2>
+                        <hr color="black">
                 </div>
             </div>
         </div>

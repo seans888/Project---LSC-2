@@ -57,6 +57,8 @@ class EmployeeController extends Controller
         ]);
     }
 
+
+
     /**
      * Creates a new Employee model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -99,25 +101,19 @@ class EmployeeController extends Controller
         $model = $this->findModel($id);
         $model->scenario = 'update-image';
 
-        if ($model->load(Yii::$app->request->post())) {
-
-            //get instance of image
-            $image = UploadedFile::getInstance($model, 'image');
-
-            //get the image name
-            $model->image = $image->baseName.'.'.$image->extension;
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $image = UploadedFile::getInstance($model, 'image'); //get instance of image
+            $model->image = $image->baseName.'.'.$image->extension; //get the image name
 
             //go through the validation rules and IF ok, THEN save
-            if($model->save()){
-                //upload image
-                $image->saveAs('uploads/'.$model->image);
-
-                //redirect to the view (details) page
-                return $this->redirect(['view', 'id' => $model->id]);
+            if($model->save())
+            {
+                $image->saveAs('uploads/'.$model->image); //upload image
+                return $this->redirect(['view', 'id' => $model->id]);//redirect to the view (details) page
             }
-
-
-        } else {
+        } else
+        {
             return $this->render('update-image', [
                 'model' => $model,
             ]);
