@@ -42,8 +42,10 @@ class Employee extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
     public function rules()
     {
+
         return [
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['first_name', 'last_name', 'gender', 'age', 'home_add'], 'required'],
@@ -53,7 +55,8 @@ class Employee extends \yii\db\ActiveRecord
             [['first_name', 'middle_name', 'last_name', 'contact_number'], 'string', 'max' => 30],
             [['age'], 'string', 'max' => 3],
             [['created_at'], 'unique'],
-            [['image'], 'required', 'on' => 'update-image'],
+            [['image'], 'safe', 'on' => 'update-image'],
+            [['image'], 'file', 'extensions' => 'png, jpg, gif, jpeg'] //validator for image - file for image
         ];
     }
 
@@ -70,10 +73,10 @@ class Employee extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'username' => 'Username',
-            'auth_key' => 'Auth Key',
+            'auth_key' => 'Authentication Key',
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',
-            'email' => 'Email',
+            'email' => 'Your email',
             'status' => 'Status',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -83,9 +86,9 @@ class Employee extends \yii\db\ActiveRecord
             'gender' => 'Gender',
             'age' => 'Age',
             'contact_number' => 'Contact Number',
-            'home_add' => 'Home Add',
+            'home_add' => 'Home Address',
             'employee_type' => 'Employee Type',
-            'image' => 'Image',
+            'image' => 'Profile Picture',
         ];
     }
 

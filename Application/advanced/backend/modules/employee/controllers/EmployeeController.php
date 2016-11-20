@@ -8,6 +8,7 @@ use backend\modules\employee\models\EmployeeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * EmployeeController implements the CRUD actions for Employee model.
@@ -98,8 +99,24 @@ class EmployeeController extends Controller
         $model = $this->findModel($id);
         $model->scenario = 'update-image';
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            //get instance of image
+            $image = UploadedFile::getInstance($model, 'image');
+
+            //get the image name
+            $model->image = $image->baseName.'.'.$image->extension;
+
+            //go through the validation rules and IF ok, THEN save
+            if($model->save()){
+                //upload image
+                $image->saveAs('uploads/'.$model->image);
+
+                //redirect to the view (details) page
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+
+
         } else {
             return $this->render('update-image', [
                 'model' => $model,
