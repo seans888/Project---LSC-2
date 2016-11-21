@@ -28,12 +28,9 @@ DashboardAsset::register($this);
 
 <div class="wrapper">
     <header class="main-header">
-        <!-- Logo -->
-        <a href="index.php" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>LSC</b></span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>LSC</b> LMS</span>
+        <a href="index.php" class="logo">  <!-- Logo -->
+            <span class="logo-mini"><b>LSC</b></span> <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-lg"><b>LSC</b> LMS</span> <!-- logo for regular state and mobile devices -->
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -44,8 +41,6 @@ DashboardAsset::register($this);
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-
-
                     <!-- Tasks: style can be found in dropdown.less -->
                     <!--<li class="dropdown tasks-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -53,9 +48,6 @@ DashboardAsset::register($this);
                             <span class="label label-danger">9</span>
                         </a>
                     </li>-->
-
-
-
 
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
@@ -70,24 +62,17 @@ DashboardAsset::register($this);
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="img/johanna.jpg" class="img-circle" alt="User Image">
-
                                 <?php echo
                                 '<p>'.Yii::$app->user->identity->first_name.' '.Yii::$app->user->identity->last_name.'
                                 <small>'.Yii::$app->user->identity->email.'</small>
-                                </p>'
-                                ?>
-
+                                </p>' ?>
                             </li>
-                            <!-- Menu Body -->
-
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
                                     <a href="http://localhost/advanced/backend/web/index.php?r=employee/employee" class="btn btn-default btn-flat">Profile</a>
                                 </div>
-
-                                <?php if
-                                (!Yii::$app->user->isGuest){
+                                <?php if (!Yii::$app->user->isGuest){
                                     echo
                                         '<div class="pull-right">
                                             <a href="'.Url::to(['site/logout']).'" class="btn btn-default"> 
@@ -96,7 +81,6 @@ DashboardAsset::register($this);
                             </li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
         </nav>
@@ -115,7 +99,6 @@ DashboardAsset::register($this);
                     <?php echo
                         '<p>'.Yii::$app->user->identity->first_name.' '.Yii::$app->user->identity->last_name.'</p>'
                     ?>
-
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -124,17 +107,14 @@ DashboardAsset::register($this);
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="Search...">
                     <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                    </span>
                 </div>
             </form>
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
-
-
                 <li>
                     <a href="index.php?r=student">
                         <i class="fa fa-users"></i> <span>Students</span>
@@ -143,7 +123,6 @@ DashboardAsset::register($this);
                         </span>-->
                     </a>
                 </li>
-
                 <li>
                     <a href="index.php?r=employee">
                         <i class="fa fa-users"></i> <span>Employees</span>
@@ -152,7 +131,6 @@ DashboardAsset::register($this);
                         </span>-->
                     </a>
                 </li>
-
                 <li>
                     <a href="index.php?r=ann-calendar">
                         <i class="fa fa-calendar-check-o"></i> <span>Calendar</span>
@@ -161,7 +139,6 @@ DashboardAsset::register($this);
                         </span>-->
                     </a>
                 </li>
-
                 <li>
                     <a href="index.php?r=course">
                         <i class="fa fa-book"></i> <span>Courses</span>
@@ -170,7 +147,6 @@ DashboardAsset::register($this);
                         </span>-->
                     </a>
                 </li>
-
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -179,26 +155,18 @@ DashboardAsset::register($this);
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <!--<h1>
-                Dashboard
-                <small>Control panel</small>
-            </h1>-->
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <!--<li class="active">Dashboard</li>-->
             </ol>
         </section>
-
         <!-- Main content -->
         <section class="content">
             <?= Alert::widget() ?>
             <?= $content ?>
         </section>
     </div>
-
-
 </div>
-
 
 <?php $this->endBody() ?>
 </body>

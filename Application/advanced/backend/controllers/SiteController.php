@@ -88,6 +88,7 @@ class SiteController extends Controller
         }
     }
 
+    //for session time out
     public function beforeAction($action)
     {
         if(!parent::beforeAction($action)){
@@ -185,7 +186,4 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
-
-
 }
