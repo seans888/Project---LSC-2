@@ -14,7 +14,11 @@ return [
     'modules' => [
         'employee' => [
             'class' => 'backend\modules\employee\Employee',
-        ]
+        ],
+
+        /*'quiz' => [
+            'class' => 'backend\modules\quiz\Quiz',
+        ],*/
     ],
     'components' => [
         'user' => [
