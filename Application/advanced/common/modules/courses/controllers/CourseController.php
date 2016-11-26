@@ -10,10 +10,11 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CourseController implements the CRUD actions for Course model.
+ * Default controller for the `courses` module
  */
 class CourseController extends Controller
 {
+
     /**
      * @inheritdoc
      */
@@ -27,6 +28,15 @@ class CourseController extends Controller
                 ],
             ],
         ];
+    }
+
+    /**
+     * Renders the index view for the module
+     * @return string
+     */
+    public function actionIndex2()
+    {
+        return $this->render('index2');
     }
 
     /**
@@ -125,4 +135,6 @@ class CourseController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
 }

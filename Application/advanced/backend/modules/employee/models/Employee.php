@@ -3,6 +3,7 @@
 namespace backend\modules\employee\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "employee".
@@ -29,7 +30,7 @@ use Yii;
  * @property AnnCalendar[] $annCalendars
  * @property Course[] $courses
  */
-class Employee extends \yii\db\ActiveRecord
+class Employee extends ActiveRecord
 {
     /**
      * @inheritdoc

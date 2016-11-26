@@ -18,9 +18,9 @@ class EmployeeController extends Controller
     /**
      * @inheritdoc
      */
-    public function behaviors()
-    {
+    public function behaviors(){
         return [
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -31,11 +31,19 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Lists all Employee models.
+     * Renders the index view for the module
+     * @return string
+     */
+    public function actionIndex2()
+    {
+        return $this->render('index2');
+    }
+
+    /**
+     * List all employee tables
      * @return mixed
      */
-    public function actionIndex()
-    {
+    public function actionIndex(){
         $searchModel = new EmployeeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -50,22 +58,18 @@ class EmployeeController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
-    {
+    public function actionView($id){
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
-
-
 
     /**
      * Creates a new Employee model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
+    public function actionCreate(){
         $model = new Employee();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

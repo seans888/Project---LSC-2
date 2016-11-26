@@ -10,10 +10,11 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TaskController implements the CRUD actions for Task model.
+ * Default controller for the `tasks` module
  */
 class TaskController extends Controller
 {
+
     /**
      * @inheritdoc
      */
@@ -27,6 +28,14 @@ class TaskController extends Controller
                 ],
             ],
         ];
+    }
+    /**
+     * Renders the index view for the module
+     * @return string
+     */
+    public function actionIndex2()
+    {
+        return $this->render('index2');
     }
 
     /**

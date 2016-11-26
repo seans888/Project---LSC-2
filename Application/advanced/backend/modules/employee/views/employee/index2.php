@@ -1,4 +1,12 @@
-<div class="tasks-default-index">
+<?php
+
+/* @var $this yii\web\View */
+
+$this->title = 'employee';
+?>
+
+<div class="employee-default-index">
+
     <h1><?= $this->context->action->uniqueId ?></h1>
     <p>
         This is the view content for action "<?= $this->context->action->id ?>".

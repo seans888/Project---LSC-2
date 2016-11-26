@@ -15,7 +15,7 @@ return [
         ],
 
         'tasks' => [
-            'class' => 'common\modules\tasks\Quiz',
+            'class' => 'common\modules\tasks\Task',
         ],
     ],
 

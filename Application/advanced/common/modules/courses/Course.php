@@ -1,11 +1,12 @@
 <?php
 
 namespace common\modules\courses;
+use yii\base\Module;
 
 /**
  * courses module definition class
  */
-class Course extends \yii\base\Module
+class Course extends Module
 {
     /**
      * @inheritdoc
@@ -20,5 +21,6 @@ class Course extends \yii\base\Module
         parent::init();
 
         // custom initialization code goes here
+
     }
 }

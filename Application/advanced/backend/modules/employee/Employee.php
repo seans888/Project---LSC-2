@@ -1,11 +1,12 @@
 <?php
 
 namespace backend\modules\employee;
+use yii\base\Module;
 
 /**
  * employee module definition class
  */
-class Employee extends \yii\base\Module
+class Employee extends Module
 {
     /**
      * @inheritdoc

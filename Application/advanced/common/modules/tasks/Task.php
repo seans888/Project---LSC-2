@@ -1,11 +1,12 @@
 <?php
 
 namespace common\modules\tasks;
+use yii\base\Module;
 
 /**
  * tasks module definition class
  */
-class Quiz extends \yii\base\Module
+class Task extends Module
 {
     /**
      * @inheritdoc
