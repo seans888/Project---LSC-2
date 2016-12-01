@@ -10383,3 +10383,125 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1480257508.74
     'REQUEST_TIME' => 1480257508
 ]
+2016-12-02 00:48:22 [::1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php:600
+Stack trace:
+#0 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(600): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(542): yii\db\Connection->createPdoInstance()
+#2 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(861): yii\db\Connection->open()
+#3 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(848): yii\db\Connection->getMasterPdo()
+#4 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#5 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(894): yii\db\Command->prepare('<span class="ke...')
+#6 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\mysql\Schema.php(348): yii\db\Command->queryColumn()
+#8 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php(231): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#9 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\generators\model\Generator.php(158): yii\db\Schema->getTableNames()
+#10 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#11 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\components\ActiveField.php(41): call_user_func(Object(Closure))
+#12 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Object.php(107): yii\gii\components\ActiveField->init()
+#13 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#14 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#15 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#16 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#17 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\widgets\ActiveForm.php(293): yii\BaseYii::createObject('[<span class="s...')
+#18 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\generators\model\form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#19 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\Users\\Jana M...')
+#20 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#21 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\views\default\view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#22 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\Users\\Jana M...')
+#23 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#24 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#25 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#26 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\controllers\DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#27 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#28 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#29 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#30 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#31 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#32 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#33 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\backend\web\index.php(18): yii\base\Application->run()
+#34 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php:547
+Stack trace:
+#0 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(861): yii\db\Connection->open()
+#1 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Connection.php(848): yii\db\Connection->getMasterPdo()
+#2 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(219): yii\db\Connection->getSlavePdo()
+#3 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(894): yii\db\Command->prepare('<span class="ke...')
+#4 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Command.php(405): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#5 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\mysql\Schema.php(348): yii\db\Command->queryColumn()
+#6 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\db\Schema.php(231): yii\db\mysql\Schema->findTableNames('<span class="st...')
+#7 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\generators\model\Generator.php(158): yii\db\Schema->getTableNames()
+#8 [internal function]: yii\gii\generators\model\Generator->yii\gii\generators\model\{closure}()
+#9 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\components\ActiveField.php(41): call_user_func(Object(Closure))
+#10 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Object.php(107): yii\gii\components\ActiveField->init()
+#11 [internal function]: yii\base\Object->__construct('[<span class="s...')
+#12 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(374): ReflectionClass->newInstanceArgs('[[<span class="...')
+#13 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(153): yii\di\Container->build('<span class="st...', '[]', '[<span class="s...')
+#14 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('<span class="st...', '[]', '[<span class="s...')
+#15 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\widgets\ActiveForm.php(293): yii\BaseYii::createObject('[<span class="s...')
+#16 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\generators\model\form.php(9): yii\widgets\ActiveForm->field(Object(yii\gii\generators\model\Generator), '<span class="st...')
+#17 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\Users\\Jana M...')
+#18 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#19 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\views\default\view.php(38): yii\base\View->renderFile('<span class="st...', '[<span class="s...')
+#20 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(325): require('C:\\Users\\Jana M...')
+#21 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('<span class="st...', '[<span class="s...')
+#22 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#23 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('<span class="st...', '[<span class="s...', Object(yii\gii\controllers\DefaultController))
+#24 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2-gii\controllers\DefaultController.php(61): yii\base\Controller->render('<span class="st...', '[<span class="s...')
+#25 [internal function]: yii\gii\controllers\DefaultController->actionView('<span class="st...')
+#26 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array('[<span class="t...', '[<span class="s...')
+#27 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams('[<span class="s...')
+#28 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#29 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#30 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#31 C:\Users\Jana Marie Gardon\Desktop\Project---LSC-2\Application\advanced\backend\web\index.php(18): yii\base\Application->run()
+#32 {main}
+Additional Information:
+
+2016-12-02 00:48:22 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'PATH' => 'C:\\oraclexe\\app\\oracle\\product\\10.2.0\\server\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Intel\\iCLS Client\\;C:\\Program Files\\Intel\\iCLS Client\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;c:\\Program Files\\Intel\\IntelSGXPSW\\bin\\x64\\Release\\;c:\\Program Files\\Intel\\IntelSGXPSW\\bin\\win32\\Release\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\htdocs\\advanced;C:\\Program Files\\CloudFoundry;C:\\xampp\\php;C:\\xampp\\php'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/backend/web/index.php'
+    'REMOTE_PORT' => '61862'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_URI' => '/advanced/backend/web/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'SCRIPT_NAME' => '/advanced/backend/web/index.php'
+    'PHP_SELF' => '/advanced/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1480636101.994
+    'REQUEST_TIME' => 1480636101
+]
