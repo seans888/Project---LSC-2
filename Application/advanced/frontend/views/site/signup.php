@@ -24,17 +24,6 @@ $this->title = 'Signup';
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
 
-            <?= $form->field($model, 'status_student')->dropDownList(
-                [
-                    'Reserved' => 'Reserved',
-                    'Enrolled' => 'Enrolled',
-                    'Cancelled' => 'Cancelled',
-                    'Done' => 'Done'
-                ],
-                ['prompt' => 'Select status here']) ?>
-
-            <?= $form->field($model, 'number_of_hours') ?>
-
             <?= $form->field($model, 'review_class')->dropDownList(
                 [
                     'Senior High / College Entrance Review' => 'Senior High / College Entrance Review',
@@ -49,11 +38,7 @@ $this->title = 'Signup';
 
             <?= $form->field($model, 'middle_name') ?>
 
-            <?= $form->field($model, 'guardian_email_address') ?>
-
             <?= $form->field($model, 'last_name') ?>
-
-            <?= $form->field($model, 'nickname') ?>
 
             <?= $form->field($model, 'gender')->dropDownList(
                 [
@@ -63,36 +48,9 @@ $this->title = 'Signup';
                 ],
                 ['prompt' => 'Select your gender']) ?>
 
-            <?= $form->field($model, 'age') ?>
-
             <?= $form->field($model, 'contact_number') ?>
 
             <?= $form->field($model, 'home_address') ?>
-
-            <?= $form->field($model, 'school') ?>
-
-            <?= $form->field($model, 'school_address') ?>
-
-            <?= $form->field($model, 'guardian_name') ?>
-
-            <?= $form->field($model, 'relation')->dropDownList(
-                [
-                    'Mother' => 'Mother',
-                    'Father' => 'Father',
-                    'Sister' => 'Sister',
-                    'Brother' => 'Brother',
-                    'Auntie' => 'Auntie',
-                    'Uncle' => 'Uncle',
-                    'Lolo' => 'Lolo',
-                    'Lola' => 'Lola',
-                    'Others' => 'Others',
-
-                ],
-                ['prompt' => 'Select the relationship with your guardian']) ?>
-
-            <?= $form->field($model, 'guardian_contact_number') ?>
-
-            <?= $form->field($model, 'date_of_registration') ?>
 
             <?= $form->field($model, 'image') ?>
 
