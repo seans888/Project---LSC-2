@@ -50,7 +50,7 @@ class SignupForm extends Model
             ['gender', 'required'],
             ['contact_number', 'required'],
             ['home_address', 'required'],
-            ['image', 'required'],
+            ['image', 'image'],
         ];
     }
 
