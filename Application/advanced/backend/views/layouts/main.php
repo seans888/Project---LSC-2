@@ -70,7 +70,7 @@ DashboardAsset::register($this);
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="http://localhost/advanced/backend/web/index.php?r=employee/employee" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="http://localhost/advanced/backend/web/index.php?r=employee/employee/index2" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <?php if (!Yii::$app->user->isGuest){
                                     echo
