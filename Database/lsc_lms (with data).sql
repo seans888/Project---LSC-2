@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2016 at 01:40 AM
+-- Generation Time: Dec 02, 2016 at 12:03 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -54,10 +54,23 @@ CREATE TABLE `attendance` (
 --
 
 CREATE TABLE `auth_assignment` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `auth_item_name` varchar(64) NOT NULL,
-  `created_at` date DEFAULT NULL
+  `created_at` timestamp(6) NULL DEFAULT NULL,
+  `employee_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `auth_assignment`
+--
+
+INSERT INTO `auth_assignment` (`user_id`, `auth_item_name`, `created_at`, `employee_id`) VALUES
+(1, 'student', NULL, NULL),
+(2, 'student', NULL, NULL),
+(3, 'student', NULL, NULL),
+(NULL, 'admin', NULL, 1),
+(NULL, 'instructor', NULL, 2),
+(NULL, 'instructor', NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -82,13 +95,18 @@ CREATE TABLE `auth_item` (
 INSERT INTO `auth_item` (`name`, `type`, `description`, `data`, `created_at`, `updated_at`, `auth_rule_name`) VALUES
 ('add-course', '2', NULL, NULL, NULL, NULL, NULL),
 ('add-task', '2', NULL, NULL, NULL, NULL, NULL),
-('admin', '1', 'This is the group for admin', NULL, NULL, NULL, NULL),
-('student', '1', 'This is the group for student', NULL, NULL, NULL, NULL),
-('tutor', '1', 'This is the group for tutor', NULL, NULL, NULL, NULL),
+('admin', '1', 'Group for ADMINS', NULL, NULL, NULL, NULL),
+('delete-course', '2', NULL, NULL, NULL, NULL, NULL),
+('delete-student', '2', NULL, NULL, NULL, NULL, NULL),
+('delete-task', '2', NULL, NULL, NULL, NULL, NULL),
+('instructor', '1', 'Group for INSTRUCTORS', NULL, NULL, NULL, NULL),
+('student', '1', 'Group for STUDENTS', NULL, NULL, NULL, NULL),
+('take-task', '2', NULL, NULL, NULL, NULL, NULL),
 ('update-course', '2', NULL, NULL, NULL, NULL, NULL),
 ('update-student', '2', NULL, NULL, NULL, NULL, NULL),
 ('update-task', '2', NULL, NULL, NULL, NULL, NULL),
 ('view-course', '2', NULL, NULL, NULL, NULL, NULL),
+('view-grade', '2', NULL, NULL, NULL, NULL, NULL),
 ('view-student', '2', NULL, NULL, NULL, NULL, NULL),
 ('view-task', '2', NULL, NULL, NULL, NULL, NULL);
 
@@ -102,6 +120,28 @@ CREATE TABLE `auth_item_child` (
   `auth_item_name` varchar(64) NOT NULL,
   `auth_item_name1` varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `auth_item_child`
+--
+
+INSERT INTO `auth_item_child` (`auth_item_name`, `auth_item_name1`) VALUES
+('instructor', 'add-course'),
+('instructor', 'add-task'),
+('instructor', 'delete-course'),
+('instructor', 'delete-task'),
+('instructor', 'update-course'),
+('instructor', 'update-task'),
+('instructor', 'view-course'),
+('instructor', 'view-grade'),
+('instructor', 'view-student'),
+('instructor', 'view-task'),
+('student', 'take-task'),
+('student', 'update-student'),
+('student', 'view-course'),
+('student', 'view-grade'),
+('student', 'view-student'),
+('student', 'view-task');
 
 -- --------------------------------------------------------
 
@@ -188,7 +228,9 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `first_name`, `middle_name`, `last_name`, `gender`, `age`, `contact_number`, `home_add`, `employee_type`, `image`) VALUES
-(1, 'jcheramia', 'QvwfE9iaEADrS1xww50gMcb_CaycLfW6', '$2y$13$TADY82JYet7lNW85QtrIieZY.XTVo4zWTyyUrMQEJcaveqiABgBmy', NULL, 'jcheramia@student.apc.edu.ph', 10, 1480638677, 1480638677, 'Johanna Marisse', 'Credito', 'Heramia', 'Female', '18', '092615223128', 'P 53 - 20 12th 15th St., Villamor Air Base Pasay, City', 'Tutor', NULL);
+(1, 'jcheramia', 'OIhTdMfQVcUNZwcjnICLyo0R3c9pdbLs', '$2y$13$qLvmL/cXYgap2YmlWZ6Pvep4uwKErB3Cjkom4EyWHU60ejaSQk.FS', NULL, 'jcheramia@student.apc.edu.ph', 10, 1480675786, 1480675786, 'Johanna Marisse', 'Credito', 'Heramia', 'Female', '19', '09261523128', 'P 53 - 20 12th 15th St., Villamor Air Base Pasay, City', 'Admin', NULL),
+(2, 'jggardon', 'S26n8F2xCCvf1x_zUJt13uhrzOueeNdg', '$2y$13$cw4CA2.crQLzbKGXJhy5/ez2Jtwcnv.S0mB/E0B2KLQcSJlk1dxWC', NULL, 'jggardon@student.apc.edu.ph', 10, 1480675867, 1480675867, 'Jana Marie', 'Gavarra', 'Gardon', 'Female', '18', '09064902062', 'Mb 16 Unit 507 BCDA Silang Village, USUSAN, Taguig City', 'Tutor', NULL),
+(3, 'jgtadeo', 'TFjQKLXiU0zFo-QxY_j7xH82MpKoqyhn', '$2y$13$wcEoEwJuZG43HgDuuUjyF.i1MumolCd/3EROtk9rqocrrbg8lC/Ju', NULL, 'jgtadeo@yahoo.com', 10, 1480675903, 1480675903, 'Jose Lorenzo', 'Gonzales', 'Tadeo', 'Male', '19', '09354811320', '8291  B. Dapitan ST., Guadalupe Nuevo, Makati City', 'Tutor', NULL);
 
 -- --------------------------------------------------------
 
@@ -299,7 +341,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `created_at`, `status`, `updated_at`, `review_class`, `first_name`, `middle_name`, `last_name`, `gender`, `contact_number`, `home_address`, `image`) VALUES
-(1, 'jggardon', 'f1winGoyyfoN111_dyDa4yH-dnCzDsDb', '$2y$13$bn.oxg1WTTR49WKMglVbGOEotXhdwQ1T8hyW2pidjc4vkQfDfjAUm', NULL, 'jggardon@student.apc.edu.ph', 1480638744, 10, 1480638744, 'Senior High / College Entrance Review', 'Jana Marie', 'Gavarra', 'Gardon', 'Female', '09261523128', 'Taguig City', '');
+(1, 'jcheramia', 'v9SCwzFBXpb0YAdYKRpOVQnFjRW6OKvl', '$2y$13$8mnY7S5d9TnD6n.PRk0HUODuS8jKztuYfATdtuXrwUPlVIgZOPNpK', NULL, 'jcheramia@student.apc.edu.ph', 1480675689, 10, 1480675689, 'Senior High / College Entrance Review', 'Johanna Marisse', 'Credito', 'Heramia', 'Female', '09261523128', 'P 53 - 20 12th 15th St., Villamor Air Base, Pasay City', ''),
+(2, 'jggardon', 'vItdpiBtsXqvEVwS2feDWI3EgREtJaHd', '$2y$13$zdi.3jdLN0z6I/VH0jRF8uoEx49XvBMhz.euBIdUtzXUxpQO2XYgW', NULL, 'jggardon@student.apc.edu.ph', 1480675717, 10, 1480675717, 'High School Entrance Test / Science High School Review', 'Jana Marie', 'Gavarra', 'Gardon', 'Female', '09061234567', 'Mb 16 Unit 507 BCDA Silang Village, USUSAN, Taguig City', ''),
+(3, 'jgtadeo', 'hToCY1nEdo1pN3HWXnNJmm7sPeUFe43l', '$2y$13$ymL8ywbWHm.bF1Fhx3HlPOIsUnoIkudELydUVOQjzj9wEDZsG.QC.', NULL, 'jgtadeo@student.apc.edu.ph', 1480675745, 10, 1480675745, 'National Medical Admission Test Review', 'Jose Lorenzo', 'Gonzales', 'Tadeo', 'Female', '09354811320', 'Guadalupe Makati City', '');
 
 --
 -- Indexes for dumped tables
@@ -324,8 +368,9 @@ ALTER TABLE `attendance`
 -- Indexes for table `auth_assignment`
 --
 ALTER TABLE `auth_assignment`
-  ADD PRIMARY KEY (`user_id`,`auth_item_name`),
-  ADD KEY `fk_auth_assignment_auth_item1_idx` (`auth_item_name`);
+  ADD KEY `fk_auth_assignment_auth_item1_idx` (`auth_item_name`),
+  ADD KEY `fk_auth_assignment_employee1_idx` (`employee_id`),
+  ADD KEY `fk_auth_assignment_user1` (`user_id`);
 
 --
 -- Indexes for table `auth_item`
@@ -443,7 +488,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `question`
 --
@@ -468,7 +513,7 @@ ALTER TABLE `task`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -492,6 +537,7 @@ ALTER TABLE `attendance`
 --
 ALTER TABLE `auth_assignment`
   ADD CONSTRAINT `fk_auth_assignment_auth_item1` FOREIGN KEY (`auth_item_name`) REFERENCES `auth_item` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_auth_assignment_employee1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_auth_assignment_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
