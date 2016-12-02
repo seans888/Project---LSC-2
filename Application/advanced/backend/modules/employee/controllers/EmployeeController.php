@@ -152,4 +152,10 @@ class EmployeeController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+	
+	public function actionLogout()
+	{
+		Yii::$app->user->logout();
+		return $this->goHome();
+	}
 }

@@ -75,7 +75,7 @@ DashboardAsset::register($this);
                                 <?php if (!Yii::$app->user->isGuest){
                                     echo
                                         '<div class="pull-right">
-                                            <a href="'.Url::to(['site/logout']).'" class="btn btn-default"> 
+                                            <a href="'.Url::to(['employee/logout']).'" class="btn btn-default"> 
                                             Logout ('. Yii::$app->user->identity->username . ') </a>
                                         </div>'; }?>
                             </li>
