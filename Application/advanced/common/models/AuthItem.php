@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "auth_item".
@@ -15,15 +16,14 @@ use Yii;
  * @property string $updated_at
  * @property string $auth_rule_name
  *
- * @property AuthAssignment[] $authAssignments
- * @property User[] $users
+ * @property AuthAssignment $authAssignment
  * @property AuthRule $authRuleName
  * @property AuthItemChild[] $authItemChildren
  * @property AuthItemChild[] $authItemChildren0
  * @property AuthItem[] $authItemName1s
  * @property AuthItem[] $authItemNames
  */
-class AuthItem extends \yii\db\ActiveRecord
+class AuthItem extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -67,17 +67,9 @@ class AuthItem extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthAssignments()
+    public function getAuthAssignment()
     {
-        return $this->hasMany(AuthAssignment::className(), ['auth_item_name' => 'name']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsers()
-    {
-        return $this->hasMany(User::className(), ['id' => 'user_id'])->viaTable('auth_assignment', ['auth_item_name' => 'name']);
+        return $this->hasOne(AuthAssignment::className(), ['auth_item_name' => 'name']);
     }
 
     /**

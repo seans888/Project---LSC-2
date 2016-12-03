@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use common\models\Employee;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;

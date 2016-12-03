@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "task".
@@ -25,7 +26,7 @@ use Yii;
  * @property Question[] $questions
  * @property Course $course
  */
-class Task extends \yii\db\ActiveRecord
+class Task extends ActiveRecord
 {
     /**
      * @inheritdoc
