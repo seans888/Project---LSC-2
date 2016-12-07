@@ -21,16 +21,7 @@ class TaskController extends Controller
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['logout', 'index2', 'index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

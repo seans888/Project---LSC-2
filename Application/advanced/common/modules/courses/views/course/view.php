@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
     <p>
-        <?= Html::a('Create Task', ['create', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Create Task', ['/courses/tasks/task/create/'], ['class' => 'btn btn-primary']) ?>
 
     </p>
 </div>
