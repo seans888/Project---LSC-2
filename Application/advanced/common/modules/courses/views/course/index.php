@@ -8,15 +8,17 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Courses';
-$this->params['breadcrumbs'][] = $this->title;
-?>
+?><br>
 <div class="course-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Course', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+        if(Yii::$app->user->can('add-course')){
+            echo Html::a('Create Course', ['create'], ['class' => 'btn btn-success']);
+        } ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

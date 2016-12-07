@@ -117,7 +117,7 @@ DashboardAsset::register($this);
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
                     <a href="index.php?r=user">
-                        <i class="fa fa-users"></i> <span>Students</span>
+                        <i class="fa fa-users"></i> <span>Manage Students</span>
                         <!--<span class="pull-right-container">
                             <small class="label pull-right bg-green">View</small>
                         </span>-->
@@ -125,7 +125,7 @@ DashboardAsset::register($this);
                 </li>
                 <li>
                     <a href="index.php?r=employee/employee">
-                        <i class="fa fa-users"></i> <span>Employees</span>
+                        <i class="fa fa-users"></i> <span>Manage Employees</span>
                         <!--<span class="pull-right-container">
                             <small class="label pull-right bg-green">View</small>
                         </span>-->
@@ -133,7 +133,7 @@ DashboardAsset::register($this);
                 </li>
                 <li>
                     <a href="index.php?r=courses/course">
-                        <i class="fa fa-book"></i> <span>Courses</span>
+                        <i class="fa fa-book"></i> <span>Manage Courses</span>
                         <!--<span class="pull-right-container">
                             <small class="label pull-right bg-green">View</small>
                         </span>-->

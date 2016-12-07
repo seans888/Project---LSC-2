@@ -51,7 +51,7 @@ $this->title = 'Home';
                     </section>
                     <!--COURSE-->
                     <section class="module col-md-3 col-sm-6">
-                        <a href="course.php"style="text-decoration: none;">
+                        <a href="index.php?r=courses/course"style="text-decoration: none;">
                             <i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:37px" ></i>
                             <div class="module-content">
                                 <div class="module-header"></div>
