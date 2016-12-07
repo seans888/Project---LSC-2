@@ -14,8 +14,7 @@ $this->title = 'Signup';
 
     <p>Please fill out the following fields to signup:</p>
 
-    <div class="row">
-        <div class="col-lg-5">
+
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
@@ -24,41 +23,30 @@ $this->title = 'Signup';
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
 
-            <?= $form->field($model, 'review_class')->dropDownList(
-                [
-                    'Senior High / College Entrance Review' => 'Senior High / College Entrance Review',
-                    'High School Entrance Test / Science High School Review' => 'High School Entrance Test / Science High School Review',
-                    'National Medical Admission Test Review' => 'National Medical Admission Test Review',
-                    'Law Aptitude Exam / Law School Admission Test Review' => 'Law Aptitude Exam / Law School Admission Test Review',
-                    'Civil Service Exam Review' => 'Civil Service Exam Review'
-                ],
-                ['prompt' => 'Select review class']) ?>
+                <?= $form->field($model, 'first_name') ?>
 
-            <?= $form->field($model, 'first_name') ?>
+                <?= $form->field($model, 'middle_name') ?>
 
-            <?= $form->field($model, 'middle_name') ?>
+                <?= $form->field($model, 'last_name') ?>
 
-            <?= $form->field($model, 'last_name') ?>
+                <?= $form->field($model, 'gender')->dropDownList(
+                    [
+                        'Male' => 'Male',
+                        'Female' => 'Female'
 
-            <?= $form->field($model, 'gender')->dropDownList(
-                [
-                    'Male' => 'Male',
-                    'Female' => 'Female'
+                    ],
+                    ['prompt' => 'Select your gender']) ?>
 
-                ],
-                ['prompt' => 'Select your gender']) ?>
+                <?= $form->field($model, 'contact_number') ?>
 
-            <?= $form->field($model, 'contact_number') ?>
+                <?= $form->field($model, 'home_address') ?>
 
-            <?= $form->field($model, 'home_address') ?>
-
-            <?= $form->field($model, 'image') ?>
+                <?= $form->field($model, 'image') ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>
-        </div>
-    </div>
+
 </div>

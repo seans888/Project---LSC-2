@@ -12,5 +12,5 @@ $this->title = 'employee';
     <h3><b>Last Name:</b> <?php echo Yii::$app->user->identity->last_name ?></h3>
     <h3><b>Email: </b> <?php echo Yii::$app->user->identity->email ?></h3>
     <h3><b>Home address:</b> <?php echo Yii::$app->user->identity->home_address ?></h3>
-    <h3><b>Contact number:</b> </h3>
+    <h3><b>Contact number:</b> <?php echo Yii::$app->user->identity->contact_number ?></h3><center/>
 </div>

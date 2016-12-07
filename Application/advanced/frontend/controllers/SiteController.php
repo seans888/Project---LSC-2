@@ -33,7 +33,7 @@ class SiteController extends Controller
 						'roles' => ['?']
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'profile'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -72,6 +72,12 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+
+    public function actionProfile()
+    {
+
+        return $this->render('profile');
     }
 
     /**

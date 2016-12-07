@@ -75,7 +75,7 @@ DashboardAsset::register($this);
                                 <?php if (!Yii::$app->user->isGuest){
                                     echo
                                         '<div class="pull-right">
-                                            <a href="'.Url::to(['employee/logout']).'" class="btn btn-default"> 
+                                            <a href="'.Url::to(['employee/employee/logout']).'" class="btn btn-default"> 
                                             Logout ('. Yii::$app->user->identity->username . ') </a>
                                         </div>'; }?>
                             </li>
@@ -132,14 +132,6 @@ DashboardAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?r=ann-calendar">
-                        <i class="fa fa-calendar-check-o"></i> <span>Calendar</span>
-                        <!--<span class="pull-right-container">
-                            <small class="label pull-right bg-green">View</small>
-                        </span>-->
-                    </a>
-                </li>
-                <li>
                     <a href="index.php?r=courses/course">
                         <i class="fa fa-book"></i> <span>Courses</span>
                         <!--<span class="pull-right-container">
@@ -156,7 +148,7 @@ DashboardAsset::register($this);
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <!--<li class="active">Dashboard</li>-->
             </ol>
         </section>

@@ -37,7 +37,7 @@ $this->title = 'Home';
                 <section class="module-body container-fluid row col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <!--CALENDAR[-->
                     <section class="module col-md-3 col-sm-6">
-                        <a href="calendar.php">
+                        <a href="calendar.php" style="text-decoration: none;">
                             <i class="fa fa-calendar fa-lg"  style="font-size:50px"></i>
                             <div class="module-content">
                                 <div class="module-header"></div>
@@ -51,7 +51,7 @@ $this->title = 'Home';
                     </section>
                     <!--COURSE-->
                     <section class="module col-md-3 col-sm-6">
-                        <a href="course.php">
+                        <a href="course.php"style="text-decoration: none;">
                             <i class="glyphicon glyphicon-list-alt fa-lg"  style="font-size:37px" ></i>
                             <div class="module-content">
                                 <div class="module-header"></div>
@@ -65,7 +65,7 @@ $this->title = 'Home';
                     </section>
                     <!--GRADES-->
                     <section class="module col-md-3 col-sm-6">
-                        <a href="grades.php">
+                        <a href="grades.php" style="text-decoration: none;">
                             <i class="fa fa-trophy fa-lg" aria-hidden="true" style="font-size:50px"></i>
                             <div class="module-content">
                                 <div class="module-header"></div>
@@ -78,7 +78,7 @@ $this->title = 'Home';
                     </section>
                     <!--ATTENDANCE-->
                     <section class="module col-md-3 col-sm-6">
-                        <a href="attendance.php">
+                        <a href="attendance.php" style="text-decoration: none;" >
                             <i class="fa fa-check-square-o fa-lg"  style="font-size:50px" ></i>
                             <div class="module-content">
                                 <div class="module-header"></div>
