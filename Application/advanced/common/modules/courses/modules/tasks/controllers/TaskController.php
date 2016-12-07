@@ -76,8 +76,11 @@ class TaskController extends Controller
     {
         $model = new Task();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->date_created = date('Y-m-d');
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
+
         } else {
             return $this->render('create', [
                 'model' => $model,

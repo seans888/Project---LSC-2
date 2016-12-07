@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+            //'id',
             'name',
             'course_description',
             'date_created',
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
     <p>
-        <?= Html::a('Create Task', ['/courses/tasks/task/create/'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Go to this course', ['/courses/course/index2'], ['class' => 'btn btn-primary']) ?>
 
     </p>
 </div>
