@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `lsc_lms`.`user` (
   PRIMARY KEY (`id`)  COMMENT '',
   UNIQUE INDEX `id_UNIQUE` (`id` ASC)  COMMENT '')
 ENGINE = InnoDB;
-
+ALTER TABLE user AUTO_INCREMENT = 2016001;
 
 -- -----------------------------------------------------
 -- Table `lsc_lms`.`course`
@@ -353,7 +353,7 @@ CREATE TABLE IF NOT EXISTS `lsc_lms`.`employee` (
   PRIMARY KEY (`id`)  COMMENT '',
   UNIQUE INDEX `id_UNIQUE` (`id` ASC)  COMMENT '')
 ENGINE = InnoDB;
-
+ALTER TABLE employee AUTO_INCREMENT = 2016001;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
