@@ -21,6 +21,5 @@ class Course extends Module
         parent::init();
 
         // custom initialization code goes here
-
     }
 }

@@ -3,7 +3,6 @@
 namespace common\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "course".
@@ -11,16 +10,15 @@ use yii\db\ActiveRecord;
  * @property integer $id
  * @property string $name
  * @property string $course_description
- * @property string $time_created
  * @property string $date_created
- * @property integer $employee_id
+ * @property integer $user_id
  *
  * @property ClassList[] $classLists
  * @property User[] $users
- * @property Employee $employee
+ * @property User $user
  * @property Task[] $tasks
  */
-class Course extends ActiveRecord
+class Course extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -36,12 +34,12 @@ class Course extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'employee_id'], 'required'],
-            [['time_created', 'date_created'], 'safe'],
-            [['employee_id'], 'integer'],
+            [['name', 'user_id'], 'required'],
+            [['date_created'], 'safe'],
+            [['user_id'], 'integer'],
             [['name'], 'string', 'max' => 100],
             [['course_description'], 'string', 'max' => 200],
-            [['employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -54,9 +52,8 @@ class Course extends ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'course_description' => 'Course Description',
-            'time_created' => 'Time Created',
             'date_created' => 'Date Created',
-            'employee_id' => 'Employee ID',
+            'user_id' => 'User ID',
         ];
     }
 
@@ -65,7 +62,7 @@ class Course extends ActiveRecord
      */
     public function getClassLists()
     {
-        return $this->hasMany(ClassList::className(), ['course_id' => 'id', 'course_employee_id' => 'employee_id']);
+        return $this->hasMany(ClassList::className(), ['course_id' => 'id']);
     }
 
     /**
@@ -73,15 +70,15 @@ class Course extends ActiveRecord
      */
     public function getUsers()
     {
-        return $this->hasMany(User::className(), ['id' => 'user_id'])->viaTable('class_list', ['course_id' => 'id', 'course_employee_id' => 'employee_id']);
+        return $this->hasMany(User::className(), ['id' => 'user_id'])->viaTable('class_list', ['course_id' => 'id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getEmployee()
+    public function getUser()
     {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
     /**
@@ -89,6 +86,6 @@ class Course extends ActiveRecord
      */
     public function getTasks()
     {
-        return $this->hasMany(Task::className(), ['course_id' => 'id', 'course_employee_id' => 'employee_id']);
+        return $this->hasMany(Task::className(), ['course_id' => 'id']);
     }
 }

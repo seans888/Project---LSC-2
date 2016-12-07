@@ -3,7 +3,6 @@
 namespace common\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "task".
@@ -12,7 +11,7 @@ use yii\db\ActiveRecord;
  * @property string $title
  * @property string $description
  * @property string $task_type
- * @property string $created
+ * @property string $date_created
  * @property string $time_open
  * @property string $time_close
  * @property string $date_open
@@ -20,13 +19,12 @@ use yii\db\ActiveRecord;
  * @property string $time_remaining
  * @property integer $attempts
  * @property integer $course_id
- * @property integer $course_employee_id
  *
  * @property AnnCalendar[] $annCalendars
  * @property Question[] $questions
  * @property Course $course
  */
-class Task extends ActiveRecord
+class Task extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -42,13 +40,13 @@ class Task extends ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'course_id', 'course_employee_id'], 'required'],
+            [['title', 'course_id'], 'required'],
             [['task_type'], 'string'],
-            [['created', 'time_open', 'time_close', 'date_open', 'date_close', 'time_remaining'], 'safe'],
-            [['attempts', 'course_id', 'course_employee_id'], 'integer'],
+            [['date_created', 'time_open', 'time_close', 'date_open', 'date_close', 'time_remaining'], 'safe'],
+            [['attempts', 'course_id'], 'integer'],
             [['title'], 'string', 'max' => 100],
             [['description'], 'string', 'max' => 150],
-            [['course_id', 'course_employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['course_id' => 'id', 'course_employee_id' => 'employee_id']],
+            [['course_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['course_id' => 'id']],
         ];
     }
 
@@ -62,7 +60,7 @@ class Task extends ActiveRecord
             'title' => 'Title',
             'description' => 'Description',
             'task_type' => 'Task Type',
-            'created' => 'Created',
+            'date_created' => 'Date Created',
             'time_open' => 'Time Open',
             'time_close' => 'Time Close',
             'date_open' => 'Date Open',
@@ -70,7 +68,6 @@ class Task extends ActiveRecord
             'time_remaining' => 'Time Remaining',
             'attempts' => 'Attempts',
             'course_id' => 'Course ID',
-            'course_employee_id' => 'Course Employee ID',
         ];
     }
 
@@ -95,6 +92,6 @@ class Task extends ActiveRecord
      */
     public function getCourse()
     {
-        return $this->hasOne(Course::className(), ['id' => 'course_id', 'employee_id' => 'course_employee_id']);
+        return $this->hasOne(Course::className(), ['id' => 'course_id']);
     }
 }

@@ -16,11 +16,8 @@ class EmployeeSignupForm extends Model
     public $first_name;
     public $middle_name;
     public $last_name;
-    public $gender;
-    public $age;
     public $contact_number;
-    public $home_add;
-    public $employee_type;
+    public $home_address;
 
 
     /**
@@ -46,11 +43,8 @@ class EmployeeSignupForm extends Model
             ['first_name', 'required'],
             ['middle_name', 'required'],
             ['last_name', 'required'],
-            ['gender', 'required'],
-            ['age', 'required'],
             ['contact_number', 'required'],
-            ['home_add', 'required'],
-            ['employee_type', 'required'],
+            ['home_address', 'required'],
 
         ];
     }
@@ -75,11 +69,8 @@ class EmployeeSignupForm extends Model
         $user->first_name = $this->first_name;
         $user->middle_name = $this->middle_name;
         $user->last_name = $this->last_name;
-        $user->gender = $this->gender;
-        $user->age = $this->age;
         $user->contact_number = $this->contact_number;
-        $user->home_add = $this->home_add;
-        $user->employee_type = $this->employee_type;
+        $user->home_address = $this->home_address;
 
         return $user->save() ? $user : null;
 

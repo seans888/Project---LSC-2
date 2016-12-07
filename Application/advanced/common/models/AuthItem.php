@@ -3,27 +3,27 @@
 namespace common\models;
 
 use Yii;
-use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "auth_item".
  *
  * @property string $name
- * @property string $type
+ * @property integer $type
  * @property string $description
  * @property string $data
  * @property string $created_at
  * @property string $updated_at
- * @property string $auth_rule_name
+ * @property string $rule_name
  *
- * @property AuthAssignment $authAssignment
- * @property AuthRule $authRuleName
+ * @property AuthAssignment[] $authAssignments
+ * @property User[] $users
+ * @property AuthRule $ruleName
  * @property AuthItemChild[] $authItemChildren
  * @property AuthItemChild[] $authItemChildren0
- * @property AuthItem[] $authItemName1s
- * @property AuthItem[] $authItemNames
+ * @property AuthItem[] $children
+ * @property AuthItem[] $parents
  */
-class AuthItem extends ActiveRecord
+class AuthItem extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -40,11 +40,11 @@ class AuthItem extends ActiveRecord
     {
         return [
             [['name', 'type'], 'required'],
+            [['type'], 'integer'],
             [['description', 'data'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
-            [['name', 'auth_rule_name'], 'string', 'max' => 64],
-            [['type'], 'string', 'max' => 45],
-            [['auth_rule_name'], 'exist', 'skipOnError' => true, 'targetClass' => AuthRule::className(), 'targetAttribute' => ['auth_rule_name' => 'name']],
+            [['name', 'rule_name'], 'string', 'max' => 64],
+            [['rule_name'], 'exist', 'skipOnError' => true, 'targetClass' => AuthRule::className(), 'targetAttribute' => ['rule_name' => 'name']],
         ];
     }
 
@@ -60,24 +60,32 @@ class AuthItem extends ActiveRecord
             'data' => 'Data',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
-            'auth_rule_name' => 'Auth Rule Name',
+            'rule_name' => 'Rule Name',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthAssignment()
+    public function getAuthAssignments()
     {
-        return $this->hasOne(AuthAssignment::className(), ['auth_item_name' => 'name']);
+        return $this->hasMany(AuthAssignment::className(), ['item_name' => 'name']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthRuleName()
+    public function getUsers()
     {
-        return $this->hasOne(AuthRule::className(), ['name' => 'auth_rule_name']);
+        return $this->hasMany(User::className(), ['id' => 'user_id'])->viaTable('auth_assignment', ['item_name' => 'name']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRuleName()
+    {
+        return $this->hasOne(AuthRule::className(), ['name' => 'rule_name']);
     }
 
     /**
@@ -85,7 +93,7 @@ class AuthItem extends ActiveRecord
      */
     public function getAuthItemChildren()
     {
-        return $this->hasMany(AuthItemChild::className(), ['auth_item_name' => 'name']);
+        return $this->hasMany(AuthItemChild::className(), ['parent' => 'name']);
     }
 
     /**
@@ -93,22 +101,22 @@ class AuthItem extends ActiveRecord
      */
     public function getAuthItemChildren0()
     {
-        return $this->hasMany(AuthItemChild::className(), ['auth_item_name1' => 'name']);
+        return $this->hasMany(AuthItemChild::className(), ['child' => 'name']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthItemName1s()
+    public function getChildren()
     {
-        return $this->hasMany(AuthItem::className(), ['name' => 'auth_item_name1'])->viaTable('auth_item_child', ['auth_item_name' => 'name']);
+        return $this->hasMany(AuthItem::className(), ['name' => 'child'])->viaTable('auth_item_child', ['parent' => 'name']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthItemNames()
+    public function getParents()
     {
-        return $this->hasMany(AuthItem::className(), ['name' => 'auth_item_name'])->viaTable('auth_item_child', ['auth_item_name1' => 'name']);
+        return $this->hasMany(AuthItem::className(), ['name' => 'parent'])->viaTable('auth_item_child', ['child' => 'name']);
     }
 }

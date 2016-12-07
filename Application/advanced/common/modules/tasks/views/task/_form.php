@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'task_type')->dropDownList([ 'Exam' => 'Exam', 'Quiz' => 'Quiz', 'Exercise' => 'Exercise', 'Assignment' => 'Assignment', ], ['prompt' => '']) ?>
 
-    <?= $form->field($model, 'created')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'date_created')->textInput() ?>
 
     <?= $form->field($model, 'time_open')->textInput(['maxlength' => true]) ?>
 
@@ -33,8 +33,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'attempts')->textInput() ?>
 
     <?= $form->field($model, 'course_id')->textInput() ?>
-
-    <?= $form->field($model, 'course_employee_id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

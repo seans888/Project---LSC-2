@@ -20,11 +20,8 @@ use yii\db\ActiveRecord;
  * @property string $first_name
  * @property string $middle_name
  * @property string $last_name
- * @property string $gender
- * @property string $age
  * @property string $contact_number
- * @property string $home_add
- * @property string $employee_type
+ * @property string $home_address
  * @property string $image
  *
  * @property AnnCalendar[] $annCalendars
@@ -50,9 +47,9 @@ class Employee extends ActiveRecord
 
         return [
             [['status', 'created_at', 'updated_at'], 'integer'],
-            [['first_name', 'last_name', 'gender', 'age', 'home_add'], 'required'],
-            [['gender', 'employee_type'], 'string'],
-            [['username', 'password_hash', 'password_reset_token', 'email', 'home_add', 'image'], 'string', 'max' => 255],
+            [['first_name', 'last_name', 'gender', 'age', 'home_address'], 'required'],
+            [['gender'], 'string'],
+            [['username', 'password_hash', 'password_reset_token', 'email', 'home_address', 'image'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['first_name', 'middle_name', 'last_name', 'contact_number'], 'string', 'max' => 30],
             [['age'], 'string', 'max' => 3],
@@ -85,11 +82,8 @@ class Employee extends ActiveRecord
             'first_name' => 'First Name',
             'middle_name' => 'Middle Name',
             'last_name' => 'Last Name',
-            'gender' => 'Gender',
-            'age' => 'Age',
             'contact_number' => 'Contact Number',
-            'home_add' => 'Home Address',
-            'employee_type' => 'Employee Type',
+            'home_address' => 'Home Address',
             'image' => 'Profile Picture',
         ];
     }

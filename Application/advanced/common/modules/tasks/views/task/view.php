@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'description',
             'task_type',
-            'created',
+            'date_created',
             'time_open',
             'time_close',
             'date_open',
@@ -40,7 +40,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'time_remaining',
             'attempts',
             'course_id',
-            'course_employee_id',
         ],
     ]) ?>
 

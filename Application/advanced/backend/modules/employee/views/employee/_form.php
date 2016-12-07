@@ -34,15 +34,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'gender')->dropDownList([ 'Female' => 'Female', 'Male' => 'Male', ], ['prompt' => '']) ?>
-
-    <?= $form->field($model, 'age')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'contact_number')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'home_add')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'employee_type')->dropDownList([ 'Tutor' => 'Tutor', 'Admin' => 'Admin', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'home_address')->textInput(['maxlength' => true]) ?>
 
 
     <div class="form-group">

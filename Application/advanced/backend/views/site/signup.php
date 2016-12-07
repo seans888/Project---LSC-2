@@ -33,27 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?= $form->field($model, 'last_name') ?>
 
-            <?= $form->field($model, 'gender')->dropDownList(
-                [
-                    'Male' => 'Male',
-                    'Female' => 'Female'
-
-                ],
-                ['prompt' => 'Select your gender']) ?>
-
-            <?= $form->field($model, 'age') ?>
-
             <?= $form->field($model, 'contact_number') ?>
 
-            <?= $form->field($model, 'home_add') ?>
+            <?= $form->field($model, 'home_address') ?>
 
-            <?= $form->field($model, 'employee_type')->dropDownList(
-                [
-                    'Tutor' => 'Tutor',
-                    'Admin' => 'Admin'
-
-                ],
-                ['prompt' => 'Select type']) ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>

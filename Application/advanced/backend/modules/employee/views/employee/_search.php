@@ -39,15 +39,9 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'last_name') ?>
 
-    <?php // echo $form->field($model, 'gender') ?>
-
-    <?php // echo $form->field($model, 'age') ?>
-
     <?php // echo $form->field($model, 'contact_number') ?>
 
-    <?php // echo $form->field($model, 'home_add') ?>
-
-    <?php // echo $form->field($model, 'employee_type') ?>
+    <?php // echo $form->field($model, 'home_address') ?>
 
     <?php // echo $form->field($model, 'image') ?>
 

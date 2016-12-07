@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\TaskSearch */
+/* @var $searchModel common\models\ChoiceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Tasks';
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'description',
             'task_type',
-            'created',
+            'date_created',
             // 'time_open',
             // 'time_close',
             // 'date_open',
@@ -36,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'time_remaining',
             // 'attempts',
             // 'course_id',
-            // 'course_employee_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

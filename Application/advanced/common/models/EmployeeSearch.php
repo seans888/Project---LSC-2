@@ -19,7 +19,7 @@ class EmployeeSearch extends Employee
     {
         return [
             [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'first_name', 'middle_name', 'last_name', 'gender', 'age', 'contact_number', 'home_add', 'employee_type', 'image'], 'safe'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'first_name', 'middle_name', 'last_name','contact_number', 'home_address',  'image'], 'safe'],
         ];
     }
 

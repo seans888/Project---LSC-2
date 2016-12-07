@@ -8,12 +8,10 @@ use Yii;
  * This is the model class for table "auth_assignment".
  *
  * @property integer $user_id
- * @property integer $employee_id
- * @property string $auth_item_name
+ * @property string $item_name
  * @property string $created_at
  *
- * @property AuthItem $authItemName
- * @property Employee $employee
+ * @property AuthItem $itemName
  * @property User $user
  */
 class AuthAssignment extends \yii\db\ActiveRecord
@@ -32,12 +30,11 @@ class AuthAssignment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'employee_id'], 'integer'],
-            [['auth_item_name'], 'required'],
+            [['user_id', 'item_name'], 'required'],
+            [['user_id'], 'integer'],
             [['created_at'], 'safe'],
-            [['auth_item_name'], 'string', 'max' => 64],
-            [['auth_item_name'], 'exist', 'skipOnError' => true, 'targetClass' => AuthItem::className(), 'targetAttribute' => ['auth_item_name' => 'name']],
-            [['employee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Employee::className(), 'targetAttribute' => ['employee_id' => 'id']],
+            [['item_name'], 'string', 'max' => 64],
+            [['item_name'], 'exist', 'skipOnError' => true, 'targetClass' => AuthItem::className(), 'targetAttribute' => ['item_name' => 'name']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -49,8 +46,7 @@ class AuthAssignment extends \yii\db\ActiveRecord
     {
         return [
             'user_id' => 'User ID',
-            'employee_id' => 'Employee ID',
-            'auth_item_name' => 'Auth Item Name',
+            'item_name' => 'Item Name',
             'created_at' => 'Created At',
         ];
     }
@@ -58,17 +54,9 @@ class AuthAssignment extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getAuthItemName()
+    public function getItemName()
     {
-        return $this->hasOne(AuthItem::className(), ['name' => 'auth_item_name']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getEmployee()
-    {
-        return $this->hasOne(Employee::className(), ['id' => 'employee_id']);
+        return $this->hasOne(AuthItem::className(), ['name' => 'item_name']);
     }
 
     /**

@@ -19,7 +19,7 @@ class EmployeeSearch extends Employee
     {
         return [
             [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'first_name', 'middle_name', 'last_name', 'gender', 'age', 'contact_number', 'home_add', 'employee_type', 'image'], 'safe'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'first_name', 'middle_name', 'last_name',  'contact_number', 'home_address', 'image'], 'safe'],
         ];
     }
 
@@ -73,11 +73,8 @@ class EmployeeSearch extends Employee
             ->andFilterWhere(['like', 'first_name', $this->first_name])
             ->andFilterWhere(['like', 'middle_name', $this->middle_name])
             ->andFilterWhere(['like', 'last_name', $this->last_name])
-            ->andFilterWhere(['like', 'gender', $this->gender])
-            ->andFilterWhere(['like', 'age', $this->age])
             ->andFilterWhere(['like', 'contact_number', $this->contact_number])
-            ->andFilterWhere(['like', 'home_add', $this->home_add])
-            ->andFilterWhere(['like', 'employee_type', $this->employee_type])
+            ->andFilterWhere(['like', 'home_address', $this->home_address])
             ->andFilterWhere(['like', 'image', $this->image]);
 
         return $dataProvider;

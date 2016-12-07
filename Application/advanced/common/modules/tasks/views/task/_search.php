@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\TaskSearch */
+/* @var $model common\models\ChoiceSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'task_type') ?>
 
-    <?= $form->field($model, 'created') ?>
+    <?= $form->field($model, 'date_created') ?>
 
     <?php // echo $form->field($model, 'time_open') ?>
 
@@ -38,8 +38,6 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'attempts') ?>
 
     <?php // echo $form->field($model, 'course_id') ?>
-
-    <?php // echo $form->field($model, 'course_employee_id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

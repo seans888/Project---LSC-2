@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Course;
+use common\models\Task;
 
 /**
- * CourseSearch represents the model behind the search form about `common\models\Course`.
+ * ChoiceSearch represents the model behind the search form about `common\models\Task`.
  */
-class CourseSearch extends Course
+class ChoiceSearch extends Task
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class CourseSearch extends Course
     public function rules()
     {
         return [
-            [['id', 'user_id'], 'integer'],
-            [['name', 'course_description', 'date_created'], 'safe'],
+            [['id', 'attempts', 'course_id'], 'integer'],
+            [['title', 'description', 'task_type', 'date_created', 'time_open', 'time_close', 'date_open', 'date_close', 'time_remaining'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class CourseSearch extends Course
      */
     public function search($params)
     {
-        $query = Course::find();
+        $query = Task::find();
 
         // add conditions that should always apply here
 
@@ -61,11 +61,18 @@ class CourseSearch extends Course
         $query->andFilterWhere([
             'id' => $this->id,
             'date_created' => $this->date_created,
-            'user_id' => $this->user_id,
+            'time_open' => $this->time_open,
+            'time_close' => $this->time_close,
+            'date_open' => $this->date_open,
+            'date_close' => $this->date_close,
+            'time_remaining' => $this->time_remaining,
+            'attempts' => $this->attempts,
+            'course_id' => $this->course_id,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'course_description', $this->course_description]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'task_type', $this->task_type]);
 
         return $dataProvider;
     }

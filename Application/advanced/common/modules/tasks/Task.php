@@ -1,12 +1,11 @@
 <?php
 
 namespace common\modules\tasks;
-use yii\base\Module;
 
 /**
  * tasks module definition class
  */
-class Task extends Module
+class Task extends \yii\base\Module
 {
     /**
      * @inheritdoc

@@ -116,7 +116,7 @@ DashboardAsset::register($this);
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                    <a href="index.php?r=student">
+                    <a href="index.php?r=user">
                         <i class="fa fa-users"></i> <span>Students</span>
                         <!--<span class="pull-right-container">
                             <small class="label pull-right bg-green">View</small>
@@ -124,7 +124,7 @@ DashboardAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?r=employee">
+                    <a href="index.php?r=employee/employee">
                         <i class="fa fa-users"></i> <span>Employees</span>
                         <!--<span class="pull-right-container">
                             <small class="label pull-right bg-green">View</small>
@@ -140,7 +140,7 @@ DashboardAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="index.php?r=course">
+                    <a href="index.php?r=courses/course">
                         <i class="fa fa-book"></i> <span>Courses</span>
                         <!--<span class="pull-right-container">
                             <small class="label pull-right bg-green">View</small>
