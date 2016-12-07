@@ -18,8 +18,8 @@ class TaskSearch extends Task
     public function rules()
     {
         return [
-            [['id', 'attempts', 'course_id', 'course_employee_id'], 'integer'],
-            [['title', 'description', 'task_type', 'created', 'time_open', 'time_close', 'date_open', 'date_close', 'time_remaining'], 'safe'],
+            [['id', 'attempts', 'course_id'], 'integer'],
+            [['title', 'description', 'task_type', 'date_created', 'time_open', 'time_close', 'date_open', 'date_close', 'time_remaining'], 'safe'],
         ];
     }
 
@@ -60,7 +60,7 @@ class TaskSearch extends Task
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created' => $this->created,
+            'date_created' => $this->date_created,
             'time_open' => $this->time_open,
             'time_close' => $this->time_close,
             'date_open' => $this->date_open,
@@ -68,7 +68,6 @@ class TaskSearch extends Task
             'time_remaining' => $this->time_remaining,
             'attempts' => $this->attempts,
             'course_id' => $this->course_id,
-            'course_employee_id' => $this->course_employee_id,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

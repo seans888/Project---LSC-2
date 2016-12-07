@@ -1,4 +1,4 @@
-<div class="courses-default-index">
+<div class="courses-default-index"><br/><br/>
     <h1><?= $this->context->action->uniqueId ?></h1>
     <p>
         This is the view content for action "<?= $this->context->action->id ?>".

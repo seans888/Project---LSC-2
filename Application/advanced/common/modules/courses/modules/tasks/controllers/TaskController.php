@@ -1,18 +1,17 @@
 <?php
 
-namespace common\modules\tasks\controllers;
+namespace common\modules\courses\modules\tasks\controllers;
 
 use Yii;
 use common\models\Task;
-use common\models\ChoiceSearch;
+use common\models\TaskSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-
 /**
- * Task controller for the `tasks` module
- * TaskController implements the CRUD actions for Task model.
+ * Default controller for the `tasks` module
  */
 class TaskController extends Controller
 {
@@ -22,6 +21,16 @@ class TaskController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['logout', 'index2', 'index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -30,14 +39,6 @@ class TaskController extends Controller
             ],
         ];
     }
-    /**
-     * Renders the index view for the module
-     * @return string
-     */
-    public function actionIndex2()
-    {
-        return $this->render('index2');
-    }
 
     /**
      * Lists all Task models.
@@ -45,13 +46,22 @@ class TaskController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ChoiceSearch();
+        $searchModel = new TaskSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    /**
+     * Renders the index view for the module
+     * @return string
+     */
+    public function actionIndex2()
+    {
+        return $this->render('index2');
     }
 
     /**
@@ -131,4 +141,12 @@ class TaskController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->goHome();
+    }
+
+
 }

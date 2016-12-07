@@ -10,7 +10,7 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Courses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="course-view">
+<div class="course-view"><br><br/>
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -36,4 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
+    <p>
+        <?= Html::a('Create Task', ['create', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+
+    </p>
 </div>

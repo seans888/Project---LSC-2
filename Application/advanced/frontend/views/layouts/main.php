@@ -44,7 +44,7 @@ AppAsset::register($this);
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img class="logo-custom" src="img/lsc.png" alt="" /></a>
+            <a class="navbar-brand" href="index.php"><img class="logo-custom" src="img/lsc.png" alt="" /></a>
         </div>
 
         <div class="navbar-collapse collapse move-me">
@@ -70,7 +70,7 @@ AppAsset::register($this);
                 <?php if
                 (!Yii::$app->user->isGuest){
                     echo
-                        '<li><a href="'.Url::to(['site/logout']).'">LOGOUT ('.Yii::$app->user->identity->username.')</a></li>'
+                        '<li><a href="'.Url::to(['/site/logout']).'">LOGOUT ('.Yii::$app->user->identity->username.')</a></li>'
 						
                     ;} ?>
             </ul>

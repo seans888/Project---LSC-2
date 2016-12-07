@@ -14,11 +14,11 @@ return [
     'modules' => [
         'courses' => [
             'class' => 'common\modules\courses\Course',
-        ],
-
-        'tasks' => [
-            'class' => 'common\modules\tasks\Task',
+                'modules' => [
+                    'tasks' => [
+                        'class' => 'common\modules\courses\modules\tasks\Task'
+                    ]
+                ]
         ],
     ],
-
 ];
