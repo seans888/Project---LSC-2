@@ -6332,3 +6332,800 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1481102303.018
     'REQUEST_TIME' => 1481102303
 ]
+2016-12-10 20:07:32 [::1][2016001][n56gg5391brs61tqcafm557qg3][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The 'gridview' module MUST be setup in your Yii configuration file and must be an instance of 'kartik\grid\Module'.' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\kartik-v\yii2-krajee-base\Config.php:260
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\kartik-v\yii2-grid\GridView.php(927): kartik\base\Config::initModule('kartik\\grid\\Mod...')
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Object.php(107): kartik\grid\GridView->init()
+#2 [internal function]: yii\base\Object->__construct(Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(379): ReflectionClass->newInstanceArgs(Array)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(154): yii\di\Container->build('kartik\\grid\\Gri...', Array, Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('kartik\\grid\\Gri...', Array, Array)
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Widget.php(101): yii\BaseYii::createObject(Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\views\course\index.php(52): yii\base\Widget::widget(Array)
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\controllers\CourseController))
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(common\modules\courses\controllers\CourseController))
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\controllers\CourseController.php(54): yii\base\Controller->render('index', Array)
+#13 [internal function]: common\modules\courses\controllers\CourseController->actionIndex()
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#17 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/course', Array)
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#20 {main}
+2016-12-10 20:07:31 [::1][2016001][n56gg5391brs61tqcafm557qg3][info][application] $_GET = [
+    'r' => 'courses/course'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'n56gg5391brs61tqcafm557qg3'
+    '_frontendUser' => 'd7a645980eaf3986f268014514cbfabfcd4bf70ea7ee5109dbbd0ad1efaad8a8a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016001,\"HOemqsXQN0szGxlb_oxVy2615M8Nkavz\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'userSessionTimeout' => 1481399271
+    '__id' => 2016001
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=n56gg5391brs61tqcafm557qg3; _frontendUser=d7a645980eaf3986f268014514cbfabfcd4bf70ea7ee5109dbbd0ad1efaad8a8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016001%2C%22HOemqsXQN0szGxlb_oxVy2615M8Nkavz%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '64130'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses/course'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses/course'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481396851.881
+    'REQUEST_TIME' => 1481396851
+]
+2016-12-10 20:10:01 [::1][2016001][n56gg5391brs61tqcafm557qg3][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The class '\kartik\mpdf\Pdf' was not found and is required for PDF export functionality. To include PDF export, follow the install steps below. If you do not need PDF export functionality, do not include 'PDF' as a format in the 'export' property. You can otherwise set 'export' to 'false' to disable all export functionality.
+
+Please ensure you have installed the 'yii2-mpdf' extension. To install, you can run this console command from your application root:
+
+php composer.phar require kartik-v/yii2-mpdf: "@dev"' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\kartik-v\yii2-krajee-base\Config.php:121
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\kartik-v\yii2-grid\GridView.php(960): kartik\base\Config::checkDependency('mpdf\\Pdf', 'yii2-mpdf', 'for PDF export ...')
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Widget.php(102): kartik\grid\GridView->run()
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\views\course\index.php(52): yii\base\Widget::widget(Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\controllers\CourseController))
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(common\modules\courses\controllers\CourseController))
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\controllers\CourseController.php(54): yii\base\Controller->render('index', Array)
+#8 [internal function]: common\modules\courses\controllers\CourseController->actionIndex()
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/course', Array)
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#15 {main}
+2016-12-10 20:09:58 [::1][2016001][n56gg5391brs61tqcafm557qg3][info][application] $_GET = [
+    'r' => 'courses/course'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'n56gg5391brs61tqcafm557qg3'
+    '_frontendUser' => 'd7a645980eaf3986f268014514cbfabfcd4bf70ea7ee5109dbbd0ad1efaad8a8a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016001,\"HOemqsXQN0szGxlb_oxVy2615M8Nkavz\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'userSessionTimeout' => 1481399271
+    '__id' => 2016001
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=n56gg5391brs61tqcafm557qg3; _frontendUser=d7a645980eaf3986f268014514cbfabfcd4bf70ea7ee5109dbbd0ad1efaad8a8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016001%2C%22HOemqsXQN0szGxlb_oxVy2615M8Nkavz%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '64215'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses/course'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses/course'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481396998.323
+    'REQUEST_TIME' => 1481396998
+]
+2016-12-10 20:53:16 [::1][2016001][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "courses/tasks/index".' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php:462
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/i...', Array)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-12-10 20:53:16 [::1][2016001][-][info][application] $_GET = [
+    'r' => 'courses/tasks/index'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'n56gg5391brs61tqcafm557qg3'
+    '_frontendUser' => 'd7a645980eaf3986f268014514cbfabfcd4bf70ea7ee5109dbbd0ad1efaad8a8a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016001,\"HOemqsXQN0szGxlb_oxVy2615M8Nkavz\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'userSessionTimeout' => 1481399271
+    '__id' => 2016001
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=n56gg5391brs61tqcafm557qg3; _frontendUser=d7a645980eaf3986f268014514cbfabfcd4bf70ea7ee5109dbbd0ad1efaad8a8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016001%2C%22HOemqsXQN0szGxlb_oxVy2615M8Nkavz%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '49562'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses/tasks/index'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses/tasks/index'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481399596.286
+    'REQUEST_TIME' => 1481399596
+]
+2016-12-10 21:19:54 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php:57
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php(57): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\Users\\johan\\...', 57, Array)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, NULL)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\create.php(20): yii\base\View->render('_form', Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('create', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\controllers\QuestionController.php(76): yii\base\Controller->render('create', Array)
+#10 [internal function]: common\modules\courses\modules\tasks\controllers\QuestionController->actionCreate()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('create', Array)
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/q...', Array)
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2016-12-10 21:19:54 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=courses/tasks/question'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '50560'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481401194.409
+    'REQUEST_TIME' => 1481401194
+]
+2016-12-10 21:20:13 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php:57
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php(57): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\Users\\johan\\...', 57, Array)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, NULL)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\create.php(20): yii\base\View->render('_form', Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('create', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\controllers\QuestionController.php(76): yii\base\Controller->render('create', Array)
+#10 [internal function]: common\modules\courses\modules\tasks\controllers\QuestionController->actionCreate()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('create', Array)
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/q...', Array)
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2016-12-10 21:20:13 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=courses/tasks/question'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '50597'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481401213.033
+    'REQUEST_TIME' => 1481401213
+]
+2016-12-10 21:21:30 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php:57
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php(57): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\Users\\johan\\...', 57, Array)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, NULL)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\create.php(20): yii\base\View->render('_form', Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('create', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\controllers\QuestionController.php(76): yii\base\Controller->render('create', Array)
+#10 [internal function]: common\modules\courses\modules\tasks\controllers\QuestionController->actionCreate()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('create', Array)
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/q...', Array)
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2016-12-10 21:21:30 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=courses/tasks/question'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '50643'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481401290.155
+    'REQUEST_TIME' => 1481401290
+]
+2016-12-10 21:21:48 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Trying to get property of non-object' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php:57
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php(57): yii\base\ErrorHandler->handleError(8, 'Trying to get p...', 'C:\\Users\\johan\\...', 57, Array)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, NULL)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\create.php(20): yii\base\View->render('_form', Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('create', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\controllers\QuestionController.php(76): yii\base\Controller->render('create', Array)
+#10 [internal function]: common\modules\courses\modules\tasks\controllers\QuestionController->actionCreate()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('create', Array)
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/q...', Array)
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2016-12-10 21:21:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=courses/tasks/question'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '50655'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481401307.899
+    'REQUEST_TIME' => 1481401307
+]
+2016-12-10 21:25:06 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function getActiveValidators() on array' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\helpers\BaseHtml.php:1265
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-12-10 21:25:06 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    'ci_session' => '49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=courses/tasks/question'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; ci_session=49e6f38e6dbe61c079aa3f45b38a1ccf7fdef75a; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '50765'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481401506.609
+    'REQUEST_TIME' => 1481401506
+]
+2016-12-10 21:33:07 [::1][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Setting unknown property: yii\widgets\ActiveForm::formId' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Component.php:197
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\BaseYii.php(521): yii\base\Component->__set('formId', 'dynamic-form')
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Object.php(105): yii\BaseYii::configure(Object(yii\widgets\ActiveForm), Array)
+#2 [internal function]: yii\base\Object->__construct(Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(379): ReflectionClass->newInstanceArgs(Array)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\di\Container.php(154): yii\di\Container->build('yii\\widgets\\Act...', Array, Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\BaseYii.php(344): yii\di\Container->get('yii\\widgets\\Act...', Array, Array)
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Widget.php(59): yii\BaseYii::createObject(Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php(14): yii\base\Widget::begin(Array)
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#10 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, NULL)
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\create.php(20): yii\base\View->render('_form', Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('create', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#16 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\controllers\QuestionController.php(76): yii\base\Controller->render('create', Array)
+#17 [internal function]: common\modules\courses\modules\tasks\controllers\QuestionController->actionCreate()
+#18 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#20 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('create', Array)
+#21 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/q...', Array)
+#22 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#24 {main}
+2016-12-10 21:33:07 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_POST = [
+    '_frontendCSRF' => 'MkVUOUIxMG8fPDsLGFp1Dn8jEUx2Wm8eewY5TDdFZiMfHTFdDGFnGA=='
+    'Question' => [
+        'ask' => ''
+        'image' => ''
+        'task_id' => ''
+    ]
+    'Choice' => [
+        0 => [
+            'choose' => ''
+            'is_correct' => ''
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '195'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://localhost/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '51084'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481401987.122
+    'REQUEST_TIME' => 1481401987
+]
+2016-12-10 21:34:23 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined offset: 1' in C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php:34
+Stack trace:
+#0 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\_form.php(34): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', 'C:\\Users\\johan\\...', 34, Array)
+#1 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#2 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#3 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, NULL)
+#4 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\views\question\create.php(20): yii\base\View->render('_form', Array)
+#5 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(326): require('C:\\Users\\johan\\...')
+#6 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(248): yii\base\View->renderPhpFile('C:\\Users\\johan\\...', Array)
+#7 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\View.php(150): yii\base\View->renderFile('C:\\Users\\johan\\...', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#8 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('create', Array, Object(common\modules\courses\modules\tasks\controllers\QuestionController))
+#9 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\common\modules\courses\modules\tasks\controllers\QuestionController.php(76): yii\base\Controller->render('create', Array)
+#10 [internal function]: common\modules\courses\modules\tasks\controllers\QuestionController->actionCreate()
+#11 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('create', Array)
+#14 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('courses/tasks/q...', Array)
+#15 C:\Users\johan\Desktop\Project---LSC-2\Application\advanced\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 c:\Users\johan\Desktop\Project---LSC-2\Application\advanced\frontend\web\index.php(18): yii\base\Application->run()
+#17 {main}
+2016-12-10 21:34:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'courses/tasks/question/create'
+]
+
+$_COOKIE = [
+    '_frontendCSRF' => '7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a:2:{i:0;s:13:\"_frontendCSRF\";i:1;s:32:\"-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw\";}'
+    '_backendCSRF' => '4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba:2:{i:0;s:12:\"_backendCSRF\";i:1;s:32:\"bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN\";}'
+    'PHPFRONTSESSID' => 'f7vusjhm0f8fdsrv5dq2r0uf91'
+    '_frontendUser' => '72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a:2:{i:0;s:13:\"_frontendUser\";i:1;s:52:\"[2016003,\"2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1\",2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.8'
+    'HTTP_COOKIE' => '_frontendCSRF=7933bf6ed2747003adec0035b5c19b49ec54ffde506c41e477740b0549dc9744a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22-yo2ZkEaMfEu4k_qICmuutVL-XedNPWw%22%3B%7D; _backendCSRF=4370d74e66eb3df57ce3c8ac567a6f8138ec8a56194f2219cf1860cafbafb47ba%3A2%3A%7Bi%3A0%3Bs%3A12%3A%22_backendCSRF%22%3Bi%3A1%3Bs%3A32%3A%22bvyxzhGnLl7E1i9XXdpYjv-B-Oa2PhKN%22%3B%7D; PHPFRONTSESSID=f7vusjhm0f8fdsrv5dq2r0uf91; _frontendUser=72d4e7916f0f62f3397c694a67a53ee9c9b0f60b0fdb2c3756b7be4eb63c8678a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_frontendUser%22%3Bi%3A1%3Bs%3A52%3A%22%5B2016003%2C%222sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Java\\jdk1.8.0_91\\bin;C:\\Program Files\\Java\\jre1.8.0_91\\bin;C:\\xampp\\htdocs\\advanced;C:\\xampp\\;C:\\xampp\\htdocs\\advanced\\init;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\CloudFoundry;C:\\Program Files\\Git\\cmd;C:\\Program Files\\TortoiseGit\\bin;C:\\Users\\johan\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\johan\\AppData\\Local\\Microsoft\\WindowsApps;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.21'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/advanced/frontend/web/index.php'
+    'REMOTE_PORT' => '51144'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'REQUEST_URI' => '/advanced/frontend/web/index.php?r=courses%2Ftasks%2Fquestion%2Fcreate'
+    'SCRIPT_NAME' => '/advanced/frontend/web/index.php'
+    'PHP_SELF' => '/advanced/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1481402063.295
+    'REQUEST_TIME' => 1481402063
+]

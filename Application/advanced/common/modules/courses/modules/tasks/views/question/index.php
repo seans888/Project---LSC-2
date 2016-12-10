@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\QuestionSearch */
@@ -16,18 +16,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Question', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+            if(Yii::$app->user->can('add-task')){
+                echo Html::a('Create Question', ['create'], ['class' => 'btn btn-success']);
+            }
+        ?>
     </p>
     <?= GridView::widget([
+        'export' => false,
+        'pjax' => true,
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'ask',
-            'image',
-            'task_id',
+            //'image',
+            //'task_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

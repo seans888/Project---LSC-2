@@ -1,6 +1,5 @@
 <?php
 
-use common\models\ChoiceSearch;
 use common\models\TaskSearch;
 use yii\helpers\Html;
 use kartik\grid\GridView;
@@ -24,6 +23,7 @@ $this->title = 'Courses';
     </p>
     <?= GridView::widget([
         'export' => false,
+        'pjax' => true,
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [

@@ -13,6 +13,7 @@ return array(
     'yii\\composer\\' => array($baseDir . '/vendor/yiisoft/yii2-composer'),
     'yii\\bootstrap\\' => array($baseDir . '/vendor/yiisoft/yii2-bootstrap'),
     'yii\\' => array($baseDir . '/vendor/yiisoft/yii2'),
+    'wbraganca\\dynamicform\\' => array($baseDir . '/vendor/wbraganca/yii2-dynamicform'),
     'phpDocumentor\\Reflection\\' => array($baseDir . '/vendor/phpdocumentor/reflection-common/src', $baseDir . '/vendor/phpdocumentor/type-resolver/src', $baseDir . '/vendor/phpdocumentor/reflection-docblock/src'),
     'kartik\\grid\\' => array($baseDir . '/vendor/kartik-v/yii2-grid'),
     'kartik\\dialog\\' => array($baseDir . '/vendor/kartik-v/yii2-dialog'),

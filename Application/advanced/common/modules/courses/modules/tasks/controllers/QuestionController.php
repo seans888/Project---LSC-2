@@ -2,6 +2,7 @@
 
 namespace common\modules\courses\modules\tasks\controllers;
 
+use common\models\Choice;
 use Yii;
 use common\models\Question;
 use common\models\QuestionSearch;
@@ -64,12 +65,14 @@ class QuestionController extends Controller
     public function actionCreate()
     {
         $model = new Question();
+        $modelsChoice = [new Choice];
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'modelsChoice' => (empty($modelsChoice)) ? [new Choice()] : $modelsChoice
             ]);
         }
     }
