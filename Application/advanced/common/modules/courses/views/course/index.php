@@ -1,7 +1,9 @@
 <?php
 
+use common\models\ChoiceSearch;
+use common\models\TaskSearch;
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CourseSearch */
@@ -21,15 +23,29 @@ $this->title = 'Courses';
         } ?>
     </p>
     <?= GridView::widget([
+        'export' => false,
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'class' => 'kartik\grid\ExpandRowColumn',
+                'value' => function ($model, $key, $index, $column){
+                            return GridView::ROW_COLLAPSED;
+                },
+                'detail' => function ($model, $key, $index, $column){
+                    $searchModel = new TaskSearch();
+                    $searchModel->course_id = $model->id;
+                    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            //'id',
+                    return Yii::$app->controller->renderPartial('_tasks', [
+                        'searchModel' => $searchModel,
+                        'dataProvider' => $dataProvider,
+                    ]);
+                },
+            ],
             'name',
-            'course_description',
-            'date_created',
+            //'course_description',
+            //'date_created',
             //'user_id',
 
             ['class' => 'yii\grid\ActionColumn'],
