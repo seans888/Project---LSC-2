@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
-    'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
+    'Prophecy\\' => array($baseDir . '/vendor/phpspec/prophecy/src'),
+    'HTMLPurifier' => array($baseDir . '/vendor/ezyang/htmlpurifier/library'),
+    'Diff' => array($baseDir . '/vendor/phpspec/php-diff/lib'),
+    'Behat\\Gherkin' => array($baseDir . '/vendor/behat/gherkin/src'),
 );

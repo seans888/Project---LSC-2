@@ -26,11 +26,11 @@ $this->title = 'Courses';
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
             'name',
             'course_description',
             'date_created',
-            'user_id',
+            //'user_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

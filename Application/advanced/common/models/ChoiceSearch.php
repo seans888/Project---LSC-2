@@ -5,12 +5,12 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Task;
+use common\models\Choice;
 
 /**
- * ChoiceSearch represents the model behind the search form about `common\models\Task`.
+ * ChoiceSearch represents the model behind the search form about `common\models\Choice`.
  */
-class ChoiceSearch extends Task
+class ChoiceSearch extends Choice
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ChoiceSearch extends Task
     public function rules()
     {
         return [
-            [['id', 'attempts', 'course_id'], 'integer'],
-            [['title', 'description', 'task_type', 'date_created', 'time_open', 'time_close', 'date_open', 'date_close', 'time_remaining'], 'safe'],
+            [['id', 'question_id'], 'integer'],
+            [['choose', 'is_correct'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ChoiceSearch extends Task
      */
     public function search($params)
     {
-        $query = Task::find();
+        $query = Choice::find();
 
         // add conditions that should always apply here
 
@@ -60,19 +60,11 @@ class ChoiceSearch extends Task
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'date_created' => $this->date_created,
-            'time_open' => $this->time_open,
-            'time_close' => $this->time_close,
-            'date_open' => $this->date_open,
-            'date_close' => $this->date_close,
-            'time_remaining' => $this->time_remaining,
-            'attempts' => $this->attempts,
-            'course_id' => $this->course_id,
+            'question_id' => $this->question_id,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'task_type', $this->task_type]);
+        $query->andFilterWhere(['like', 'choose', $this->choose])
+            ->andFilterWhere(['like', 'is_correct', $this->is_correct]);
 
         return $dataProvider;
     }
