@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'date_close',
             'time_remaining',
             'attempts',
-            'course_id',
+            'course.title:text:Course',
         ],
     ]) ?>
 

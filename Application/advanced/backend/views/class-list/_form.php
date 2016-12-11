@@ -15,25 +15,33 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'user_id')->dropDownList(
-        ArrayHelper::map(User::find()->all(), 'id', 'name'),
-        [
-            'prompt' => 'Select Course',
-            /*'onChange' => '
-                $.post("index.php?r=courses/lists&id='.'"+$(this).val(), function(
-                    $("selec#models-contact).html(data);
-                });'*/
-        ]); ?>
+    <div class="col-sm=6">
+        <?= $form->field($model, 'user_id')->dropDownList(
+            ArrayHelper::map(User::find()->all(), 'id', 'id'),
+            [
+                'prompt' => 'Select Student',
+                /*'onChange' => '
+                    $.post("index.php?r=courses/lists&id='.'"+$(this).val(), function(
+                        $("select#models-contact).html(data);
+                    });'*/
+            ]);
+        ?>
+    </div>
 
-    <?= $form->field($model, 'course_id')->dropDownList(
-        ArrayHelper::map(Course::find()->all(), 'id', 'name'),
-        [
-            'prompt' => 'Select Course',
-            /*'onChange' => '
-                $.post("index.php?r=courses/lists&id='.'"+$(this).val(), function(
-                    $("selec#models-contact).html(data);
-                });'*/
-        ]); ?>
+    <div class="col-sm-6">
+        <?= $form->field($model, 'course_id')->dropDownList(
+            ArrayHelper::map(Course::find()->all(), 'id', 'name'),
+            [
+                'prompt' => 'Select Course',
+                /*'onChange' => '
+                    $.post("index.php?r=courses/lists&id='.'"+$(this).val(), function(
+                        $("select#models-contact).html(data);
+                    });'*/
+            ]);
+        ?>
+    </div>
+
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'course_description',
             'date_created',
-            'user_id',
+            'user.last_name:text:Student',
         ],
     ]) ?>
 

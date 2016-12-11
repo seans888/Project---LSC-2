@@ -16,7 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Class List', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+         if(Yii::$app->user->can('add-classlist')){
+            echo Html::a('Create Class List', ['create'], ['class' => 'btn btn-success']);
+         }
+        ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

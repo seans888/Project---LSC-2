@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'ask',
             'image',
-            'task_id',
+            'task.title:text:Task name',
         ],
     ]) ?>
 

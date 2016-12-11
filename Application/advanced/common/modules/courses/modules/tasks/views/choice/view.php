@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'choose',
             'is_correct',
-            'question_id',
+            'question.ask:text:Question',
         ],
     ]) ?>
 
