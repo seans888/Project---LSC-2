@@ -9,39 +9,59 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Signup';
 ?>
+
+<style>
+
+</style>
+
 <div class="site-signup"><br/>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to signup:</p>
 
-
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <div class="col-sm-4">
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                </div>
 
-                <?= $form->field($model, 'email') ?>
+                <div class="col-sm-4">
+                    <?= $form->field($model, 'password')->passwordInput() ?>
+                </div>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <div class="col-sm-4">
+                    <?= $form->field($model, 'email') ?>
+                </div>
 
-                <?= $form->field($model, 'first_name') ?>
 
-                <?= $form->field($model, 'middle_name') ?>
+                <div class="col-sm-4">
+                    <?= $form->field($model, 'first_name') ?>
+                </div>
 
-                <?= $form->field($model, 'last_name') ?>
+                <div class="col-sm-4">
+                    <?= $form->field($model, 'middle_name') ?>
+                </div>
 
-                <?= $form->field($model, 'gender')->dropDownList(
-                    [
-                        'Male' => 'Male',
-                        'Female' => 'Female'
+                <div class="col-sm-4">
+                    <?= $form->field($model, 'last_name') ?>
+                </div>
 
-                    ],
-                    ['prompt' => 'Select your gender']) ?>
+                <div class="col-sm-6">
+                    <?= $form->field($model, 'gender')->dropDownList(
+                        [
+                            'Male' => 'Male',
+                            'Female' => 'Female'
 
-                <?= $form->field($model, 'contact_number') ?>
+                        ],
+                        ['prompt' => 'Select your gender']) ?>
+                </div>
+
+                <div class="col-sm-6">
+                    <?= $form->field($model, 'contact_number') ?>
+                </div>
 
                 <?= $form->field($model, 'home_address') ?>
 
-                <?= $form->field($model, 'image') ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>

@@ -9,6 +9,12 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Login';
 ?>
+<style>
+.site-login{
+    width: 35%;
+    margin-left: 30%;
+}
+</style>
 
 
 <div class="site-login"><br/>
@@ -34,3 +40,5 @@ $this->title = 'Login';
 
             <?php ActiveForm::end(); ?>
 </div>
+
+
