@@ -78,7 +78,7 @@ $this->title = 'Home';
                     </section>
                     <!--ATTENDANCE-->
                     <section class="module col-md-3 col-sm-6">
-                        <a href="attendance.php" style="text-decoration: none;" >
+                        <a href="index.php?r=attendance" style="text-decoration: none;" >
                             <i class="fa fa-check-square-o fa-lg"  style="font-size:50px" ></i>
                             <div class="module-content">
                                 <div class="module-header"></div>

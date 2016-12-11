@@ -34,7 +34,7 @@ class Course extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'user_id'], 'required'],
+            [['name'], 'required'],
             [['date_created'], 'safe'],
             [['user_id'], 'integer'],
             [['name'], 'string', 'max' => 100],

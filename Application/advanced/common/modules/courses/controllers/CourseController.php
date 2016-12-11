@@ -2,6 +2,7 @@
 
 namespace common\modules\courses\controllers;
 
+use common\models\User;
 use Yii;
 use common\models\Course;
 use common\models\CourseSearch;
@@ -49,6 +50,7 @@ class CourseController extends Controller
         $searchModel = new CourseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -79,6 +81,7 @@ class CourseController extends Controller
             $model = new Course();
 
             if ($model->load(Yii::$app->request->post()) ) {
+                $model->user_id = Yii::$app->user->getId();
                 $model->date_created = date('Y-m-d');
                 $model->save();
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -146,5 +149,7 @@ class CourseController extends Controller
         Yii::$app->user->logout();
         return $this->goHome();
     }
+
+
 
 }

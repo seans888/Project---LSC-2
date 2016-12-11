@@ -8,7 +8,6 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Tasks';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="task-index">
     <?= GridView::widget([

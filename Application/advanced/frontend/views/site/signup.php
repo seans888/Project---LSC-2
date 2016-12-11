@@ -60,7 +60,7 @@ $this->title = 'Signup';
                     <?= $form->field($model, 'contact_number') ?>
                 </div>
 
-                <?= $form->field($model, 'home_address') ?>
+                <?= $form->field($model, 'home_address')->textarea() ?>
 
 
                 <div class="form-group">
