@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2016 at 11:11 AM
+-- Generation Time: Dec 11, 2016 at 06:07 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -93,12 +93,15 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `data`, `created_at`, `u
 ('add-classlist', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
 ('add-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', NULL),
 ('add-task', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
+('add-user', 2, NULL, NULL, '2016-12-12', '2016-12-12', NULL),
 ('check-attendance', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
+('delete-course', 2, NULL, NULL, '2016-12-12', '2016-12-12', NULL),
 ('instructors', 1, 'Group for instructors', NULL, '2016-12-07', '2016-12-07', NULL),
 ('students', 1, 'Group for students', NULL, '2016-12-07', '2016-12-07', NULL),
 ('update-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', NULL),
 ('update-schedule', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
-('view-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', 'view-own-course');
+('view-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', 'view-own-course'),
+('view-own-courses', 2, NULL, NULL, '2016-12-12', '2016-12-12', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,7 +122,12 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('instructors', 'add-classlist'),
 ('instructors', 'add-course'),
 ('instructors', 'add-task'),
-('instructors', 'check-attendance');
+('instructors', 'check-attendance'),
+('instructors', 'delete-course'),
+('instructors', 'update-course'),
+('instructors', 'view-course'),
+('instructors', 'view-own-courses'),
+('students', 'view-course');
 
 -- --------------------------------------------------------
 
@@ -192,7 +200,10 @@ CREATE TABLE `course` (
 
 INSERT INTO `course` (`id`, `name`, `course_description`, `date_created`, `user_id`) VALUES
 (2, 'High School Entrance Test / Science High School Review', '', '2016-12-07', 2016003),
-(3, ' Senior High / College Entrance Test Review', ' This review also helps prepare students for their Grade 10 to Grade 12 academic subjects.', '2016-12-07', 2016003);
+(3, ' Senior High / College Entrance Test Review', ' This review also helps prepare students for their Grade 10 to Grade 12 academic subjects.', '2016-12-07', 2016003),
+(4, 'Civil Service Exam Review', '', '2016-12-11', 2016003),
+(5, ' National Medical Admission Test Review', '', '2016-12-11', 2016003),
+(8, 'try', NULL, '2016-12-12', 2016004);
 
 -- --------------------------------------------------------
 
@@ -268,7 +279,8 @@ CREATE TABLE `schedule` (
   `id` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `day` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL,
-  `schedule` varchar(17) NOT NULL
+  `schedule` varchar(17) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -475,7 +487,7 @@ ALTER TABLE `choice`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `employee`
 --
