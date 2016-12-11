@@ -4,23 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\AttendanceSearch */
+/* @var $searchModel common\models\ScheduleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Attendances';
+$this->title = 'Schedules';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="attendance-index">
+<div class="schedule-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?php
-            if(Yii::$app->user->can('check-attendance')){
-                echo Html::a('Create Attendance', ['create'], ['class' => 'btn btn-success']);
-            }
-        ?>
+        <?= Html::a('Create Schedule', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -28,10 +24,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'status',
-            'class_list_user_id',
-            'class_list_course_id',
-            'schedule_id',
+            'id',
+            'subject',
+            'day',
+            'schedule',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
