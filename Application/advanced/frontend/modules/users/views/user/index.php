@@ -16,7 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+            if(Yii::$app->user->can('add-user')){
+                echo Html::a('Create User', ['create'], ['class' => 'btn btn-success']);
+            }
+        ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,16 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
+            //'auth_key',
+            //'password_hash',
+            //'password_reset_token',
             // 'email:email',
             // 'status',
             // 'created_at',
             // 'updated_at',
-            // 'first_name',
-            // 'middle_name',
-            // 'last_name',
+             'first_name',
+             'middle_name',
+             'last_name',
             // 'gender',
             // 'contact_number',
             // 'home_address',

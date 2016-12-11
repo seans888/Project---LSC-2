@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?php
             if(Yii::$app->user->can('check-attendance')){
-                echo Html::a('Create Attendance', ['create'], ['class' => 'btn btn-success']);
+                echo Html::a('Check Attendance', ['create'], ['class' => 'btn btn-info']);
             }
         ?>
     </p>

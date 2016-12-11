@@ -7,6 +7,12 @@ use yii\widgets\ActiveForm;
 /* @var $model common\models\Course */
 /* @var $form yii\widgets\ActiveForm */
 ?>
+<style>
+    .course-form{
+        width: 50%;
+        margin-left: 25%;
+    }
+</style>
 
 <div class="course-form">
 
