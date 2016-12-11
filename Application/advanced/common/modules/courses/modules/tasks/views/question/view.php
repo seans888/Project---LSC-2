@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Course */
+/* @var $model common\models\Question */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Courses', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Questions', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="course-view"><br><br/>
+<div class="question-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -28,15 +28,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            //'id',
-            'name',
-            'course_description',
-            'date_created',
-            'user_id',
+            'id',
+            'ask',
+            'image',
+            'task_id',
         ],
     ]) ?>
 
-    <p>
-        <?= Html::a('Enroll students to this course', ['/class-list/create'], ['class' => 'btn btn-primary']) ?>
-    </p>
 </div>

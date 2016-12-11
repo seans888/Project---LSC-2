@@ -6,6 +6,7 @@ use Yii;
 use common\models\Course;
 use common\models\CourseSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -73,17 +74,23 @@ class CourseController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Course();
+        if(Yii::$app->user->can('add-course'))
+        {
+            $model = new Course();
 
-        if ($model->load(Yii::$app->request->post()) ) {
-            $model->date_created = date('Y-m-d');
-            $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post()) ) {
+                $model->date_created = date('Y-m-d');
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
+        }else{
+            throw new ForbiddenHttpException('You are not allowed to perform this action. Kindly contact your instructor');
         }
+
     }
 
     /**
