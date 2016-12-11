@@ -41,4 +41,5 @@ abstract class Rule extends Object
      * @return boolean a value indicating whether the rule permits the auth item it is associated with.
      */
     abstract public function execute($user, $item, $params);
+
 }

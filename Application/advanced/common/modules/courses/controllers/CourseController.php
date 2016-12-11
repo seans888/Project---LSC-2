@@ -28,6 +28,7 @@ class CourseController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'view-own-course' => ['POST'],
                 ],
             ],
         ];
@@ -47,14 +48,15 @@ class CourseController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CourseSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+            $searchModel = new CourseSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
     }
 
     /**
@@ -64,9 +66,11 @@ class CourseController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
+
     }
 
     /**
@@ -106,13 +110,18 @@ class CourseController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        if(Yii::$app->user->can('view-own-courses', ['user_id' => Yii::$app->user->id])){
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
+        }else{
+            return "You are not allowed to update";
         }
+
     }
 
     /**
@@ -123,9 +132,12 @@ class CourseController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        if(Yii::$app->user->can('delete-course', ['user_id' => Yii::$app->user->id])){
+            $this->findModel($id)->delete();
+        }else{
+            return "You are not allowed to delete this course";
+        }
 
-        return $this->redirect(['index']);
     }
 
     /**

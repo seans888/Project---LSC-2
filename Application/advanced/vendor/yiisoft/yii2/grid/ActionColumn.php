@@ -7,6 +7,7 @@
 
 namespace yii\grid;
 
+use Codeception\Lib\Connector\Yii1;
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -150,17 +151,20 @@ class ActionColumn extends Column
                 return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url, $options);
             };
         }
-        if (!isset($this->buttons['update'])) {
-            $this->buttons['update'] = function ($url, $model, $key) {
-                $options = array_merge([
-                    'title' => Yii::t('yii', 'Update'),
-                    'aria-label' => Yii::t('yii', 'Update'),
-                    'data-pjax' => '0',
-                ], $this->buttonOptions);
-                return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, $options);
-            };
+        if(Yii::$app->user->can('update-course')){
+            if (!isset($this->buttons['update'])) {
+                $this->buttons['update'] = function ($url, $model, $key) {
+                    $options = array_merge([
+                        'title' => Yii::t('yii', 'Update'),
+                        'aria-label' => Yii::t('yii', 'Update'),
+                        'data-pjax' => '0',
+                    ], $this->buttonOptions);
+                    return Html::a('<span class="glyphicon glyphicon-pencil"></span>', $url, $options);
+                };
+            }
         }
-        if (!isset($this->buttons['delete'])) {
+
+        /*if (!isset($this->buttons['delete'])) {
             $this->buttons['delete'] = function ($url, $model, $key) {
                 $options = array_merge([
                     'title' => Yii::t('yii', 'Delete'),
@@ -171,7 +175,7 @@ class ActionColumn extends Column
                 ], $this->buttonOptions);
                 return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, $options);
             };
-        }
+        }*/
     }
 
     /**

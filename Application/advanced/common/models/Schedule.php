@@ -11,6 +11,7 @@ use Yii;
  * @property string $subject
  * @property string $day
  * @property string $schedule
+ * @property integer $user_id
  *
  * @property Attendance[] $attendances
  * @property ClassList[] $classListUsers
@@ -31,8 +32,9 @@ class Schedule extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['subject', 'day', 'schedule'], 'required'],
+            [['subject', 'day', 'schedule', 'user_id'], 'required'],
             [['day'], 'string'],
+            [['user_id'], 'integer'],
             [['subject'], 'string', 'max' => 100],
             [['schedule'], 'string', 'max' => 17],
         ];
@@ -48,6 +50,7 @@ class Schedule extends \yii\db\ActiveRecord
             'subject' => 'Subject',
             'day' => 'Day',
             'schedule' => 'Schedule',
+            'user_id' => 'User ID',
         ];
     }
 

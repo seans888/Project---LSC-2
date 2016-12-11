@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'subject',
             'day',
             'schedule',
+            'user_id',
         ],
     ]) ?>
 

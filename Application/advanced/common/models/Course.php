@@ -88,4 +88,6 @@ class Course extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Task::className(), ['course_id' => 'id']);
     }
+
+
 }

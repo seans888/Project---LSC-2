@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\TaskSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tasks';
+$this->title = 'Courses';
 ?>
 <div class="task-index">
     <?= GridView::widget([

@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?php
             if(Yii::$app->user->can('update-schedule')){
-                echo Html::a('Create Schedule', ['create'], ['class' => 'btn btn-success']);
+                Html::a('Create Schedule', ['create'], ['class' => 'btn btn-success']);
             }
         ?>
     </p>
@@ -28,10 +28,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            //'id',
+            'user_id',
             'subject',
             'day',
             'schedule',
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

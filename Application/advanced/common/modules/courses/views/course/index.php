@@ -21,11 +21,15 @@ $this->title = 'Courses';
             echo Html::a('Create Course', ['create'], ['class' => 'btn btn-success']);
         } ?>
     </p>
+
+
+
     <?= GridView::widget([
         'export' => false,
         'pjax' => true,
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+
         'columns' => [
             [
                 'class' => 'kartik\grid\ExpandRowColumn',
