@@ -16,7 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Schedule', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php
+            if(Yii::$app->user->can('update-schedule')){
+                echo Html::a('Create Schedule', ['create'], ['class' => 'btn btn-success']);
+            }
+        ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
