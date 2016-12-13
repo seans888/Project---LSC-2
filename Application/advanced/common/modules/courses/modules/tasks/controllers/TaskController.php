@@ -177,6 +177,8 @@ class TaskController extends Controller
     public function actionStart()
     {
        $session = Yii::$app->session;
+        if(session_id() == '' || !isset($_SESSION))
+            session_start();
 
         if (isset($_GET['task']))
         {
@@ -317,6 +319,7 @@ class TaskController extends Controller
 
     public function actionFinish()
     {
+        $session = Yii::$app->session;
         if(session_id() == '' || !isset($_SESSION))
             session_start();
 
@@ -327,29 +330,34 @@ class TaskController extends Controller
         }
 
         $dataProvider = new ArrayDataProvider(array(
-            'allModels' => Yii::$app->session['answers'],
+            'allModels' => $session['answers'],
             'pagination' => array(
                 'pageSize'=>self::PAGE_SIZE,
                 'page' => $page - 1,
             ),
         ));
 
+
         if($dataProvider->totalCount == 0)
             throw new HttpException(404, 'Not Found');
 
-        $userAnswers = Yii::$app->session['answers'];
+        $session = Yii::$app->session;
+        $userAnswers = $session['answers'];
         $correctAnswers = 0;
-        foreach ($userAnswers as $answer)
-        {
-            $question = Question::find()
-                ->where(array('id' => $answer->question_id, 'task_id' => Yii::$app->session['task']))
-                ->one();
+            foreach ((array)$userAnswers as $answer)
+            {
+                $question = Question::find()
+                    ->where(array('id' => $answer->question_id, 'task_id' => Yii::$app->session['task']))
+                    ->one();
 
-            if($answer->user_answer === intval($answer->answer))
-                $correctAnswers++;
-        }
+                if($answer->user_answer === intval($answer->answer))
+                    $correctAnswers++;
+            }
+
+
 
         $score = round($correctAnswers / $dataProvider->totalCount * 100, 2);
+
 
         $diplomaForm = null;
         if(self::MINIMUM_SCORE !== false && $score >= self::MINIMUM_SCORE)
