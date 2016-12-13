@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2016 at 06:10 PM
+-- Generation Time: Dec 13, 2016 at 06:15 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -150,18 +150,6 @@ CREATE TABLE `auth_rule` (
 
 INSERT INTO `auth_rule` (`name`, `data`, `created_at`, `updated_at`) VALUES
 ('view-own-course', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `choice`
---
-
-CREATE TABLE `choice` (
-  `id` int(11) NOT NULL,
-  `choose` varchar(255) NOT NULL,
-  `is_correct` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
 
@@ -421,13 +409,6 @@ ALTER TABLE `auth_rule`
   ADD PRIMARY KEY (`name`);
 
 --
--- Indexes for table `choice`
---
-ALTER TABLE `choice`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_UNIQUE` (`id`);
-
---
 -- Indexes for table `class_list`
 --
 ALTER TABLE `class_list`
@@ -499,11 +480,6 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `choice`
---
-ALTER TABLE `choice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `course`
 --
