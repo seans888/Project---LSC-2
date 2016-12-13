@@ -19,7 +19,7 @@ class QuestionSearch extends Question
     {
         return [
             [['id', 'task_id'], 'integer'],
-            [['ask', 'image'], 'safe'],
+            [['title', 'answer', 'answer2', 'answer3', 'answer4', 'answer5', 'answer6'], 'safe'],
         ];
     }
 
@@ -63,8 +63,13 @@ class QuestionSearch extends Question
             'task_id' => $this->task_id,
         ]);
 
-        $query->andFilterWhere(['like', 'ask', $this->ask])
-            ->andFilterWhere(['like', 'image', $this->image]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'answer', $this->answer])
+            ->andFilterWhere(['like', 'answer2', $this->answer2])
+            ->andFilterWhere(['like', 'answer3', $this->answer3])
+            ->andFilterWhere(['like', 'answer4', $this->answer4])
+            ->andFilterWhere(['like', 'answer5', $this->answer5])
+            ->andFilterWhere(['like', 'answer6', $this->answer6]);
 
         return $dataProvider;
     }

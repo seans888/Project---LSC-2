@@ -26,6 +26,7 @@ use Yii;
  */
 class Task extends \yii\db\ActiveRecord
 {
+    public $questionCount;
     /**
      * @inheritdoc
      */
@@ -94,4 +95,6 @@ class Task extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Course::className(), ['id' => 'course_id']);
     }
+
+
 }

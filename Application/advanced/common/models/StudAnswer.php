@@ -7,16 +7,24 @@ use Yii;
 /**
  * This is the model class for table "stud_answer".
  *
- * @property integer $user_id
- * @property integer $choice_id
- * @property integer $choice_question_id
+ * @property integer $id
+ * @property string $user_answer
+ * @property string $title
+ * @property string $answer
+ * @property string $answers
+ * @property integer $question_id
  *
  * @property Result[] $results
- * @property Choice $choice
- * @property User $user
+ * @property Question $question
  */
 class StudAnswer extends \yii\db\ActiveRecord
 {
+    public $id;
+    public $question_id;
+    public $user_answer;
+    public $title;
+    public $answer;
+    public $answers;
     /**
      * @inheritdoc
      */
@@ -31,10 +39,10 @@ class StudAnswer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'choice_id', 'choice_question_id'], 'required'],
-            [['user_id', 'choice_id', 'choice_question_id'], 'integer'],
-            [['choice_id', 'choice_question_id'], 'exist', 'skipOnError' => true, 'targetClass' => Choice::className(), 'targetAttribute' => ['choice_id' => 'id', 'choice_question_id' => 'question_id']],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['question_id'], 'required'],
+            [['question_id'], 'integer'],
+            [['user_answer', 'title', 'answer', 'answers'], 'string', 'max' => 255],
+            [['question_id'], 'exist', 'skipOnError' => true, 'targetClass' => Question::className(), 'targetAttribute' => ['question_id' => 'id']],
         ];
     }
 
@@ -44,9 +52,12 @@ class StudAnswer extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => 'User ID',
-            'choice_id' => 'Choice ID',
-            'choice_question_id' => 'Choice Question ID',
+            'id' => 'ID',
+            'user_answer' => 'User Answer',
+            'title' => 'Title',
+            'answer' => 'Answer',
+            'answers' => 'Answers',
+            'question_id' => 'Question ID',
         ];
     }
 
@@ -55,22 +66,14 @@ class StudAnswer extends \yii\db\ActiveRecord
      */
     public function getResults()
     {
-        return $this->hasMany(Result::className(), ['stud_answer_user_id' => 'user_id', 'stud_answer_choice_id' => 'choice_id', 'stud_answer_choice_question_id' => 'choice_question_id']);
+        return $this->hasMany(Result::className(), ['stud_answer_id' => 'id', 'stud_answer_question_id' => 'question_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getChoice()
+    public function getQuestion()
     {
-        return $this->hasOne(Choice::className(), ['id' => 'choice_id', 'question_id' => 'choice_question_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUser()
-    {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(Question::className(), ['id' => 'question_id']);
     }
 }
