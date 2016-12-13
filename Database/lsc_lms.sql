@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2016 at 06:07 PM
+-- Generation Time: Dec 13, 2016 at 10:38 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -30,8 +30,7 @@ CREATE TABLE `ann_calendar` (
   `id` int(11) NOT NULL,
   `announcement` varchar(50) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `task_id` int(11) DEFAULT NULL,
-  `start_date` date DEFAULT NULL
+  `task_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -64,10 +63,9 @@ CREATE TABLE `auth_assignment` (
 --
 
 INSERT INTO `auth_assignment` (`user_id`, `item_name`, `created_at`) VALUES
-(2016001, 'students', '2016-12-07'),
-(2016002, 'students', '2016-12-07'),
-(2016003, 'instructors', '2016-12-07'),
-(2016004, 'instructors', '2016-12-07');
+(2016001, 'students', NULL),
+(2016002, 'students', NULL),
+(2016003, 'instructors', '2016-12-13');
 
 -- --------------------------------------------------------
 
@@ -92,6 +90,7 @@ CREATE TABLE `auth_item` (
 INSERT INTO `auth_item` (`name`, `type`, `description`, `data`, `created_at`, `updated_at`, `rule_name`) VALUES
 ('add-classlist', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
 ('add-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', NULL),
+('add-student-to-course', 2, NULL, NULL, '2016-12-13', '2016-12-13', NULL),
 ('add-task', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
 ('add-user', 2, NULL, NULL, '2016-12-12', '2016-12-12', NULL),
 ('check-attendance', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
@@ -121,6 +120,7 @@ CREATE TABLE `auth_item_child` (
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('instructors', 'add-classlist'),
 ('instructors', 'add-course'),
+('instructors', 'add-student-to-course'),
 ('instructors', 'add-task'),
 ('instructors', 'check-attendance'),
 ('instructors', 'delete-course'),
@@ -147,7 +147,7 @@ CREATE TABLE `auth_rule` (
 --
 
 INSERT INTO `auth_rule` (`name`, `data`, `created_at`, `updated_at`) VALUES
-('view-own-course', NULL, '2016-12-07', '2016-12-07');
+('view-own-course', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -158,8 +158,7 @@ INSERT INTO `auth_rule` (`name`, `data`, `created_at`, `updated_at`) VALUES
 CREATE TABLE `choice` (
   `id` int(11) NOT NULL,
   `choose` varchar(255) NOT NULL,
-  `is_correct` varchar(255) NOT NULL,
-  `question_id` int(11) NOT NULL
+  `is_correct` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -172,13 +171,6 @@ CREATE TABLE `class_list` (
   `user_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
-
---
--- Dumping data for table `class_list`
---
-
-INSERT INTO `class_list` (`user_id`, `course_id`) VALUES
-(2016001, 2);
 
 -- --------------------------------------------------------
 
@@ -199,11 +191,7 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`id`, `name`, `course_description`, `date_created`, `user_id`) VALUES
-(2, 'High School Entrance Test / Science High School Review', '', '2016-12-07', 2016003),
-(3, ' Senior High / College Entrance Test Review', ' This review also helps prepare students for their Grade 10 to Grade 12 academic subjects.', '2016-12-07', 2016003),
-(4, 'Civil Service Exam Review', '', '2016-12-11', 2016003),
-(5, ' National Medical Admission Test Review', '', '2016-12-11', 2016003),
-(8, 'try', NULL, '2016-12-12', 2016004);
+(1, 'try', NULL, '2016-12-13', 2016003);
 
 -- --------------------------------------------------------
 
@@ -246,10 +234,23 @@ INSERT INTO `employee` (`id`, `username`, `auth_key`, `password_hash`, `password
 
 CREATE TABLE `question` (
   `id` int(11) NOT NULL,
-  `ask` varchar(255) NOT NULL,
-  `image` varbinary(8000) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `answer` varbinary(8000) DEFAULT NULL,
+  `answer2` varchar(255) DEFAULT NULL,
+  `answer3` varchar(255) DEFAULT NULL,
+  `answer4` varchar(255) DEFAULT NULL,
+  `answer5` varchar(255) DEFAULT NULL,
+  `answer6` varchar(255) DEFAULT NULL,
   `task_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`id`, `title`, `answer`, `answer2`, `answer3`, `answer4`, `answer5`, `answer6`, `task_id`) VALUES
+(1, 'hey', NULL, '1', '2', '3', '4', '5', 1),
+(2, 'try', 0x0000000000, 'haha', '15', '12', '5', '5', 1);
 
 -- --------------------------------------------------------
 
@@ -264,9 +265,8 @@ CREATE TABLE `result` (
   `grade` int(11) NOT NULL,
   `min_grade` int(11) DEFAULT NULL,
   `max_grade` int(11) DEFAULT NULL,
-  `stud_answer_user_id` int(11) NOT NULL,
-  `stud_answer_choice_id` int(11) NOT NULL,
-  `stud_answer_choice_question_id` int(11) NOT NULL
+  `stud_answer_id` int(11) DEFAULT NULL,
+  `stud_answer_question_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -279,8 +279,7 @@ CREATE TABLE `schedule` (
   `id` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `day` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL,
-  `schedule` varchar(17) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `schedule` varchar(17) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -290,9 +289,12 @@ CREATE TABLE `schedule` (
 --
 
 CREATE TABLE `stud_answer` (
-  `user_id` int(11) NOT NULL,
-  `choice_id` int(11) NOT NULL,
-  `choice_question_id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `user_answer` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `answer` varchar(255) DEFAULT NULL,
+  `answers` varchar(255) DEFAULT NULL,
+  `question_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -315,6 +317,13 @@ CREATE TABLE `task` (
   `attempts` int(11) DEFAULT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+
+--
+-- Dumping data for table `task`
+--
+
+INSERT INTO `task` (`id`, `title`, `description`, `task_type`, `date_created`, `time_open`, `time_close`, `date_open`, `date_close`, `time_remaining`, `attempts`, `course_id`) VALUES
+(1, 'try', 'try desc', 'Exam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -348,9 +357,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`, `first_name`, `middle_name`, `last_name`, `gender`, `contact_number`, `home_address`, `image`) VALUES
 (2016001, 'jcheramia', 'HOemqsXQN0szGxlb_oxVy2615M8Nkavz', '$2y$13$RJwvzSkRavQlO12Iq71RK.Sc9MVSiB8t2DJD/6X/EiPACowOdFBee', NULL, 'jcheramia@student.apc.edu.ph', 10, '0000-00-00', '0000-00-00', 'Johanna Marisse', 'Credito', 'Heramia', 'Female', '09261523128', 'P 53 - 20 12th 15th St., Villamor Air Base, Pasay City', ''),
 (2016002, 'jgtadeo', 'HGkJFwHOI1w1jOiP_rRBo7f3m_-mQ1R-', '$2y$13$o1lDOhGkHZrudmQsmvLZpejV5vk0pHyfzyEfUBaD1pf8V88LzPo.K', NULL, 'jgtadeo@student.apc.edu.ph', 10, '0000-00-00', '0000-00-00', 'Jose Lorenzo', 'Gonzales', 'Tadeo', 'Male', '09354811320', '8291 B Dapitan St., Guadalupe Nuevo, MAkati City', ''),
-(2016003, 'jggardon', '2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1', '$2y$13$6WUeZ8/LTjsdZox/IsWVj.t4TKzCtAoijtCSMh.l55NmDsp5CnlOC', NULL, 'jggardon@student.apc.edu.ph', 10, '0000-00-00', '0000-00-00', 'Jana Marie', 'Gavarra', 'Gardon', 'Female', '09061234567', 'Mb 16 Unit 507 BCDA Silang Village, USUSAN, Taguig City', ''),
-(2016004, 'dpbalcena', '8NeIzKaBrrLTs5Q6jqstizyOUq_EMM02', '$2y$13$vlL.XFtdrDTMGO2BH50oreLYgLLjIiqGo/.vUJxmSM2vIgwxFXWGC', NULL, 'dpbalcena@student.apc.edu.ph', 10, '0000-00-00', '0000-00-00', 'Danya', 'Pa', 'Balcena', 'Female', '09123456789', 'Parañaque', ''),
-(2016005, 'mlbelchez', 'sUhPZx1a_UmOufauv3nGZjPWWKtFy8zI', '$2y$13$Q786GjrobCcjN9jV5IzD/ery3pVpQ0aPw6RFBkxf/jkVi.XT80.s.', NULL, 'mlbelchez@student.apc.edu.ph', 10, '0000-00-00', '0000-00-00', 'Maica', 'L', 'Belchez', 'Female', '09261523128', 'Malibay', NULL);
+(2016003, 'jggardon', '2sIYMkshMU48Rf8_6mbSgbFGm0QNg7N1', '$2y$13$6WUeZ8/LTjsdZox/IsWVj.t4TKzCtAoijtCSMh.l55NmDsp5CnlOC', NULL, 'jggardon@student.apc.edu.ph', 10, '0000-00-00', '0000-00-00', 'Jana Marie', 'Gavarra', 'Gardon', 'Female', '09061234567', 'Mb 16 Unit 507 BCDA Silang Village, USUSAN, Taguig City', '');
 
 --
 -- Indexes for dumped tables
@@ -403,9 +410,8 @@ ALTER TABLE `auth_rule`
 -- Indexes for table `choice`
 --
 ALTER TABLE `choice`
-  ADD PRIMARY KEY (`id`,`question_id`),
-  ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_choice_question1_idx` (`question_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
 -- Indexes for table `class_list`
@@ -443,7 +449,7 @@ ALTER TABLE `question`
 ALTER TABLE `result`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id_UNIQUE` (`id`),
-  ADD KEY `fk_result_stud_answer1_idx` (`stud_answer_user_id`,`stud_answer_choice_id`,`stud_answer_choice_question_id`);
+  ADD KEY `fk_result_stud_answer1_idx` (`stud_answer_id`,`stud_answer_question_id`);
 
 --
 -- Indexes for table `schedule`
@@ -456,8 +462,9 @@ ALTER TABLE `schedule`
 -- Indexes for table `stud_answer`
 --
 ALTER TABLE `stud_answer`
-  ADD PRIMARY KEY (`user_id`,`choice_id`,`choice_question_id`),
-  ADD KEY `fk_stud_answer_choice1_idx` (`choice_id`,`choice_question_id`);
+  ADD PRIMARY KEY (`id`,`question_id`),
+  ADD UNIQUE KEY `id_UNIQUE` (`id`),
+  ADD KEY `fk_stud_answer_question1_idx` (`question_id`);
 
 --
 -- Indexes for table `task`
@@ -487,7 +494,7 @@ ALTER TABLE `choice`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `employee`
 --
@@ -497,7 +504,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `result`
 --
@@ -509,15 +516,20 @@ ALTER TABLE `result`
 ALTER TABLE `schedule`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `stud_answer`
+--
+ALTER TABLE `stud_answer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2016006;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2016004;
 --
 -- Constraints for dumped tables
 --
@@ -557,12 +569,6 @@ ALTER TABLE `auth_item_child`
   ADD CONSTRAINT `fk_auth_item_has_auth_item_auth_item2` FOREIGN KEY (`child`) REFERENCES `auth_item` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `choice`
---
-ALTER TABLE `choice`
-  ADD CONSTRAINT `fk_choice_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Constraints for table `class_list`
 --
 ALTER TABLE `class_list`
@@ -585,14 +591,13 @@ ALTER TABLE `question`
 -- Constraints for table `result`
 --
 ALTER TABLE `result`
-  ADD CONSTRAINT `fk_result_stud_answer1` FOREIGN KEY (`stud_answer_user_id`,`stud_answer_choice_id`,`stud_answer_choice_question_id`) REFERENCES `stud_answer` (`user_id`, `choice_id`, `choice_question_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_result_stud_answer1` FOREIGN KEY (`stud_answer_id`,`stud_answer_question_id`) REFERENCES `stud_answer` (`id`, `question_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `stud_answer`
 --
 ALTER TABLE `stud_answer`
-  ADD CONSTRAINT `fk_stud_answer_choice1` FOREIGN KEY (`choice_id`,`choice_question_id`) REFERENCES `choice` (`id`, `question_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_stud_answer_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_stud_answer_question1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `task`
