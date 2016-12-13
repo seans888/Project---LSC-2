@@ -1,5 +1,7 @@
 <?php
 
+use common\models\Task;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -18,7 +20,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'task_id')->textInput() ?>
+    <?= $form->field($model, 'task_id')->dropDownList(
+        ArrayHelper::map(Task::find()->all(), 'id', 'title'),
+        [
+            'prompt' => 'Select Task',
+
+        ]);
+     ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
