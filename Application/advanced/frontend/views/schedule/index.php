@@ -26,7 +26,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
             'user_id',
@@ -34,8 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'day',
             'schedule',
 
-
-            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>
