@@ -33,6 +33,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ]);
         }
         ?>
+		
+		<?php
+        if(Yii::$app->user->can('add-student-to-course')){
+            echo Html::a('Enroll students to this course', ['/class-list/create'], ['class' => 'btn btn-primary']);
+        }
+        ?>	
+        <?php
+        if(Yii::$app->user->can('view-task')){
+            echo Html::a('View tasks', ['/courses/tasks/task/'], ['class' => 'btn btn-primary']);
+        }
+
+        ?>
     </p>
 
     <?= DetailView::widget([
@@ -51,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
         if(Yii::$app->user->can('add-student-to-course')){
             echo Html::a('Enroll students to this course', ['/class-list/create'], ['class' => 'btn btn-primary']);
         }
-        ?>
+        ?>	
         <?php
         if(Yii::$app->user->can('view-task')){
             echo Html::a('View tasks', ['/courses/tasks/task/'], ['class' => 'btn btn-primary']);

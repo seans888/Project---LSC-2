@@ -57,7 +57,7 @@ endif;
     <p>
         <?php
         if(Yii::$app->user->can('add-task')){
-            echo Html::a('Create Task', ['create'], ['class' => 'btn btn-success']);
+            echo Html::a('Create more task', ['create'], ['class' => 'btn btn-success']);
         }
         ?>
     </p><br/>

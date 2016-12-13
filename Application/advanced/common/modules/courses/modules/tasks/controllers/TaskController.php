@@ -397,7 +397,7 @@ class TaskController extends Controller
                         ->where(array('id' => Yii::$app->session['task']))
                         ->one();
 
-                    $text = 'This certificate accredits that the ' . $task->name . ' online test has been successfully passed by:';
+                    $text = 'This certificate accredits that the ' . $task->title . ' online test has been successfully passed by:';
                     $w = $pdf->GetStringWidth($text)+6;
                     $pdf->SetX(($pdf->w-$w)/2);
                     $pdf->SetTextColor(0,0,0);

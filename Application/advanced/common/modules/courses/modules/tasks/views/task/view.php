@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+		<?= Html::a('Add question',['/courses/tasks/question/create'], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= DetailView::widget([
@@ -43,6 +44,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-    <?= Html::a('Add question',['/courses/tasks/question/create'], ['class' => 'btn btn-primary']) ?>
+  
 
 </div>
