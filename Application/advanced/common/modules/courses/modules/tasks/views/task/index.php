@@ -61,6 +61,8 @@ endif;
         }
         ?>
     </p><br/>
+
+
     <?php
         foreach ($tasks as $task):
         echo Html::a($task->title . ' ( ' . $task->questionCount . ' Questions )', array("task/start", 'task' => $task->id), array('class' => 'task'));

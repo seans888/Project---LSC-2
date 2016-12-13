@@ -5,6 +5,7 @@ namespace common\modules\courses\modules\tasks\controllers;
 use common\models\DiplomaForm;
 use common\models\Question;
 use common\models\StudAnswer;
+use common\models\TaskSearch;
 use Yii;
 use common\models\Task;
 use yii\bootstrap\Html;
@@ -44,16 +45,9 @@ class TaskController extends Controller
      * Lists all Task models.
      * @return mixed
      */
+
     public function actionIndex()
     {
-        /*$searchModel = new TaskSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);*/
-
         $tasks = Task::find()
             ->select('t.id, t.title, count(*) as questionCount')
             ->from(['t' => Task::tableName()])
@@ -71,7 +65,13 @@ class TaskController extends Controller
      */
     public function actionIndex2()
     {
-        return $this->render('index2');
+        $searchModel = new TaskSearch();
+         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+         return $this->render('index2', [
+             'searchModel' => $searchModel,
+             'dataProvider' => $dataProvider,
+         ]);
     }
 
     /**

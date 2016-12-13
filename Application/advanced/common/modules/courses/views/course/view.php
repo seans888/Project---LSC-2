@@ -52,5 +52,10 @@ $this->params['breadcrumbs'][] = $this->title;
             echo Html::a('Enroll students to this course', ['/class-list/create'], ['class' => 'btn btn-primary']);
         }
         ?>
+        <?php
+        if(Yii::$app->user->can('add-task')){
+            echo Html::a('Add task to this course', ['/courses/tasks/task/create'], ['class' => 'btn btn-primary']);
+        }
+        ?>
     </p>
 </div>

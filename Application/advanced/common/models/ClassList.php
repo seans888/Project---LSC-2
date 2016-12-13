@@ -44,8 +44,8 @@ class ClassList extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => 'User ID',
-            'course_id' => 'Course ID',
+            'user_id' => 'Students',
+            'course_id' => 'Courses',
         ];
     }
 
