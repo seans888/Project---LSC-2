@@ -59,7 +59,7 @@ AppAsset::register($this);
                 <?php if
                 (!Yii::$app->user->isGuest){
                     echo
-                        '<li><a href="index.php?r=site%2Fprofile"> Profile </a></li>'
+                        '<li><a href=""'.Url::to(['site/profile']).'"> Profile </a></li>'
                     ;} ?>
 					<?php if
                 (Yii::$app->user->isGuest){
