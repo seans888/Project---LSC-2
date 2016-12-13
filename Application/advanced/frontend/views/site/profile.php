@@ -18,13 +18,13 @@ $this->title = 'Profile';
     <th class="th1" width="800px" bgcolor="#B3C6D8"><h4><b>ID: </b></th> <td class="td1" width="1200px" align="center"><h4><?php echo Yii::$app->user->identity->id ?></h4></td>
 	</tr><tr class="tr1">
     <th class="th1" width="600px" bgcolor="#B3C6D8"><h4><b>Username: </b></th> <td class="td1" width="600px" align="center"><h4><?php echo Yii::$app->user->identity->username ?></h4></td>
-	</tr><tr class="tr1">
+</tr> <tr class="tr1">
     <th class="th1" width="300px" bgcolor="#B3C6D8"><h4><b>First name: </b></th> <td class="td1" width="300px" align="center"><h4><?php echo Yii::$app->user->identity->first_name ?></h4></td>
-    </tr><tr class="tr1">
+   </tr><tr class="tr1">
 	<th class="th1" width="300px" bgcolor="#B3C6D8"><h4><b>Middle name: </b></th> <td class="td1" width="300px" align="center"><h4><?php echo Yii::$app->user->identity->middle_name ?></h4></td>
-	</tr><tr class="tr1">
+</tr><tr class="tr1">
     <th class="th1" width="300px" bgcolor="#B3C6D8"><h4><b>Last name: </b></th> <td class="td1" width="300px" align="center"><h4><?php echo Yii::$app->user->identity->last_name ?></h4></td>
-	</tr><tr class="tr1">
+</tr><tr class="tr1">
 	<th class="th1" width="300px" bgcolor="#B3C6D8"><h4><b>Address: </b></th> <td class="td1" width="300px" align="center"><h4><?php echo Yii::$app->user->identity->home_address ?></h4></td>
 	</tr></table>
 	</center>
