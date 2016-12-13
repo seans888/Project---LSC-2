@@ -176,71 +176,68 @@ class TaskController extends Controller
 
     public function actionStart()
     {
-        if(session_id() == '' || !isset($_SESSION))
-            session_start();
+       $session = Yii::$app->session;
 
-        if(isset($_GET['task']))
+        if (isset($_GET['task']))
         {
-            Yii::$app->session['task'] = $_GET['task'];
-        }else
-        {
-            Yii::$app->session['task'] = 1;
+            $session['task'] = $_GET['task'];
+        } else {
+            $session['task'] = 1;
         }
 
-        unset(Yii::$app->session['diplomaGot']);
-        unset(Yii::$app->session['answers']);
+            unset($session['diplomaGot']);
+            unset($session['answers']);
 
-        $answers = array();
+            $answers = array();
 
-        $questions = Question::find()
-            ->where(array('task_id' => Yii::$app->session['task']))
-            ->all();
+            $questions = Question::find()
+                ->where(array('task_id' => $session['task']))
+                ->all();
 
-        foreach ($questions as $question){
-            $answer = new StudAnswer();
-            $answer->question_id = $question->id;
-            $answer->title = Html::encode($question->title);
-            $answer->user_answer = null;
+            foreach ($questions as $question) {
+                $answer = new StudAnswer();
+                $answer->question_id = $question->id;
+                $answer->title = Html::encode($question->title);
+                $answer->user_answer = null;
 
-            $answers_indexs = array(1,2,3,4,5,6);
-            shuffle($answers_indexs);
+                $answers_indexs = array(1, 2, 3, 4, 5, 6);
+                shuffle($answers_indexs);
 
-            $answers2 = array();
-            $answers2[$answers_indexs[0]] = Html::encode($question->answer);
-            $answer->answer = $answers_indexs[0];
+                $answers2 = array();
+                $answers2[$answers_indexs[0]] = Html::encode($question->answer);
+                $answer->answer = $answers_indexs[0];
 
-            if(!is_null($question->answer2))
-                $answers2[$answers_indexs[1]] = Html::encode($question->answer2);
-            if(!is_null($question->answer3))
-                $answers2[$answers_indexs[2]] = Html::encode($question->answer3);
-            if(!is_null($question->answer4))
-                $answers2[$answers_indexs[3]] = Html::encode($question->answer4);
-            if(!is_null($question->answer5))
-                $answers2[$answers_indexs[4]] = Html::encode($question->answer5);
-            if(!is_null($question->answer6))
-                $answers2[$answers_indexs[5]] = Html::encode($question->answer6);
+                if (!is_null($question->answer2))
+                    $answers2[$answers_indexs[1]] = Html::encode($question->answer2);
+                if (!is_null($question->answer3))
+                    $answers2[$answers_indexs[2]] = Html::encode($question->answer3);
+                if (!is_null($question->answer4))
+                    $answers2[$answers_indexs[3]] = Html::encode($question->answer4);
+                if (!is_null($question->answer5))
+                    $answers2[$answers_indexs[4]] = Html::encode($question->answer5);
+                if (!is_null($question->answer6))
+                    $answers2[$answers_indexs[5]] = Html::encode($question->answer6);
 
-            $this->shuffle_assoc($answers2);
-            $answer->answers = $answers2;
+                $this->shuffle_assoc($answers2);
+                $answer->answers = $answers2;
 
-            $answers[] = $answer;
-        }
+                $answers[] = $answer;
+            }
 
-        $this->shuffle_assoc($answers);
-        $i = 0;
-        foreach ($answers as $answer)
-        {
-            $answer->id = $i;
-            $i++;
-        }
+            $this->shuffle_assoc($answers);
+            $i = 0;
+            foreach ($answers as $answer) {
+                $answer->id = $i;
+                $i++;
+            }
 
-        Yii::$app->session['answers'] = array_slice($answers, 0, (self::QUESTION_NUMBER ? self::QUESTION_NUMBER : count($answers)));
+            $session['answers'] = array_slice($answers, 0, (self::QUESTION_NUMBER ? self::QUESTION_NUMBER : count($answers)));
 
             $dataProvider = new ArrayDataProvider(array(
                 'allModels' => Yii::$app->session['answers'],
                 'pagination' => array(
-                    'pageSize'=>self::PAGE_SIZE,
-                    'page'=> 0,
+                    'pageSize' => self::PAGE_SIZE,
+                    'page' => 0,
                 ),
             ));
 
@@ -252,7 +249,8 @@ class TaskController extends Controller
                 'seconds' => $seconds,
                 'questionsLeft' => $questionsLeft,
             ));
-    }
+        }
+
 
     public function actionChange()
     {
@@ -282,8 +280,11 @@ class TaskController extends Controller
                 if($paramKey !== 'page' && $paramKey !== 'task')
                 {
                     $session = Yii::$app->session;
-                    $answer = $session['answers'][$paramKey];
-                    $answer->user_answer = intval($paramValues[$i]);
+                    if(isset($session['answers'][$paramKey])){
+                        $answer = $session['answers'][$paramKey];
+                        $answer->user_answer = intval($paramValues[$i]);
+                    }
+
                 }
             }
             elseif ($paramKey === 'end' && $paramValues[$i] === '1')
