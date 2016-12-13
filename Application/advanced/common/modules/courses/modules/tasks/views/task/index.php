@@ -39,6 +39,21 @@ $this->registerCss('
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <p style="text-align: center">
+        <ul id="quizrules" style="padding:10px; margin:auto;">
+    <p>You have just <?= TaskController::SECONDS_PER_QUESTIONS?> seconds to answer each question.
+        <?php
+        if(TaskController::MINIMUM_SCORE !== false):
+        ?>
+    </p>
+    <p>
+        If you get <?= TaskController::MINIMUM_SCORE ?>% or more, you will be able to download a diploma! <br/>
+    </p>
+<?php
+endif;
+?>
+    </ul>
+    </p>
     <p>
         <?php
         if(Yii::$app->user->can('add-task')){
@@ -56,21 +71,7 @@ $this->registerCss('
     ?>
 
 
-    <p style="text-align: center">
-        <ul id="quizrules" style="padding:10px; margin:auto;">
-            <li>You have just <?= TaskController::SECONDS_PER_QUESTIONS?> seconds to answer each question.
-                <?php
-                if(TaskController::MINIMUM_SCORE !== false):
-                ?>
-            </li>
-            <li>
-                If you get <?= TaskController::MINIMUM_SCORE ?>% or more, you will be able to download a diploma! <br/>
-            </li>
-        <?php
-        endif;
-        ?>
-        </ul>
-    </p>
+
     <div id="wait" style="top:25%;left:0%;width:100%;text-align:center;display:none;position:fixed">
         <?= Html::img(Yii::$app->controller->module->assetsUrl.'/image/loading.gif', array('style' => 'background:white;border:1px solid black;')); ?>
     </div>

@@ -39,8 +39,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'date_close',
             'time_remaining',
             'attempts',
-            'course.title:text:Course',
+            'course.name:text:Course',
         ],
-    ]) ?>
+    ]); ?>
+
+    <?= Html::a('Add Questions', ['create', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
 
 </div>

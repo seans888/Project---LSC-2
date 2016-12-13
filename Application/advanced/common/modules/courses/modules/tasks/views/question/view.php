@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Question */
 
-$this->title = $model->id;
+$this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Questions', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -29,9 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'ask',
-            'image',
-            'task.title:text:Task name',
+            'title',
+            'answer',
+            'answer2',
+            'answer3',
+            'answer4',
+            'answer5',
+            'answer6',
+            'task_id',
         ],
     ]) ?>
 

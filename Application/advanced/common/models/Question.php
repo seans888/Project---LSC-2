@@ -39,8 +39,7 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['title', 'task_id'], 'required'],
             [['task_id'], 'integer'],
-            [['title', 'answer2', 'answer3', 'answer4', 'answer5', 'answer6'], 'string', 'max' => 255],
-            [['answer'], 'string', 'max' => 8000],
+            [['title','answer', 'answer2', 'answer3', 'answer4', 'answer5', 'answer6'], 'string', 'max' => 255],
             [['task_id'], 'exist', 'skipOnError' => true, 'targetClass' => Task::className(), 'targetAttribute' => ['task_id' => 'id']],
         ];
     }
@@ -52,13 +51,13 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
+            'title' => 'Question',
             'answer' => 'Answer',
-            'answer2' => 'Answer2',
-            'answer3' => 'Answer3',
-            'answer4' => 'Answer4',
-            'answer5' => 'Answer5',
-            'answer6' => 'Answer6',
+            'answer2' => 'Choice 1',
+            'answer3' => 'Choice 2',
+            'answer4' => 'Choice 3',
+            'answer5' => 'Choice 4',
+            'answer6' => 'Choice 5',
             'task_id' => 'Task ID',
         ];
     }

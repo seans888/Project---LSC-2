@@ -68,7 +68,7 @@ class Task extends \yii\db\ActiveRecord
             'date_close' => 'Date Close',
             'time_remaining' => 'Time Remaining',
             'attempts' => 'Attempts',
-            'course_id' => 'Course ID',
+            'course_id' => 'Course',
         ];
     }
 
