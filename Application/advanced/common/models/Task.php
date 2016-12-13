@@ -47,7 +47,7 @@ class Task extends \yii\db\ActiveRecord
             [['attempts', 'course_id'], 'integer'],
             [['title'], 'string', 'max' => 100],
             [['description'], 'string', 'max' => 150],
-            [['course_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['course_id' => 'id']],
+            [['course_id'], 'exist', 'skipOnError' => true, 'targetClass' => Course::className(), 'targetAttribute' => ['course_id' => 'id',]],
         ];
     }
 

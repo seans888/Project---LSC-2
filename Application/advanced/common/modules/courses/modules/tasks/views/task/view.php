@@ -43,6 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-    <?= Html::a('Add Questions', ['create', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+    <?= Html::a('Add question',['/courses/tasks/question/create'], ['class' => 'btn btn-primary']) ?>
 
 </div>
