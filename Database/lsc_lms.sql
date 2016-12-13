@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2016 at 10:38 AM
+-- Generation Time: Dec 13, 2016 at 06:10 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -100,7 +100,8 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `data`, `created_at`, `u
 ('update-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', NULL),
 ('update-schedule', 2, NULL, NULL, '2016-12-11', '2016-12-11', NULL),
 ('view-course', 2, NULL, NULL, '2016-12-07', '2016-12-07', 'view-own-course'),
-('view-own-courses', 2, NULL, NULL, '2016-12-12', '2016-12-12', NULL);
+('view-own-courses', 2, NULL, NULL, '2016-12-12', '2016-12-12', NULL),
+('view-task', 2, NULL, NULL, '2016-12-14', '2016-12-14', NULL);
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,8 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('instructors', 'update-course'),
 ('instructors', 'view-course'),
 ('instructors', 'view-own-courses'),
-('students', 'view-course');
+('students', 'view-course'),
+('students', 'view-task');
 
 -- --------------------------------------------------------
 
@@ -172,6 +174,14 @@ CREATE TABLE `class_list` (
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
+--
+-- Dumping data for table `class_list`
+--
+
+INSERT INTO `class_list` (`user_id`, `course_id`) VALUES
+(2016001, 1),
+(2016002, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -191,7 +201,7 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`id`, `name`, `course_description`, `date_created`, `user_id`) VALUES
-(1, 'try', NULL, '2016-12-13', 2016003);
+(1, 'High School Entrance Test / Science High School Review', '', '2016-12-13', 2016003);
 
 -- --------------------------------------------------------
 
@@ -235,7 +245,7 @@ INSERT INTO `employee` (`id`, `username`, `auth_key`, `password_hash`, `password
 CREATE TABLE `question` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `answer` varbinary(8000) DEFAULT NULL,
+  `answer` varchar(255) DEFAULT NULL,
   `answer2` varchar(255) DEFAULT NULL,
   `answer3` varchar(255) DEFAULT NULL,
   `answer4` varchar(255) DEFAULT NULL,
@@ -249,8 +259,8 @@ CREATE TABLE `question` (
 --
 
 INSERT INTO `question` (`id`, `title`, `answer`, `answer2`, `answer3`, `answer4`, `answer5`, `answer6`, `task_id`) VALUES
-(1, 'hey', NULL, '1', '2', '3', '4', '5', 1),
-(2, 'try', 0x0000000000, 'haha', '15', '12', '5', '5', 1);
+(3, 'What is the question all about?', 'me', 'you', 'me', 'us', 'forever', '4 lang sapat na', 2),
+(4, 'What is your final grade?', '4', '1', 'R', '2', '3', '4 lang sapat na', 2);
 
 -- --------------------------------------------------------
 
@@ -279,7 +289,8 @@ CREATE TABLE `schedule` (
   `id` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `day` enum('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') NOT NULL,
-  `schedule` varchar(17) NOT NULL
+  `schedule` varchar(17) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32;
 
 -- --------------------------------------------------------
@@ -323,7 +334,10 @@ CREATE TABLE `task` (
 --
 
 INSERT INTO `task` (`id`, `title`, `description`, `task_type`, `date_created`, `time_open`, `time_close`, `date_open`, `date_close`, `time_remaining`, `attempts`, `course_id`) VALUES
-(1, 'try', 'try desc', 'Exam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
+(1, 'try', 'try desc', 'Exam', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(2, 'Final exam on BEHASCI', '', 'Quiz', '2016-12-13', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(3, 'Short qyuz', '', 'Quiz', '2016-12-13', NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(4, 'Task sample', 'task description', 'Exam', '2016-12-13', NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -504,7 +518,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `result`
 --
@@ -524,7 +538,7 @@ ALTER TABLE `stud_answer`
 -- AUTO_INCREMENT for table `task`
 --
 ALTER TABLE `task`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user`
 --

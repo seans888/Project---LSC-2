@@ -34,9 +34,9 @@ class Schedule extends \yii\db\ActiveRecord
         return [
             [['subject', 'day', 'schedule', 'user_id'], 'required'],
             [['day'], 'string'],
-            [['user_id'], 'integer'],
             [['subject'], 'string', 'max' => 100],
             [['schedule'], 'string', 'max' => 17],
+            [['user_id'], 'integer'],
         ];
     }
 
@@ -50,7 +50,7 @@ class Schedule extends \yii\db\ActiveRecord
             'subject' => 'Subject',
             'day' => 'Day',
             'schedule' => 'Schedule',
-            'user_id' => 'User ID',
+            'user_id' => 'User',
         ];
     }
 
