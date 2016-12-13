@@ -15,14 +15,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
+        <?php
+         if(Yii::$app->user->can('update-course')){
+            echo Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']);
+         }
+        ?>
+
+        <?php
+        if(Yii::$app->user->can('delete-course'))
+        {
+            echo Html::a('Delete', ['delete', 'id' => $model->id], [
+                'class' => 'btn btn-danger',
+                'data' => [
+                    'confirm' => 'Are you sure you want to delete this item?',
+                    'method' => 'post',
+                ],
+            ]);
+        }
+        ?>
     </p>
 
     <?= DetailView::widget([
@@ -37,6 +47,10 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
     <p>
-        <?= Html::a('Enroll students to this course', ['/class-list/create'], ['class' => 'btn btn-primary']) ?>
+        <?php
+        if(Yii::$app->user->can('add-student-to-course')){
+            echo Html::a('Enroll students to this course', ['/class-list/create'], ['class' => 'btn btn-primary']);
+        }
+        ?>
     </p>
 </div>
