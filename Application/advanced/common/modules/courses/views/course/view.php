@@ -53,9 +53,10 @@ $this->params['breadcrumbs'][] = $this->title;
         }
         ?>
         <?php
-        if(Yii::$app->user->can('add-task')){
-            echo Html::a('Add task to this course', ['/courses/tasks/task/create'], ['class' => 'btn btn-primary']);
+        if(Yii::$app->user->can('view-task')){
+            echo Html::a('View tasks', ['/courses/tasks/task/'], ['class' => 'btn btn-primary']);
         }
+
         ?>
     </p>
 </div>
