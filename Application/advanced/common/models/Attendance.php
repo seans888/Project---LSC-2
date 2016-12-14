@@ -46,9 +46,9 @@ class Attendance extends \yii\db\ActiveRecord
     {
         return [
             'status' => 'Status',
-            'class_list_user_id' => 'Class List User ID',
-            'class_list_course_id' => 'Class List Course ID',
-            'schedule_id' => 'Schedule ID',
+            'class_list_user_id' => 'Class List Users',
+            'class_list_course_id' => 'Class List Courses',
+            'schedule_id' => 'Schedule',
         ];
     }
 

@@ -2,6 +2,10 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\models\User;
+use yii\helpers\ArrayHelper;
+use common\models\Course;
+use common\models\Schedule;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Attendance */
@@ -10,15 +14,54 @@ use yii\widgets\ActiveForm;
 
 <div class="attendance-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(); ?><br>
 
-    <?= $form->field($model, 'status')->dropDownList([ 'Absent' => 'Absent', 'Late' => 'Late', 'Excuse' => 'Excuse', 'Present' => 'Present', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'status')->dropDownList(
+	[ 'Absent' => 'Absent', 'Late' => 'Late', 'Excuse' => 'Excuse', 'Present' => 'Present', 
+	], ['prompt' => 'Select Status']) ?>
 
-    <?= $form->field($model, 'class_list_user_id')->textInput() ?>
+	<div class="col-sm-6">
+	<?= $form->field($model, 'class_list_user_id')->dropDownList(
+        ArrayHelper::map(User::find()->all(), 'id', 'username'),
+        [
+            'prompt' => 'Select Select Student',
 
-    <?= $form->field($model, 'class_list_course_id')->textInput() ?>
+        ]);?>
+	</div>
+	
+	<div class="col-sm-6">
+	<?= $form->field($model, 'class_list_course_id')->dropDownList(
+        ArrayHelper::map(Course::find()->all(), 'id', 'name'),
+        [
+            'prompt' => 'Select Select Course',
 
-    <?= $form->field($model, 'schedule_id')->textInput() ?>
+        ]);?>
+	</div>
+	
+
+	
+
+		<div class="col-sm-6">
+		<?= $form->field($model, 'schedule_id')->dropDownList(
+        ArrayHelper::map(Schedule::find()->all(), 'id', 'schedule'),
+        [
+            'prompt' => 'Select Time',
+
+        ]);?>
+		</div>
+		
+		<div class="col-sm-6">
+		<?= $form->field($model, 'schedule_id')->dropDownList(
+        ArrayHelper::map(Schedule::find()->all(), 'id', 'day'),
+        [
+            'prompt' => 'Select Day',
+
+        ]);?>
+		</div>
+	
+		
+		
+		
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

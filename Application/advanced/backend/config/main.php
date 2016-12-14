@@ -15,6 +15,11 @@ return [
         'employee' => [
             'class' => 'backend\modules\employee\Employee',
         ],
+		'users' => [
+
+            'class' => 'backend\modules\users\User',
+
+        ],
     ],
     'components' => [
         'user' => [
