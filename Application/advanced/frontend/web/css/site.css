@@ -6,10 +6,7 @@ body {
 
 .th1{
 	padding-left:20px;
-	 border-bottom: 1px solid #ddd
-}
-.td1{
-	border-bottom: 1px solid #ddd
+	 border-bottom:2px solid #ddd
 }
 
 table1{
@@ -17,9 +14,17 @@ table1{
 	
 }
 
-tr1:hover{background-color:#f5f5f5;
+td.td1:hover{background-color:#f5f5f5;
+	 border-bottom:1px solid #282b36;
 	
 }
+th{
+	background-color: #dbdde8;
+}
+td{
+	background-color: #e5e6eb;
+}
+
 
 .wrap {
     min-height: 100%;

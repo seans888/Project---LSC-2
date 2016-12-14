@@ -3,6 +3,17 @@ body {
     height: 100%;
 }
 
+th{
+	background-color: #cfd2e1;
+}
+td{
+	background-color: #e5e6eb;
+}
+.th1{
+	background-color: #B3C6D8;
+	padding-left: 15px
+}
+
 .wrap {
     min-height: 100%;
     height: auto;
