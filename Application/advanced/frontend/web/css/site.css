@@ -3,6 +3,10 @@ body {
     height: 100%;
 
 }
+ul.breadcrumb{
+	background-color: #dbdde8;
+	
+}
 
 .th1{
 	padding-left:20px;
